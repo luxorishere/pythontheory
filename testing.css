@@ -1,4 +1,36 @@
 .block {
-    background-color: black;
+    display: inline-block;
+    width: 355px;
+    height: 320px;
+    transition: 100ms;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    cursor: pointer;
+    border: solid 0.1rem;
     
+    
+}
+
+.image {
+    height: 200px;
+    cursor: pointer;
+    border: solid 0.1rem;
+    }
+
+.block:hover {
+    transform: scale(1.05);
+}
+.text {
+    margin-left: 10px;
+    border: solid 0.1rem;
+}
+
+.channel {
+    margin-left: 10px;
+    border: solid 0.1rem;
+
+}
+.stats {
+    margin-left: 10px;
+    border: solid 0.1rem;
 }
