@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, #FF69B4, #FFD700);
+  /* You can adjust the gradient colors and direction as needed */
+  display: flex;
+  align-items: center;
+  color: #fff; /* Text color */
+  font-family: Arial, sans-serif;
+}
+.frontheading{
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: left;
+  
+  margin-left: 20px;
+
+}
