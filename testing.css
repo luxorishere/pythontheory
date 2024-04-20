@@ -1,4 +1,4 @@
-.block {
+/* .block {
     display: inline-block;
     width: 355px;
     height: 320px;
@@ -33,5 +33,86 @@
 .stats {
     margin-left: 10px;
     border: solid 0.1rem;
+} */
+
+.center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: rgb(255, 217, 0);
+    margin: 0;
+    padding: 0;
+
+}
+button {
+    width: 140px;
+    height: 50px;
+    position: relative;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.top {
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 238);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: rgb(36,38,34);
+    display: flex;
+    justify-content: center;
+    border-radius: 7mm;
+    outline: 2px solid rgb(36, 38, 34);
+    align-items: center;
+    cursor: pointer;
+    transition: 0.25s;
+
+}
+
+.bottom {
+    width: 100%;
+    height: 100%;
+    background: rgb(229, 229, 199);
+    position: absolute;
+    top: 10px;
+    left:0;
+    border-radius: 7mm;
+    outline: 2px solid rgb(36, 38, 34);
+    z-index: -1;
+
+}
+
+.bottom::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 9px;
+    background: rgb(36, 38, 34);
+    bottom: 0;
+    left: 15%;
+}
+.bottom::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 9px;
+    background: rgb(36, 38, 34);
+    bottom: 0;
+    left: 85%;
+}
+button:active .top {
+    transform: translateY(10px);
+}
+
+
 
