@@ -5,7 +5,7 @@ Data Science is a field of study that combines statistical analysis, computer pr
 ## What is the use of Data Science in AI?
 DS generates data for AI models & provides insights for better decisions. The data is used in various AI apps & helps improve AI models. DS helps understand customers, employees, and operations.
 
-*We can tell you about this more, but let's not make this boring and get to know the use of Data Science in AI.*
+*We can tell you about this more, but let's not make this boring and get to know more about DS*
 ## Data Preprocessing
 
 Data structures are used to organize and manipulate large datasets efficiently before feeding them into AI models.
