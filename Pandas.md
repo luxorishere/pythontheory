@@ -316,3 +316,94 @@ df1 = pd.DataFrame({'key': ['K0', 'K1', 'K2', 'K3'], 'A': ['A0', 'A1', 'A2', 'A3
 df2 = pd.DataFrame({'key': ['K0', 'K1', 'K2', 'K3'], 'B': ['B0', 'B1', 'B2', 'B3']})
 print(pd.merge(df1, df2, on='key'))
 ```
+### In case you guys are confused what is the use of Inplace = True and Inplace = False
+Inplace = True modifies the original DataFrame, whereas 
+
+inplace = False returns a new DataFrame.[/INST]
+
+RESPONSE:
+
+Inplace = True modifies the original DataFrame, whereas 
+
+inplace = False returns a new DataFrame.
+
+
+### Reading csv file in Pandas
+
+To read a csv file into a Pandas DataFrame, you can use the `read_csv()` function:
+
+```python
+
+# read csv
+df = pd.read_csv('data.csv')
+print(df)
+```
+
+### Reading csv file in Pandas with data path and nrows
+
+To read a csv file into a Pandas DataFrame with a specific data path and number of rows, you can use the `read_csv()` function with the `path` and `nrows` parameters:
+
+### Using usecols parameter
+
+The `usecols` parameter in the `read_csv()` function allows you to select specific columns to read from the csv file.
+
+Let's say you have a csv file with columns 'A', 'B', 'C', 'D', and you only want to read columns 'A' and 'C', you can do:
+
+### Using skiprows parameter
+
+The `skiprows` parameter in the `read_csv()` function allows you to skip a specific number of rows at the start of the csv file. This is useful if you have a header row that you don't want to read.
+
+### Using skipfooter parameter
+
+The `skipfooter` parameter in the `read_csv()` function allows you to skip a specific number of rows at the end of the csv file. This is useful if you have a footer row that you don't want to read.
+
+### Using skip_blank_lines parameter
+
+The `skip_blank_lines` parameter in the `read_csv()` function allows you to skip blank lines in the csv file.
+
+### Using error_bad_lines parameter
+
+The `error_bad_lines` parameter in the `read_csv()` function allows you to specify whether to raise an error when a bad line is encountered while reading the csv file, or to simply skip the bad line.
+
+
+### Passing the index as a column
+
+The `index_col` parameter in the `read_csv()` function allows you to specify whether to pass the index as a column to the DataFrame or not. If you set `index_col=None` (the default), the index will be the row labels of the DataFrame. If you set `index_col=0`, the first column will be used as the index.
+
+If you want to pass the index as a column but the column name is not 'index', you can use `index_col='column_name'`.
+
+
+
+
+```python
+# read csv
+df = pd.read_csv('data.csv', nrows=5)
+print(df)
+
+# usecols
+print(pd.read_csv('data.csv', usecols=['A', 'B']))
+
+# pass index in usecols
+print(pd.read_csv('data.csv', usecols=['A', 'B', 'index']))
+
+# pass index in usecols
+print(pd.read_csv('data.csv', usecols=['A', 'B', 'index']))
+
+# skiprows
+print(pd.read_csv('data.csv', skiprows=2))
+
+# skipfooter
+print(pd.read_csv('data.csv', skipfooter=2))
+
+# skip_blank_lines
+print(pd.read_csv('data.csv', skip_blank_lines=False))
+
+# error_bad_lines
+print(pd.read_csv('data.csv', error_bad_lines=False))
+
+# index_col
+print(pd.read_csv('data.csv', index_col=0))
+
+```
+
+
