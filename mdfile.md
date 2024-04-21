@@ -162,5 +162,3 @@ class Circle extends Shape {
     }
 }
 ```
-
-### Made with love
