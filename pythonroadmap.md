@@ -119,10 +119,17 @@ Main thing is to learn.
 
 As soon as you learn the basics of Data Science, you can start building your projects.
 
+### Exploratory Data Analysis (EDA) in short
+EDA is an initial data analysis step where we take a look at the data to understand its distribution, patterns, outliers, relationships, etc. without building any specific model. The goal of EDA is to summarize the main characteristics of the data and to understand the problem we are trying to solve.
+
 ## Exploratory Data Analysis (EDA)
 - **Dataset**: Weather data for different cities over a year
 - **Task**: Analyze the weather data to understand patterns, trends, and outliers.
 - **Visualizations**: Create scatter plots to show the relationship between temperature and other variables, box plots to show the distribution of temperature across different months, and heat maps to show the correlation between different weather variables.
+
+
+### Predictive Modeling in short
+Predictive Modeling is a step where we build models to predict the outcomes based on the input features. The goal is to make accurate predictions without overfitting the data.
 
 ## Predictive Modeling
 - **Dataset**: Housing prices dataset with features like number of bedrooms, square footage, and location
