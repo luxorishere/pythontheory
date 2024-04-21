@@ -136,7 +136,7 @@ Predictive Modeling is a step where we build models to predict the outcomes base
 - **Task**: Build a predictive model to predict the housing prices based on the given features.
 - **Algorithms**: Use regression algorithms like linear regression or decision trees to make predictions.
 
-These types of projects requires Maths so learn maths related too it.
+These types of projects requires Maths so learn maths related thing too.
 We also gonna cover what maths u should study.
 
 These are just beginners projects that teach u basics of DS.
