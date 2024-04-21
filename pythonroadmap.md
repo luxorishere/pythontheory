@@ -145,13 +145,12 @@ These are just beginners projects that teach u basics of DS.
 7. Gradient descent
 8. Normal distribution
 9. Hypothesis Testing
-10. Correlation ...keep learning
+10. Correlation ...keep learning 
 
 ## Books
 
 1. Python for Data Science - Wes Mckinney *(Contains Everything till now)* 
 2. Play with Graphs - Amit Agrawal 
-
 # Time Complexity and Space Complexity
 
 Time Complexity and Space Complexity are important terms in this journey.
@@ -272,10 +271,7 @@ Overall, Kaggle is a great resource for data scientists to learn, collaborate, a
 
 ## If you didn't learn someone else gonna do it
 
-
-
-
-
+*Made with RKAP*
 
 
 
