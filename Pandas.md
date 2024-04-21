@@ -158,11 +158,11 @@ We are not going to provide you the code example here, Do it yourself and see th
 
 
 We can also perform various operations on a DataFrame such as:
-
+- Inserting a column name into a DataFrame in one line: `df.insert(0, 'new_column_name', some_values)`
+- Removing columns from a DataFrame: `del df['column_to_delete1', 'column_to_delete2']`
 - Changing the column name: `df.rename(columns={'old_column_name': 'new_column_name'}, inplace=True)`
 - Creating a new column: `df['new_column'] = some_values`
 - Removing a row: `df.drop(index=index_label_to_drop, inplace=True)`
-- Removing a column: `del df['column_to_delete']`
 - Sorting a DataFrame: `df.sort_values(by='column_to_sort_by', ascending=True, inplace=True)`
 - Filtering data based on conditions: `df[df['column_name'] > some_value]`
 - Grouping data: `df.groupby('column_to_group_by').mean()`
@@ -206,7 +206,113 @@ print(pd.merge(df1, df2, on='key'))
 
 
 
+### Arithmetic operations
+Pandas provides several arithmetic options for operations on Series and
+DataFrames. These operations can be applied element-wise:
+ 1. addition: `df1 + df2`
+ 2. subtraction: `df1 - df2`
+ 3. multiplication: `df1 * df2`
+ 4. division: `df1 / df2`
+ 5. exponentiation: `df1 ** df2`
+ 6. modulo: `df1 % df2`
+```python
+# Example for arithmetic operations
+df1 = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+df2 = pd.DataFrame({'A': [7, 8, 9], 'B': [10, 11, 12]})
 
+# addition
+print(df1 + df2)
 
+# subtraction
+print(df1 - df2)
 
+# multiplication
+print(df1 * df2)
 
+# division
+print(df1 / df2)
+
+# exponentiation
+print(df1 ** df2)
+
+# modulo
+print(df1 % df2)
+```
+```
+   A   B
+0  8  14
+1  4  16
+2  0  12
+
+   A   B
+0 -6  -4
+1 -2  -6
+2  0  -6
+
+   A   B
+0  7  50
+1  8  55
+2  9  66
+
+     A     B
+0   0.14  0.33
+1   0.20  0.29
+2   0.03  0.08
+
+   A  B
+0   1   1
+1   8  11
+2   9  12
+```
+
+### Quick view
+
+* create: `pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})`
+* index: `df.index`
+* columns: `df.columns`
+* shape: `df.shape`
+* head: `df.head()`
+* tail: `df.tail()`
+* loc: `df.loc[row_indexer, column_indexer]`
+* iloc: `df.iloc[row_indexer, column_indexer]`
+* ix: `df.ix[row_indexer, column_indexer]`
+* info: `df.info()`
+* describe: `df.describe()`
+* reset_index: `df.reset_index(drop=True)`
+* sort_values: `df.sort_values(by='column_to_sort_by', ascending=True, inplace=True)`
+* groupby: `df.groupby('column_to_group_by').mean()`
+* merge: `pd.merge(df1, df2, on='column_to_merge_on')`
+```python
+# view the DataFrame
+print(df)
+print(df.index)
+print(df.columns)
+print(df.shape)
+print(df.head())
+print(df.tail())
+
+# access data
+print(df.loc[0, 'A'])
+print(df.iloc[0, 1])
+print(df.ix[0, 'B'])
+
+# summary of the data
+df.info()
+print(df.describe())
+
+# reset index
+df_reset_index = df.reset_index(drop=True)
+print(df_reset_index)
+
+# sort values
+df_sorted = df.sort_values(by='A', ascending=False)
+print(df_sorted)
+
+# groupby
+print(df.groupby('A').mean())
+
+# merge
+df1 = pd.DataFrame({'key': ['K0', 'K1', 'K2', 'K3'], 'A': ['A0', 'A1', 'A2', 'A3']})
+df2 = pd.DataFrame({'key': ['K0', 'K1', 'K2', 'K3'], 'B': ['B0', 'B1', 'B2', 'B3']})
+print(pd.merge(df1, df2, on='key'))
+```
