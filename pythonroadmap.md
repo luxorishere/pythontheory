@@ -271,7 +271,7 @@ Overall, Kaggle is a great resource for data scientists to learn, collaborate, a
 
 ## If you didn't learn someone else gonna do it
 
-*Made with RKAP*
+*Made with RKAP India*
 
 
 
