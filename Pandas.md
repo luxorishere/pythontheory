@@ -371,7 +371,8 @@ The `error_bad_lines` parameter in the `read_csv()` function allows you to speci
 The `index_col` parameter in the `read_csv()` function allows you to specify whether to pass the index as a column to the DataFrame or not. If you set `index_col=None` (the default), the index will be the row labels of the DataFrame. If you set `index_col=0`, the first column will be used as the index.
 
 If you want to pass the index as a column but the column name is not 'index', you can use `index_col='column_name'`.
-
+### Changing the data type of a column
+ If you want to change the data type of a column, you can use the `dtype` parameter in the `read_csv()` function.
 
 
 
@@ -403,7 +404,104 @@ print(pd.read_csv('data.csv', error_bad_lines=False))
 
 # index_col
 print(pd.read_csv('data.csv', index_col=0))
-
+# read csv
+df = pd.read_csv('data.csv', dtype={'B': float})
+print(df)
 ```
+### To convert Dataframe to array or numpy
+
+```python
+
+# convert dataframe to array
+df_array = df.to_numpy()
+print(df_array)
+```
+### To change the particular element in dataframe
+
+Note down the index of the element you want to change then its column name and finally the value to be replaced
+
+```python
+df.loc[0, 'B'] = 10
+print(df)
+```
+There are another method also which is inplace
+```python
+df.iloc[0, 0] = 10
+print(df)
+```
+loc and iloc both are used to access the data,
+Here are basic definitions for both
+
+1. loc is used for label based indexing
+2. iloc is used for position based indexing
+If you still don't get it then lemme explain it to you
+
+
+| Feature | loc | iloc |
+| --- | --- | --- |
+| Indexing | Label based | Position based |
+| Index | Must be included in the index of the DataFrame | Must be integer position |
+| Columns | Must be included in the columns of the DataFrame | Must be integer position |
+| Syntax | `df.loc[row_label, column_label]` | `df.iloc[row_position, column_position]` |
+| Row and column labels must be a list | Yes | No |
+| Returns a view into the original DataFrame | Yes | Yes |
+| Supports negative indexing | No | Yes |
+```python
+
+# Example using loc and iloc
+df = pd.DataFrame([[1, 2], [3, 4], [5, 6]], index=['a', 'b', 'c'], columns=['A', 'B'])
+
+print(df)
+
+# loc - label based indexing
+print(df.loc['a', 'A'])  # 1
+print(df.loc[['a', 'b'], ['A', 'B']])
+print(df.loc[:, ['A', 'B']])
+print(df.loc[['a', 'b'], :])
+
+# iloc - position based indexing
+print(df.iloc[0, 0])  # 1
+print(df.iloc[[0, 1], [0, 1]])
+print(df.iloc[:, [0, 1]])
+print(df.iloc[[0, 1], :])
+```
+```
+A  B
+a  1  2
+b  3  4
+c  5  6
+1
+   A  B
+a  1  2
+b  3  4
+   A  B
+a  1  2
+b  3  4
+c  5  6
+   A  B
+a  1  2
+b  3  4
+1
+   A  B
+a  1  2
+b  3  4
+   A  B
+a  1  2
+b  3  4
+c  5  6
+   A  B
+a  1  2
+b  3  4
+```
+### Dropping rows and columns
+```python
+# dropping axis (rows or columns)
+df_dropped_columns = df.drop('B', axis=1)
+print(df_dropped_columns)
+df_dropped_rows = df.drop(['c'], axis=0)
+print(df_dropped_rows)
+```
+axis = 0 means row
+axis = 1 means column
 
 
