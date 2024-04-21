@@ -75,7 +75,7 @@ button {
     outline: 2px solid rgb(36, 38, 34);
     align-items: center;
     cursor: pointer;
-    transition: 0.25s;
+    transition: 100ms;
 
 }
 
