@@ -1,12 +1,15 @@
-def sum_of_array(arr):
-    if len(arr) == 1:
-        return arr[0]
-    
-    mid = len(arr) // 2
-    left_sum = sum_of_array(arr[:mid])
-    right_sum = sum_of_array(arr[mid:])
-    
-    return left_sum + right_sum
+class Solution:
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        nums_dict = {}
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in nums_dict:
+                return [nums_dict[complement], i]
+            else:
+                nums_dict[nums[i]] = i
 
-arr = [1, 2, 3, 4, 5]
-print(sum_of_array(arr))
