@@ -504,4 +504,8 @@ print(df_dropped_rows)
 axis = 0 means row
 axis = 1 means column
 
+### Filling Miss values
+
+
+
 

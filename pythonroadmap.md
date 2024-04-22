@@ -106,7 +106,7 @@ For Scikit-learn :- https://scikit-learn.org/stable/
 Dive into these tools and work as much as you can.
 
 We are not going to teach u how to use them. This is just a roadmap.
-But we are goint to provide the link for youtube videos of these tools.
+But we are going to provide the link for youtube videos of these tools.
 
 ```
 Free Resources vs Paid Resources
