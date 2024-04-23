@@ -1,39 +1,31 @@
-class Node:
-    def __init__(self, Data = None):
-        self.data = Data
-        self.next = None
-        
-class LinkedList:
-    def __init__(self):
-        self.head = None
-        
-    def append(self, Data):
-        new_node = Node(Data)
-        if not self.head:
-            self.head = new_node
-            return
-        last_node = self.head
-        while last_node.next:
-            last_node = last_node.next
-        last_node.next = new_node
-        
-    def print_list(self):
-        cur_node = self.head
-        while cur_node:
-            print(cur_node.data)
-            cur_node = cur_node.next
-        print("NULL")
+import matplotlib.pyplot as plt
 
+# Complex dataset
+categories = ['A', 'B', 'C', 'D']
+values1 = [10, 15, 7, 12]
+values2 = [8, 12, 6, 10]
 
-#Example to initialize the code
-if __name__ == '__main__':
-    llist = LinkedList()
+# Create a figure and axis
+fig, ax = plt.subplots()
 
-    llist.append(1)
-    llist.append(2)
-    llist.append(3)
+# Plot two sets of bars
+bar_width = 0.35
+fig, ax = plt.subplots()
 
-    llist.print_list()
+bar1 = ax.bar(categories, values1, bar_width, label='Set 1')
+# Create a figure and axis
 
-            
-    
+# Calculate the x positions for the second set of bars
+x_positions = [x + bar_width for x in range(len(categories))]
+
+# Plot the second set of bars
+bar2 = ax.bar(x_positions, values2, bar_width, label='Set 2')
+# Add labels, title, and legend
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.title('Comparison of Two Sets of Data')
+plt.xticks([x + bar_width/2 for x in categories], categories)
+plt.legend()
+
+# Display the graph
+plt.show()
