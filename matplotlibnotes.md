@@ -27,6 +27,74 @@ Here are some examples of how Matplotlib can be used in daily analysis of data w
 6. **Subplots**: Subplots are used to show multiple plots in a single figure. For example, to show the sales of different products in a company side-by-side, subplots can be used.
 7. **Animations**: Animations are used to show the evolution of a variable over time. For example, to show the evolution of the stock prices of a company over time, animation can be used.
 8. **Custom legends**: Custom legends are used to add more information to the plot. For example, to add the names of the products in a bar plot, a custom legend can be used.
+```python
+
+# example of matplotlib
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+plt.plot(x, y)
+plt.xlabel('X axis')
+plt.ylabel('Y axis')
+plt.title('Simple Plot')
+plt.show()
+```
+![alt text](image.png)
 
 
+Here are the keywords attributes used in the above code:
 
+1. `xlabel` : Sets the label of the x-axis.
+2. `ylabel` : Sets the label of the y-axis.
+3. `title` : Sets the title of the plot.
+4. `plot` : Plots the data on a line graph.
+5. `show` : Shows the plot.
+
+### Attributes of Matplotlib
+
+Matplotlib has a lot of attributes that can be used to customize the appearance of the plot. Here are some of the important attributes that you should know:
+
+* `figsize`: This attribute sets the size of the figure. It takes a tuple of (width, height) in inches.
+* `dpi`: This attribute sets the resolution of the figure. It is the number of pixels per inch.
+* `facecolor` and `edgecolor`: These attributes set the background color and border color of the figure, respectively.
+* `grid`: This attribute enables or disables the grid in the plot.
+* `gridcolor` and `gridalpha`: These attributes set the color and transparency of the grid, respectively.
+* `xlim` and `ylim`: These attributes set the x-axis and y-axis limits of the plot.
+* `xticks` and `yticks`: These attributes set the locations and labels of the tick marks on the x-axis and y-axis, respectively.
+* `titlefontsize` and `labelfontsize`: These attributes set the font size of the title and axis labels, respectively.
+* `legend`: This attribute adds a legend to the plot. It takes a dictionary of keyword arguments that can be used to customize the legend.
+* `figure`: This attribute returns the figure object, which can be further customized using various methods and attributes.
+
+For example:
+
+```python
+# Example of using some of the attributes of Figure
+fig = plt.figure(figsize=(10, 6), dpi=80, facecolor='w', edgecolor='k')
+
+# Change the grid color and transparency
+ax = fig.add_subplot(111)
+ax.grid(True, color='y', alpha=0.3)
+
+# Change the x-axis and y-axis limits
+ax.set_xlim([0, 6])
+ax.set_ylim([0, 12])
+
+# Change the x-axis and y-axis ticks locations and labels
+ax.set_xticks([1, 2, 3, 4, 5])
+ax.set_xticklabels(['One', 'Two', 'Three', 'Four', 'Five'])
+ax.set_yticks([2, 4, 6, 8, 10])
+ax.set_yticklabels(['Two', 'Four', 'Six', 'Eight', 'Ten'])
+
+# Change the font size of the title and axis labels
+ax.set_title('Simple Plot', fontsize=20)
+ax.set_xlabel('X axis', fontsize=15)
+ax.set_ylabel('Y axis', fontsize=15)
+
+# Add a legend to the plot
+ax.legend(loc='upper right')
+
+plt.show()
+```
+![alt text](image-1.png)

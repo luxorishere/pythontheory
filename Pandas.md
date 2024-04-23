@@ -507,5 +507,31 @@ axis = 1 means column
 ### Filling Miss values
 
 
+**Dropna**
+
+- dropna() : Drops all rows that contain any null or missing values.
+
+**Fillna**
+
+- fillna() : Fills all null or missing values with a specified value.
+
+```python
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+print(df)
+df = df.dropna()
+print(df)
+df = df.fillna(0)
+print(df)
+```
+```
+# fillna(0) : Fills all null or missing values in the dataframe with 0.
+# This is a special method provided by pandas for filling missing values 
+# in a DataFrame with a specified value. In this case, we are filling 
+# all missing values with 0.
+```
+
+
+
 
 
