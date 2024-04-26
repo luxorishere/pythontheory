@@ -530,8 +530,36 @@ print(df)
 # in a DataFrame with a specified value. In this case, we are filling 
 # all missing values with 0.
 ```
+Python is a high-level, interpreted, object-oriented programming language with modules, exceptions, and dynamic typing. It is widely used for web development, scientific computing, data analysis, and software development. Python has a simple syntax and is easy to learn, making it a popular language for beginners and experienced programmers alike. It is known for its readability and ability to be used for a wide range of tasks. Many built-in libraries and third-party packages are available for Python, making it a powerful language for a variety of purposes.
+
+```python
+def calculate(num1, num2, operator):
+    if operator == "+":
+        return num1 + num2
+    elif operator == "-":
+        return num1 - num2
+    elif operator == "*":
+        return num1 * num2
+    elif operator == "/":
+        return num1 / num2
+    else:
+        print("Invalid operator")
+
+print("Select operator:")
+print("+ : Add")
+print("- : Subtract")
+print("* : Multiply")
+print("/ : Divide")
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+operator = input("Enter operator: ")
+
+result = calculate(num1, num2, operator)
+print("Result: ", result)
 
 
 
 
+```
 

@@ -24,13 +24,10 @@ It means isn't there any garbage value other than just relative values
 car["column"].unique()
 ```
 
-Python  cs
-Pandas s
-Project s
-Maths for data Science Statistics l 
-Java OOPs cs l
-Tafl cs s
-OS s
+Maths for data Science Statistics l <br>
+Java OOPs cs l<br>
+Tafl cs s<br>
+OS s<br>
 Web Development s
 
 College Studies 

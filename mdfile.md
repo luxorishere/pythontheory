@@ -12,3 +12,4 @@
 
 6. **Area Charts**: Area charts are like line graphs but with the area under the line filled in. They are good for showing trends over time while also emphasizing the magnitude of change between data points.
 
+7. **Step charts**: Step charts are used when you want to show when something happened at specific points in time. For example, if you have a series of events that happened at different points over a period, a step chart can help you visualize when each event occurred. This is especially useful when you have a lot of events that happened at the same time, as a regular line chart can make it hard to see which event happened when.
