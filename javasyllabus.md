@@ -279,10 +279,97 @@ public class ClassVariables {
 
 
 
-- Variables
 - Operators
+
+Operators in Java are used to perform mathematical and logical operations.
+
+```java
++ Addition
+- Subtraction
+* Multiplication
+/ Division
+% Modulus
+++ Increment
+-- Decrement
+
+
+public class Operators {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 5;
+        
+        System.out.println(a + b); // addition
+        System.out.println(a - b); // subtraction
+        System.out.println(a * b); // multiplication
+        System.out.println(a / b); // division
+        System.out.println(a % b); // modulus
+        System.out.println(++a); // increment
+        System.out.println(--a); // decrement
+    }
+    
+}
+
+```
 - Control Statements
-- Arraay and String
+
+Control statements in Java are used to control the flow of the program.
+
+```java
+if-else
+switch
+for
+while
+do-while
+
+public class ControlStatements {
+    
+    public static void main(String[] args) {
+        
+        int number = 10;
+        
+        // if else statement
+        if(number > 5) {
+            System.out.println("Number is greater than 5");
+        } else {
+            System.out.println("Number is less than or equal to 5");
+        }
+        
+        // switch statement
+        switch(number) {
+            case 5: 
+                System.out.println("Number is 5");
+                break;
+            case 10:
+                System.out.println("Number is 10");
+                break;
+            default:
+                System.out.println("Number is not 5 or 10");
+        }
+        
+        // for loop
+        for(int i = 1; i <= 5; i++) {
+            System.out.println("Value of i: " + i);
+        }
+        
+        // while loop
+        int j = 1;
+        while(j <= 5) {
+            System.out.println("Value of j: " + j);
+            j++;
+        }
+        
+        // do while loop
+        int k = 1;
+        do {
+            System.out.println("Value of k: " + k);
+            k++;
+        } while(k <= 5);
+    }
+    
+}
+```
+
+- Array and String
 - Class Inheritance
 - Class Variables
 - Class Methods
@@ -290,7 +377,11 @@ public class ClassVariables {
 
 3. Object Oriented Programming
 
-- Class and Object
+- Class and Object 
+
+Why we can't create more than one public class in a single java file?
+
+In Java, you can only have one public class per file and the name of the file should match the name of the public class. This restriction is in place to ensure clear organization and maintainability of code. However, you can have multiple non-public classes in the same file.
 - Inheritance
 - Subclass and Superclass
 - Overriding

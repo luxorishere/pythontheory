@@ -180,7 +180,7 @@
 - One question at a time
 - One problem at a time
 
-
+![alt text](<WhatsApp Image 2024-04-22 at 12.05.57_7e1d8758.jpg>)
 
 
 

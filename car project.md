@@ -1,44 +1,49 @@
-# Car price to be checked
+# Project: Car Price Prediction
 
-1. See how much data you have
+## Topics to Learn
 
-```python
-car.shape
-```
-2. Find the null and irregular values
+1. **Python Programming:**
+   - Basic syntax and data structures (lists, dictionaries, etc.)
+   - File handling
+   - Functions and modules
+   - Libraries like NumPy, Pandas, Matplotlib, Scikit-Learn
 
-```python
-car.info()
-```
-To fill the null value in the column
+2. **Data Preprocessing:**
+   - Data cleaning
+   - Feature scaling
+   - Encoding categorical variables
 
-```python
-car["column"].fillna(car["column"].mean(),inplace=True)
-```
+3. **Exploratory Data Analysis (EDA):**
+   - Data visualization
+   - Statistical analysis
 
-3. See the uniqueness in data column 
+4. **Feature Engineering:**
+   - Creating new features
+   - Feature selection techniques
 
-It means isn't there any garbage value other than just relative values
+5. **Machine Learning (ML):**
+   - Regression techniques
+   - Model evaluation metrics
+   - Hyperparameter tuning
+   - Model deployment and integration
 
-```python
-car["column"].unique()
-```
+6. **Mathematics and Statistics:**
+   - Understanding regression concepts
+   - Calculus and Linear Algebra
 
-Maths for data Science Statistics l <br>
-Java OOPs cs l<br>
-Tafl cs s<br>
-OS s<br>
-Web Development s
+7. **Data Splitting and Model Validation:**
+   - Splitting data
+   - Cross-validation techniques
 
-College Studies 
-Tafl
-Java
-Python
+8. **Model Interpretation and Explainability:**
+   - Understanding model predictions
+   - Techniques for explaining models
 
-- Python bacics
-- Python Tools
-- Python Maths &rarr; Statistics, Linear Algebra, Probability, Hypothesis Testing
-- Python Web Development
-- Python OOPs
-- Python Database
-- Python Project
+9. **Deployment:**
+   - Setting up a production environment
+   - Developing APIs
+   - Containerization and cloud deployment
+
+10. **Continuous Learning:**
+    - Stay updated with the latest advancements
+    - Explore advanced topics like deep learning
