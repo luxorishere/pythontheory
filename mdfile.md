@@ -1,15 +1,140 @@
+# Things to focus while creating the time table
+
+## Two major things
+
+- College 
+- Self study
+
+### Not a time table But daily Tasks 
+- Holiday
+- No holiday
+
+## College
+
+1. TAFL
+2. OS
+3. Java OOPs
+4. Python
+
+## For Self Study
+
+1. Python
+2. Machine Learning
+3. Data Science
+4. Ai and ML
+5. Important Maths<br>
+**Projects are important too**
+
+## Python
+
+- Python Core language
+- Python Libraries
+- Python Frameworks
+
+## Machine Learning
+
+- Linear Regression
+- Logistic Regression
+- Decision Tree
+- K-Means Clustering
+- Random Forest
+- Support Vector Machine
+- Deep Learning
 
 
-1. **Bar Graphs**: Use bar graphs when you want to compare quantities or values of different categories. The bars represent each category's value, and you can easily see which one is bigger or smaller.
+## Data Science
 
-2. **Line Graphs**: Line graphs are great for showing trends over time. If you have data points that change over a period, like sales numbers over months or years, a line graph can display how those numbers go up or down.
+- EDA
+- Predictive Modeling
 
-3. **Pie Charts**: Pie charts are useful when you want to show parts of a whole. For example, if you have percentages of different categories that make up a whole (like expenses in a budget), a pie chart can visually represent these proportions.
+## AI and ML
 
-4. **Histograms**: Histograms are similar to bar graphs but are used for showing distributions of data. They're helpful when you want to see how values are spread out in a dataset, especially in ranges or bins.
+- Natural Language Processing
+- Deep Learning
 
-5. **Scatter Plots**: Scatter plots are used to show relationships between two variables. If you want to see if there's a correlation or pattern between two sets of data points, a scatter plot can help you visualize that relationship.
+## Important Maths
 
-6. **Area Charts**: Area charts are like line graphs but with the area under the line filled in. They are good for showing trends over time while also emphasizing the magnitude of change between data points.
+- Linear Algebra
+- Matrix
+- Linear Programming
+- Statistics
+- Probability
+- Correlation
+- Hypothesis Testing
+- Regression
+- Calculus
+- Differential Equations
+- Fourier Series
 
-7. **Step charts**: Step charts are used when you want to show when something happened at specific points in time. For example, if you have a series of events that happened at different points over a period, a step chart can help you visualize when each event occurred. This is especially useful when you have a lot of events that happened at the same time, as a regular line chart can make it hard to see which event happened when.
+## Projects
+
+- EDA 
+- Predictive Modeling
+- AI Projects
+- Machine Learning Projects
+- Market basket Analysis
+- Machine learning Classification
+- Machine learning Regression
+- Deep learning Projects
+- Machine learning clustering
+
+
+| Category | Subcategory |
+| --- | --- |
+| College | Tafl |
+| College | Java OOPs |
+| College | Python |
+| Self study | Python |
+| Self study | Machine Learning |
+| Self study | Data Science |
+| Self study | AI and ML |
+| Self study | Important Maths |
+| Self study | Projects |
+| Python | Python Core language |
+| Python | Python Libraries |
+| Python | Python Frameworks |
+| Machine Learning | Linear Regression |
+| Machine Learning | Logistic Regression |
+| Machine Learning | Decision Tree |
+| Machine Learning | K-Means Clustering |
+| Machine Learning | Random Forest |
+| Machine Learning | Support Vector Machine |
+| Machine Learning | Deep Learning |
+| Data Science | EDA |
+| Data Science | Predictive Modeling |
+| AI and ML | Natural Language Processing |
+| AI and ML | Deep Learning |
+| Important Maths | Linear Algebra |
+| Important Maths | Matrix |
+| Important Maths | Linear Programming |
+| Important Maths | Statistics |
+| Important Maths | Probability |
+| Important Maths | Correlation |
+| Important Maths | Hypothesis Testing |
+| Important Maths | Regression |
+| Important Maths | Calculus |
+| Important Maths | Differential Equations |
+| Important Maths | Fourier Series |
+| Projects | EDA |
+| Projects | Predictive Modeling |
+| Projects | AI Projects |
+| Projects | Machine Learning Projects |
+| Projects | Market basket Analysis |
+| Projects | Machine learning Classification |
+| Projects | Machine learning Regression |
+| Projects | Deep learning Projects |
+| Projects | Machine learning clustering |
+
+| Category | Data Science | AI and ML | Python | Important Maths | Projects |
+|:---------|:-------------|:----------|:-------|:---------------|:---------|
+| Data Science | EDA | Natural Language Processing | Python Core language | Matrix | EDA |
+| AI and ML | Predictive Modeling | Deep Learning | Python Libraries | Probability | AI Projects |
+| Python | Python Frameworks | | | | Machine Learning Projects |
+| Important Maths | Linear Algebra | Correlation | | Linear Programming | Market basket Analysis |
+| Important Maths | | Hypothesis Testing | | Regression | Machine learning Classification |
+| Important Maths | | Calculus | | Differential Equations | Machine learning Regression |
+| Important Maths | | Fourier Series | | | Deep learning Projects |
+| Projects | | | | | Machine learning clustering |
+
+
+
