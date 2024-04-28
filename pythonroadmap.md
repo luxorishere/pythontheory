@@ -171,7 +171,6 @@ In DS we really need to focus on time complexity and space complexity so that it
 A database is a structured collection of data that is stored and accessed electronically. It allows for efficient data storage, retrieval, and manipulation. Databases can be relational, NoSQL, or in-memory, and they are commonly used in web development, mobile apps, and enterprise systems for managing and organizing large amounts of data.
 
 Some of the popular databases are:
-
 1. MySQL
 2. PostgreSQL
 3. MongoDB
