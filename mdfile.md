@@ -137,4 +137,51 @@
 | Projects | | | | | Machine learning clustering |
 
 
+### Time starts from End of the April
+
+### Month Task
+
+### Python
+
+- Python Core language
+- Python Libraries
+- Python Frameworks
+
+### Maths
+
+- Linear Algebra
+- Matrix
+- Linear Programming
+- Statistics
+- Probability
+
+### Data Science
+
+- EDA
+- Predictive Modeling
+
+### Machine Learning
+
+- Linear Regression
+- Logistic Regression
+- Decision Tree
+- K-Means Clustering
+- Random Forest
+- Support Vector Machine
+
+### College Study
+
+- TAFL
+- OS
+- Java OOPs
+
+### Daily DSA
+
+- One question at a time
+- One problem at a time
+
+
+
+
+
 
