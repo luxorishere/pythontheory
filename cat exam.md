@@ -162,5 +162,51 @@ Book uthao nahi solve ho rahe to uss topic par video dekho
 
 Simple as that
 
+Todays task is
+1 video of this Prime Factorization 
+40 Questions of Prime Factoriztion
+
+
+Yaad rakho percentage jyada nahi laane percentile lana hai 
+
+70% marks laake 99 perectile hota hai means 99% bacho se jyada 
+to galti sab karenge aur sab poora nahi kar payenge 
+
+tum galti kam karna bas 
+hogi tumse bhi 
+but baaki se kam karogi to apne aap hi percentile upar chala jayega
+
+ye soch ke mat jana ki 
+percentage jyada chahiye 
+
+aisa nahi hai
+Percentage mangte nahi Percentile mangte hai doosro se better ho ki nahi sab karenge galti tum kitna kar rahi yahi dekhna hai 
+
+The thing is classrooms and coachings are wastage of times 
+
+Waste kar dete hai time ko 
+
+reason bhi bata rhaa
+
+CAT ek aisa exam hai jaha skills aur logical kitna soch sakte hai uspe sawaal aata hai to the thing is kisi ko bhi naye purane ajeeb hi sawaal mil jate hai aise sawaal naye naye create hote rahte hai 
+
+Coaching and classes kya karte hai paisa leke PYQs solve karayenge
+
+Are jab tum khud poore time baith ke khud dimaag nahi ladaoge aur kisi aur ke karte hue dekhoge to nahi aayega ye koi normal maths nahi ki formula karte hue dekh liya aur chaha ki aa jaye
+
+Har pal sawaal yun change ho jata hai padha padhaya aata hi nahi 
+
+Kya fayda aise Coachings and classes ka jo bas time le aur karwaye vahi jo aa chuka hai tum sab karte hue dekho aur kuch nahi
+
+CAT is all about kitna tum khud se kar lete ho khud means just books uthao topics basics clear karo aur poore din questions me lag jao 
+
+kisi aur ka mat dekho khud karo 
+
+Mai ye sab unki baaten sunke bata raha jinke 99% percentile aaye hai
+
+
+Books bataya hai unhone message par bataunga
+
+
 
 
