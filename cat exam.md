@@ -121,6 +121,46 @@ Watch this video for more info
 https://www.youtube.com/watch?v=Wh9EKzBDlY4&pp=ygUYcHJpbWUgZmFjdG9yaXphdGlvbiwgY2F0
 
 
+Dekho Time nahi hai
+Aur videos dekhte dekhte dikkat hoti hai
+
+To tod do tasks ko 
+
+Kya chahiye
+
+Knowledge
+Questions
+
+
+knowledge kaha se aayega (Videos, Books)
+
+Question kaha se aayenge (PDFs or Books)
+
+Knowledge ke liye Videos jyada lambe nahi hai but laptop par dekhna padega to kisi time poore din me thoda time nikalo Videos ke liye 
+
+Atleast one topic ka video to ho hi jaye poora videos kaha se milenge ab ye sawal
+
+Excel sheet dekho jo bhi linked videos hai poori dekho pahle 
+ek fir doosri 
+
+Question solve karo 
+
+to knowledge ke liye 
+if videos to thoda time nikal ke dekho to kisi time poore din me thoda time nikalo
+
+Else books uthana hai to kisi bhi time kar sakte hai
+
+To for videos pata chal gaya 
+
+Knowledge --> Videos --> Excel --> Self exploration khud se bhi dekho videos per topic search karo video
+
+now for questions
+
+Book uthao agar kam pade vaise padenge nahi 
+
+Book uthao nahi solve ho rahe to uss topic par video dekho 
+
+Simple as that
 
 
 
