@@ -331,8 +331,6 @@ class MyChildClass extends MyParentClass {
 }
 ```
 
-
-
 1. **Overriding**: Overriding occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. This allows for runtime polymorphism, where the method that gets executed is determined at runtime based on the object's type.
 
 ```java
@@ -505,6 +503,84 @@ public class Main {
         Animal animal = new Dog();
         animal.makeSound(); // Output: Bark
         animal.eat(); // Output: Animal eating
+    }
+}
+```
+
+## Packages
+
+
+1. **Defining Packages**:
+   - A package in Java is a way to organize related classes and interfaces. It helps avoid naming conflicts and provides a namespace for the classes.
+   - Packages are defined at the beginning of your Java source file using the `package` keyword followed by the package name.
+   - For example, let's say we have a package named `com.example.utilities`:
+
+```java
+package com.example.utilities;
+
+public class MathUtils {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+}
+```
+
+2. **CLASSPATH Setting for Packages**:
+   - CLASSPATH is an environment variable that tells the Java compiler and runtime where to look for classes and packages.
+   - When you compile and run Java programs that use packages, you need to set the CLASSPATH to include the directory containing your packages.
+   - You can set the CLASSPATH using command-line options or by setting the environment variable. For example:
+
+```bash
+# Command-line option
+javac -cp path/to/your/packages Main.java
+
+# Environment variable (Linux/macOS)
+export CLASSPATH=/path/to/your/packages
+
+# Environment variable (Windows)
+set CLASSPATH=C:\path\to\your\packages
+```
+
+3. **Making JAR Files for Library Packages**:
+   - JAR (Java Archive) files are used to package Java classes and resources into a single file. They are commonly used for distributing libraries and applications.
+   - To create a JAR file for your package, you can use the `jar` command provided by Java.
+   - For example, let's create a JAR file for our `com.example.utilities` package:
+
+```bash
+# Create JAR file
+jar cf myutils.jar -C /path/to/your/packages com/example/utilities
+```
+
+4. **Import and Static Import Naming Convention For Packages**:
+   - Import statements are used to make classes and interfaces from other packages accessible in your code.
+   - Regular import: `import package_name.class_name;`
+   - Static import (Java 5 and above): `import static package_name.class_name.*;`
+   - It's recommended to follow naming conventions when importing packages and classes:
+     - Use lowercase for package names (e.g., `com.example.utilities`).
+     - Use camelCase for class names (e.g., `MathUtils`).
+
+Example usage with import statements:
+
+```java
+import com.example.utilities.MathUtils;
+
+public class Main {
+    public static void main(String[] args) {
+        int sum = MathUtils.add(5, 10);
+        System.out.println("Sum: " + sum);
+    }
+}
+```
+
+Example usage with static import:
+
+```java
+import static com.example.utilities.MathUtils.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int sum = add(5, 10);
+        System.out.println("Sum: " + sum);
     }
 }
 ```
