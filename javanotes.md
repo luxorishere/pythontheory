@@ -235,5 +235,278 @@ public class MyClass {
     String text = "Hello, Java!";
 }
 ```
+## Object Oriented Programming *Third Part*
+
+### Class
+
+What is a class?
+
+A class is a blueprint or template for creating objects. It defines the properties and behaviors that an object of that class will have.
+
+```java
+// Example of defining a class
+public class MyClass {
+    // Fields (attributes)
+    int myField;
+}
+    
+```
+
+### Object
+
+What is an object?
+
+An object is an instance of a class. It contains the state and behavior of the class.
+
+```java
+// Example of creating an object
+public class MyClass {
+    public static void main(String[] args) {
+        // Creating an object of MyClass
+        MyClass myObject = new MyClass();
+        
+        // Calling the method of the object
+        myObject.myMethod();
+    }
+    
+    int myField;
+    void myMethod() {
+        System.out.println("This is myMethod");
+    }
+}
+```
+
+### Inheritance
+
+Inheritance is a mechanism in object-oriented programming that allows one class to inherit the properties and behaviors of another class.
+
+```java
+// Example of inheritance
+public class MyParentClass {
+    int myField;
+    void myMethod() {
+        System.out.println("This is myMethod");
+    }
+}
+
+class MyChildClass extends MyParentClass {
+    // This class inherits all the properties and methods of MyParentClass
+    // and we can define new properties and methods in this class
+    int myChildField;
+    void myChildMethod() {
+        // call the method of the parent class
+        super.myMethod();
+        System.out.println("This is myChildMethod");
+    }
+}
+
+```
+### Super Class and Sub Class
+
+Super class is the class that is inherited from and sub class is the class that inherits from the super class.
+
+```java
+// Example of super class and sub class
+public class MyParentClass {
+    int myField;
+    void myMethod() {
+        System.out.println("This is myMethod");
+    }
+}
+
+class MyChildClass extends MyParentClass {
+    // This class inherits all the properties and methods of MyParentClass
+    // and we can define new properties and methods in this class
+    int myChildField;
+    void myChildMethod() {
+        // call the method of the parent class
+        super.myMethod();
+        System.out.println("This is myChildMethod");
+    }
+    public static void main(String[] args) {
+        MyChildClass myObject = new MyChildClass();
+        myObject.myMethod();
+        myObject.myChildMethod();
+    }
+}
+```
+
+
+
+1. **Overriding**: Overriding occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. This allows for runtime polymorphism, where the method that gets executed is determined at runtime based on the object's type.
+
+```java
+class Animal {
+    void makeSound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal = new Dog();
+        animal.makeSound(); // Output: Bark
+    }
+}
+```
+
+2. **Overloading**: Overloading refers to defining multiple methods in a class with the same name but different parameters (number, type, or order). The compiler determines which method to call based on the arguments provided.
+
+```java
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println(calc.add(5, 10)); // Output: 15
+        System.out.println(calc.add(3.5, 2.5)); // Output: 6.0
+    }
+}
+```
+
+3. **Encapsulation**: Encapsulation is the practice of bundling the data (attributes) and methods (behavior) that operate on the data into a single unit (class). It helps in hiding the internal state of an object and only exposing the necessary functionalities through methods.
+
+```java
+class Student {
+    private String name;
+    private int age;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.setName("Alice");
+        student.setAge(20);
+        System.out.println("Name: " + student.getName());
+        System.out.println("Age: " + student.getAge());
+    }
+}
+```
+
+4. **Polymorphism**: Polymorphism allows objects to be treated as instances of their superclass, even if they are instances of a subclass. This can be achieved through method overriding (runtime polymorphism) or method overloading (compile-time polymorphism).
+
+```java
+class Shape {
+    void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape shape = new Circle();
+        shape.draw(); // Output: Drawing a circle
+    }
+}
+```
+
+5. **Abstraction**: Abstraction is the process of hiding the implementation details and showing only the essential features of an object. Abstract classes and interfaces are used to achieve abstraction.
+
+```java
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape shape = new Circle();
+        shape.draw(); // Output: Drawing a circle
+    }
+}
+```
+
+6. **Interfaces**: An interface in Java is a reference type that can contain only constants, method signatures, default methods, static methods, and nested types. It defines a set of methods that a class must implement, providing a contract for behavior.
+
+```java
+interface Printable {
+    void print();
+}
+
+class Document implements Printable {
+    @Override
+    public void print() {
+        System.out.println("Printing document");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Printable printable = new Document();
+        printable.print(); // Output: Printing document
+    }
+}
+```
+
+7. **Abstract Class**: An abstract class is a class that cannot be instantiated on its own and may contain abstract methods (methods without a body) that must be implemented by its subclasses. It can also contain concrete methods and instance variables.
+
+```java
+abstract class Animal {
+    abstract void makeSound();
+
+    void eat() {
+        System.out.println("Animal eating");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal = new Dog();
+        animal.makeSound(); // Output: Bark
+        animal.eat(); // Output: Animal eating
+    }
+}
+```
 
 
