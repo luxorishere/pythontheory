@@ -1,14 +1,31 @@
-def rotate_an_array(ilist, turn):
-    rlist = []
-    if turn > len(ilist):
-        turn = len(ilist) % turn
-    
-    for i in range(len(ilist) - turn, len(ilist)):
-        rlist.append(ilist[i])
-    
-    for i in range(0, turn + 1):
-        rlist.append(ilist[i])
-    return rlist
+import pandas as pd
 
-tlist = [1,2,3,4,5]
-print(rotate_an_array(tlist, 2))
+def leetcode(arr, target):
+    arr2d = []
+    templ = []
+    i = 0
+    sum = 0 
+    while i < len(arr):
+        temp = sum + arr[i]
+        if temp <= target:
+            sum += arr[i]
+            templ.append(arr[i])
+            if True:
+                arr2d.append(templ)
+                
+            
+            
+            
+        else:
+            i += 1
+        
+        if sum == target:
+            return templ
+    return [[-1,-1]]
+
+arr = [2,3,5]
+print(leetcode(arr,11))
+            
+            
+            
+        

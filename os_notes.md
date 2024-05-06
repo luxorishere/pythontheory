@@ -79,3 +79,33 @@ An operating system (OS) is software that manages a computer's resources and pro
   - Handles time-sensitive tasks such as industrial control systems, medical devices, and robotics.
   - Ensures timely processing of events, meeting strict deadlines to prevent system failures.
 
+### Components of an Operating System:
+
+**1. Kernel (Operating System)**
+
+Core Part of an Operating System
+
+**2. Shell**
+
+Shell is used to interact with the user.
+
+**3. File System**
+
+File System is used to store data.
+
+**4. Device Drivers**
+
+Device Drivers are used to access hardware devices.
+
+**5. Process Management**
+
+Process Management is used to manage processes.
+
+**6. Memory Management**
+
+Memory Management is used to manage memory.
+
+**7. Input/Output**
+
+Input/Output is used to interact with the user.
+

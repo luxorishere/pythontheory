@@ -586,3 +586,4 @@ public class Main {
 ```
 
 
+SET JAVA HOME PATH
