@@ -1,31 +1,31 @@
-import pandas as pd
-
-def leetcode(arr, target):
-    arr2d = []
-    templ = []
-    i = 0
-    sum = 0 
-    while i < len(arr):
-        temp = sum + arr[i]
-        if temp <= target:
-            sum += arr[i]
-            templ.append(arr[i])
-            if True:
-                arr2d.append(templ)
-                
-            
-            
-            
-        else:
-            i += 1
+def finding_the_missing(ilist, k):
+    if check(ilist) == True:
+        return ilist[len(ilist) - 1] + k
         
-        if sum == target:
-            return templ
-    return [[-1,-1]]
-
-arr = [2,3,5]
-print(leetcode(arr,11))
-            
-            
-            
+    limit = ilist[len(ilist) - 1]
+    tlist = []
+    for i in range(1, limit + 1):
+        tlist.append(i)
         
+    rlist = []
+    t = 0
+    tcounter = 0
+    icount = 0
+    while t != k:
+        if tcounter < len(tlist) - 1 and tlist[tcounter] not in ilist:
+            icount = tlist[tcounter]
+            t += 1
+        elif tcounter >= len(tlist):
+            icount = 0
+            icount = ilist[len(ilist) - 1] + k - t
+            break
+        tcounter += 1
+
+    return icount
+def check(ilist):
+    if len(ilist) == 1:
+        return True
+    for i in range(0, len(ilist) - 1):
+        if ilist[i] - ilist[i - 1] > 1:
+            return False
+    return True

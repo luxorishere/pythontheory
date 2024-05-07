@@ -2,14 +2,17 @@ package javap;
 
 public class javaclass {
     public static void main(String[] args) {
-        LinkedList ilist = new LinkedList();
-        ilist.insert(0);
-        ilist.insert(0);
-        ilist.insert(0);
-        ilist.insert(0);
-        ilist.printing();
+        recursion(10);
 
 
+    }
+    static void recursion(int num){
+        if (num == 0){
+            return;
+        }
+        System.out.println(num);
+        num -= 1;
+        recursion(num);
     }
 }
 class Node{
