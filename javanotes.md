@@ -585,10 +585,6 @@ public class Main {
 }
 ```
 
-Try Exception handling
-Multithreading 
-Thread life cycle
-
 ### Try Exception Handling
 
 
@@ -618,8 +614,8 @@ public class ExceptionHandlingExample {
     }
 }
 ```
-### Multithreading
 
+### Multithreading
 
 Multithreading in Java:
 
@@ -697,5 +693,85 @@ public class MultithreadingExample {
 }
 ```
 
+### Shorter Code
+
+```java
+public class MultithreadingExample {
+    public static void main(String[] args) {
+        // Creating and starting a thread using lambda expression
+        Thread thread1 = new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Thread 1: " + i);
+                try {
+                    Thread.sleep(1000); // Sleep for 1 second
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread1.start();
+
+        // Creating and starting a thread using anonymous class
+        Thread thread2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 5; i++) {
+                    System.out.println("Thread 2: " + i);
+                    try {
+                        Thread.sleep(1000); // Sleep for 1 second
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        thread2.start();
+
+        // Main thread continues execution
+        System.out.println("Main thread is running...");
+    }
+}
+```
+
+### Thread life cycle
+
+Thread Life Cycle
+
+------------------
+
+1. New: A thread is created using the `Thread` constructor or by implementing the `Runnable` interface.
+2. Runnable: The thread becomes runnable when it is started using the `start()` method.
+3. Running: The thread is executing the code inside the `run()` method.
+4. Blocked: The thread is waiting for a resource to become available, such as a lock or a condition variable.
+5. Waiting: The thread has finished executing the `run()` method and is waiting to be joined by another thread.
+6. Terminated: The thread has completed execution and is no longer running.
+
+Note that a thread can be in multiple states at the same time, for example, a thread can be both runnable and blocked.
+
+```java
+public class ThreadLifecycleExample {
+    public static void main(String[] args) {
+        Thread thread = new Thread(() -> {
+            System.out.println("Thread is in NEW state"); // New state
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Thread is in RUNNABLE state"); // Runnable state
+        });
+
+        System.out.println("Thread is created but not yet started"); // New state
+        thread.start(); // Transition to Runnable state
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Thread is in TERMINATED state"); // Terminated state
+    }
+}
+```
 
 <!-- SET JAVA HOME PATH -->
