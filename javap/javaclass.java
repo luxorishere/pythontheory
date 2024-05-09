@@ -1,59 +1,26 @@
 package javap;
+public class javaclass{
+    public int a = 1;
+    public static int b = 2;
 
-public class javaclass {
+
     public static void main(String[] args) {
-        recursion(10);
-
-
-    }
-    static void recursion(int num){
-        if (num == 0){
-            return;
-        }
-        System.out.println(num);
-        num -= 1;
-        recursion(num);
+        Student s1 = new Student("Parth", 1);
+        s1.info();
+        System.out.println(b);
+        
     }
 }
-class Node{
-    int data;
-    Node next;
+class Student{
+    String name;
+    int id;
 
-    Node(int data){
-        this.data = data;
+
+    public Student(String name, int id){
+        this.name = name;
+        this.id = id;
     }
-} 
-class LinkedList{
-    Node head;
-
-    LinkedList(){
-        this.head = null;
-    } 
-    void insert(int data){
-        Node nen = new Node(data);
-        if (head == null){
-            head.next = nen;
-        }
-        else{
-        
-            Node temp = head;
-            while (temp.next != null){
-                temp = temp.next;
-            }
-            
-            temp.next = nen;
-        }
-    }
-    
-    
-    void printing(){
-        Node temp = head;
-        while (temp != null){
-            System.out.println(temp.data);
-            temp = temp.next;
-            
-        }
-        
-
+    public void info(){
+        System.out.println(this.name + " " + this.id);
     }
 }

@@ -585,5 +585,39 @@ public class Main {
 }
 ```
 
+Try Exception handling
+Multithreading 
+Thread life cycle
 
-SET JAVA HOME PATH
+### Try Exception Handling
+
+
+Exception Handling:
+
+- Exceptions are used to handle errors or exceptions that occur during the execution of a program.
+- Exceptions are objects that are thrown when an error occurs.
+- Exception handling is the process of writing code that will "handle" these exceptions in a way that is appropriate for the situation.
+- Catch block is used to handle exceptions.
+- Finally block is used to execute certain code whether an exception occurs or not.
+- Java has a number of built-in exceptions, and it is also possible to create custom exceptions.
+
+```java
+
+public class ExceptionHandlingExample {
+    public static void main(String[] args) {
+        try {
+            // Code that may cause an exception
+            int result = 10 / 0; // This will throw an ArithmeticException
+            System.out.println("Result: " + result); // This line won't be executed
+        } catch (ArithmeticException e) {
+            // Catching and handling the exception
+            System.out.println("An arithmetic exception occurred: " + e.getMessage());
+        }
+        // The program continues execution after handling the exception
+        System.out.println("Program execution continues...");
+    }
+}
+```
+
+
+<!-- SET JAVA HOME PATH -->

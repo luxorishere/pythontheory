@@ -1,31 +1,30 @@
-def finding_the_missing(ilist, k):
-    if check(ilist) == True:
-        return ilist[len(ilist) - 1] + k
-        
-    limit = ilist[len(ilist) - 1]
-    tlist = []
-    for i in range(1, limit + 1):
-        tlist.append(i)
-        
-    rlist = []
-    t = 0
-    tcounter = 0
-    icount = 0
-    while t != k:
-        if tcounter < len(tlist) - 1 and tlist[tcounter] not in ilist:
-            icount = tlist[tcounter]
-            t += 1
-        elif tcounter >= len(tlist):
-            icount = 0
-            icount = ilist[len(ilist) - 1] + k - t
-            break
-        tcounter += 1
+from numpy import sort
 
-    return icount
-def check(ilist):
-    if len(ilist) == 1:
-        return True
-    for i in range(0, len(ilist) - 1):
-        if ilist[i] - ilist[i - 1] > 1:
-            return False
-    return True
+
+def char_to_ascii(s):
+    return ord(s)
+def ascii_to_char(num):
+    return chr(num)
+
+def charleetcode(ilist):
+    numlist = []
+    for i in ilist:
+        numlist.append(char_to_ascii(i))
+    return numlist
+
+def leetcode(ilist, chartarget):
+    numlist = charleetcode(ilist)
+    target = char_to_ascii(chartarget)
+    numlist = sort(numlist)
+    for i in range(0, len(ilist)):
+        temp = numlist[i] - target
+        if temp > 0:
+            return ascii_to_char(numlist[i])
+        
+        
+    return -1
+        
+        
+rlist = ["c", "d", "e"]
+target = "a"
+print(leetcode(rlist, target))
