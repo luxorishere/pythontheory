@@ -618,7 +618,84 @@ public class ExceptionHandlingExample {
     }
 }
 ```
+### Multithreading
 
+
+Multithreading in Java:
+
+- Multithreading is the ability of a program to perform multiple tasks simultaneously.
+- In Java, multithreading is achieved using threads. A thread is a separate flow of execution that can run concurrently with other threads in a program.
+- Java provides a built-in support for multithreading using the `Thread` class.
+- To create a thread in Java, you need to extend the `Thread` class or implement the `Runnable` interface.
+- When a thread is created, it is in a new state called "New". The thread scheduler starts the thread by changing its state to "Runnable".
+- When a thread is runnable, it is executed by the thread scheduler. The thread scheduler selects a runnable thread and executes it.
+- If the thread scheduler is unable to find any runnable thread, it will put the current thread (the thread that is being executed) in the "Waiting" state.
+- The thread scheduler will wake up a waiting thread when there is a runnable thread available.
+- A thread can be in one of the following states: New, Runnable, Waiting, Timed Waiting, Blocked, Terminated.
+- The `join()` method is used to wait for the completion of a thread.
+- The `synchronized` keyword is used to provide mutual exclusion between threads.
+- The `volatile` keyword is used to ensure that changes to a variable are immediately visible to all threads.
+- The `wait()` and `notify()` methods are used to synchronize threads.
+- The `notifyAll()` method is used to notify all threads that are waiting on an object.
+
+
+```markdown
+### Summarizing multithreading in Java in five lines:
+
+- Multithreading allows a program to perform multiple tasks simultaneously.
+- Java provides built-in support for multithreading using the `Thread` class.
+- Threads execute concurrently with other threads in a program, and the thread scheduler manages the execution of threads.
+- Threads can also be in the "Blocked" state, which means that the thread is waiting for a lock to be released.
+- The thread scheduler will wake up a blocked thread when the lock is released.
+```
+```java
+public class MultithreadingExample {
+    public static void main(String[] args) {
+        // Create and start a new thread using Runnable interface
+        Thread thread1 = new Thread(new MyRunnable());
+        thread1.start();
+
+        // Create and start a new thread by extending Thread class
+        MyThread thread2 = new MyThread();
+        thread2.start();
+
+        // Main thread continues execution
+        System.out.println("Main thread is running...");
+    }
+
+    // Runnable implementation for creating threads
+    static class MyRunnable implements Runnable {
+        @Override
+        public void run() {
+            // Code that runs in the new thread
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Runnable thread: " + i);
+                try {
+                    Thread.sleep(1000); // Sleep for 1 second
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    // Thread class extension for creating threads
+    static class MyThread extends Thread {
+        @Override
+        public void run() {
+            // Code that runs in the new thread
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Thread class thread: " + i);
+                try {
+                    Thread.sleep(1000); // Sleep for 1 second
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+```
 
 
 <!-- SET JAVA HOME PATH -->
