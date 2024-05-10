@@ -773,20 +773,5 @@ public class ThreadLifecycleExample {
     }
 }
 ```
-hi this is parth
-```html
-<html lang="en" className="scroll-smooth">
-
-<head>
-    <style>
-        p {
-            /* add your desired CSS styles here */
-        }
-    </style>
-</head>
-
-<body>
-    <p>Hello!</p>
-</body>
 
 <!-- SET JAVA HOME PATH -->
