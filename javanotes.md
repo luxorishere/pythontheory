@@ -776,5 +776,4 @@ public class ThreadLifecycleExample {
     }
 }
 ```
-Hi Arnav this for testing 
 <!-- SET JAVA HOME PATH -->
