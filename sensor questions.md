@@ -31,7 +31,6 @@ Examples of digital sensor: Encoders
 
 
 5. Inverse Sensor
-
 An inverse sensor is like a reverse detective; instead of finding clues to solve a mystery, it uses known information to understand its surroundings better, like how your ears help you know where a sound is coming from.
 
 
