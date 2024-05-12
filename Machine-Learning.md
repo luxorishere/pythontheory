@@ -171,3 +171,35 @@ Yes, we need to apply feature scaling after splitting the dataset.
 
  The reason is: Feature scaling is used to make sure that each feature is on the same scale, so that the algorithms can treat all features equally. If we scale the data before splitting, then we won't be able to tell which features are important just by looking at the scaled data. After splitting the dataset, we can see the distribution of the data in each feature, and we can decide which features to scale based on that.
 
+```python
+from sklearn.model_selection import train_test_split
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 1)
+```
+```python
+# Import necessary libraries
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+# Load the Iris dataset
+dataset = pd.read_csv("iris.csv")
+
+# Separate features and target
+# Separate features and target
+X = dataset.drop('target', axis=1)  # Assuming 'target' is the column name       for the target variable
+y = dataset['target']
+
+# Spl
+# Split the dataset into an 80-20 training-test set
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Apply StandardScaler to scale the feature variables
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+# Print scaled training and test sets
+print("Scaled Training Set:")
+print(X_train)
+print("\nScaled Test Set:")
+print(X_test)
+```
