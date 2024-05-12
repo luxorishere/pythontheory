@@ -153,6 +153,7 @@ public class MyClass {
 ```
 
 ### Final Members
+
 Final members (fields or methods) cannot be changed once initialized (for fields) or defined (for methods).
 
 ```java
@@ -238,6 +239,7 @@ public class MyClass {
     String text = "Hello, Java!";
 }
 ```
+
 ## Object Oriented Programming *Third Part*
 
 ### Class
