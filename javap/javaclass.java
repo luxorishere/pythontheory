@@ -1,19 +1,15 @@
 package javap;
 public class javaclass{
-    public int a = 1;
-    public static int b = 2;
-
-
     public static void main(String[] args) {
-       
-        
+        fun(5);
     }
-}
-class Node{
-    int data;
-    Node next;
-}
-class Linkedlist{
-    
+    static void fun(int n){
+        if (n == 0){
+            return;
+        }
+        System.out.println(n);
+        n -= 1;
 
+        fun(n);
+    }
 }
