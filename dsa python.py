@@ -1,11 +1,11 @@
-import numpy as np
-def sell_stock(array):
-    maximum = 0
-    for i in range(0 , len(array)):
-        for j in range(i + 1, len(array)):
-            if array[j] > array[i]:
-                temp = np.abs(array[j] - array[i])
-                maximum = max(maximum, temp)
-    return maximum
+def reversing_array(array):
+    start = 0
+    end = len(array) - 1
+    while start < end:
+        array[start], array[end] = array[end], array[start]
+        start += 1
+        end -= 1
+    return array
 
-            
+array = [1, 2, 3, 4, 5]
+print(reversing_array(array))

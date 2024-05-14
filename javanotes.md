@@ -778,4 +778,28 @@ public class ThreadLifecycleExample {
     }
 }
 ```
+## Polymorphism
+
+
+Polymorphism: Polymorphism is a fundamental concept in object-oriented programming. It allows for objects of different classes to behave in a similar way. This is achieved by defining a method in one class that is overridden in a subclass. When calling a method on an object of a subclass, the method implementation from the subclass is executed instead of the one from the superclass. This allows for the same method to be used with objects of different classes, without the need for type casting.
+
+
+```java
+class Shape {
+    void draw() {
+        System.out.println("Drawing a shape");
+    }
+}   
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+        // extend keyword is used to inherit the properties and methods of the superclass(Shape) in the subclass(Circle) 
+
+```
+
 <!-- SET JAVA HOME PATH -->
