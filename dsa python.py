@@ -19,11 +19,25 @@ def leetcode(array):
             cend = len(array[0]) - 1
        
     return temp
+def leetcode_matrix(array):
+    arr = []
+    for i in range(0, len(array)):
+        for j in range(0, len(array[0])):
+            arr.append(array[i][j])
+    arr.sort()
+    count = 0
+    for i in range(0 , len(array) * len(array[0])):
+        if count == len(array[0]):
+            print("\n")
+            count = 0
+        print(f"{arr[i] }")
+        count += 1
 
-arr = [[0,0,1,1,1],
-       [0,0,1,1,1],
-       [0,1,1,1,1]]
+def recursion(string, sstring, fstring):
+    if string == "":
+        return sstring == fstring
+    temp = 
+        
+        
 
-print(leetcode(arr))
-            
     
