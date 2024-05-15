@@ -175,6 +175,7 @@ Yes, we need to apply feature scaling after splitting the dataset.
 from sklearn.model_selection import train_test_split
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 1)
 ```
+
 ```python
 # Import necessary libraries
 import pandas as pd
