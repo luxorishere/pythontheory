@@ -124,6 +124,9 @@
                 <mxCell id="161" value="list.addall {2}" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
                     <mxGeometry x="661" y="549" width="87" height="27" as="geometry"/>
                 </mxCell>
+                <mxCell id="163" value="" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="2190" y="1254" width="246" height="111" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>

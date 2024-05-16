@@ -1,43 +1,31 @@
-def leetcode(array):
-    rstart = 0
-    rend = len(array)
-    cstart = 0
-    cend = len(array[0]) - 1
-    count = 0
+def leetcode(string):
+    ilist = [];
+    for i in range(0, len(string)):
+        ilist.append(string[i])
+    return ilist
+def solution(string):
+    ilist = leetcode(string)
+    maxlen = 0
+    templist = []
+    rlist = []
+    i = 0
     temp = 0
-    while rstart < rend:
-        if cend > -1 and array[rstart][cend] == 1:
-            count += 1
-            cend -= 1
-            if temp > count:
-                continue
+    for i in range(0, len(ilist)):
+        temp = 1
+        templist = []
+        templist.append(ilist[i])
+        for j in range(i + 1, len(ilist)):
+            if ilist[i] == ilist[j]:
+                break
             else:
-                temp = count
-        else:
-            rstart += 1
-            count = 0
-            cend = len(array[0]) - 1
-       
-    return temp
-def leetcode_matrix(array):
-    arr = []
-    for i in range(0, len(array)):
-        for j in range(0, len(array[0])):
-            arr.append(array[i][j])
-    arr.sort()
-    count = 0
-    for i in range(0 , len(array) * len(array[0])):
-        if count == len(array[0]):
-            print("\n")
-            count = 0
-        print(f"{arr[i] }")
-        count += 1
-
-def recursion(string, sstring, fstring):
-    if string == "":
-        return sstring == fstring
-    temp = 
+                templist.append(ilist[j])
+                temp += 1
+            
+        if maxlen < temp:
+            maxlen = temp
+            rlist = templist
         
+    return rlist
         
 
-    
+print(solution("abcabcbb"))
