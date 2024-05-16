@@ -11,7 +11,7 @@
         return recursion(number / 10, temp, check);
     }
 ```
-### Revering the number
+### Reversing the number
 ```java
 static int reverse(int num){
         int digit = (int)Math.log10(num) + 1;
@@ -39,4 +39,19 @@ static int zeroes(int number, int count){
         }
         return zeroes(number / 10, count);
     }
+```
+### Check array is sorted or not
+
+```java
+static boolean check(int[] arr, boolean test, int i){
+        if (arr[i] == arr.length - 1){
+            return test;
+        }
+        if (arr[i] > arr[i + 1]){
+            return false;
+        }
+
+        return check(arr,test, i + 1);
+    }
+    
 ```
