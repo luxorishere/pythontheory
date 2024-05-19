@@ -8,6 +8,7 @@
 5. Trees (Binary Trees, Binary Search Trees, AVL Trees, etc.)
 6. Graphs
 7. Hash Tables (Hash Maps)
+8. Strings 
 
 **Problem-Solving Techniques:**
 1. Sliding Window Technique
