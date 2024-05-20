@@ -397,3 +397,88 @@ In Java, you can only have one public class per file and the name of the file sh
 - ClassPath Setting for packages
 - Making Jar file for packages
 - Import and static import naming Convention for Packages
+
+
+### Unit 3: Java New Features
+- Functional Interfaces
+- Lambda Expression
+- Method References
+- Stream API
+- Default Methods
+- Static Method
+- Base64 Encode and Decode
+- Decode
+- ForEach Method
+- Try-with-resources
+- Type Annotations
+- Repeating Annotations
+- Java Module System
+- Diamond Syntax with Anonymous Class
+- Inner Anonymous Class
+- Local Variable Type Inference
+- Switch Expressions
+- Yield Keyword
+- Text Blocks
+- Records
+- Sealed Classes
+
+### Unit 4: Java Collections Framework
+- Collection in Java
+- Collection Framework in Java
+- Hierarchy of Collection Framework
+- Iterator Interface
+- Collection Interface
+- List Interface
+- ArrayList
+- LinkedList
+- Vector
+- Stack
+- Queue Interface
+- Set Interface
+- HashSet
+- LinkedHashSet
+- SortedSet Interface
+- TreeSet
+- Map Interface
+- HashMap Class
+- LinkedHashMap Class
+- TreeMap Class
+- Hashtable Class
+- Sorting
+- Comparable Interface
+- Comparator Interface
+- Properties Class in Java
+
+### Unit 5: Spring Framework and Spring Boot
+#### Spring Framework
+- Spring Core Basics
+- Spring Dependency Injection concepts
+- Spring Inversion of Control
+- AOP
+- Bean Scopes - Singleton
+- Prototype
+- Request
+- Session
+- Application
+- Web Socket
+- Autowiring
+- Annotations
+- Life Cycle Callbacks
+- Bean Configuration styles
+
+#### Spring Boot
+- Spring Boot Build Systems
+- Spring Boot Code Structure
+- Spring Boot Runners
+- Logger
+- BUILDING RESTFUL WEB SERVICES
+- Rest Controller
+- Request Mapping
+- Request Body
+- Path Variable
+- Request Parameter
+- GET
+- POST
+- PUT
+- DELETE APIs
+- Build Web Applications
