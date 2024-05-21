@@ -137,3 +137,56 @@ static ArrayList linear_check_boolean(int[] arr, int target, int index, ArrayLis
 
 ### Recursion and linear search without passing the argument
 
+### Java intersection and 1 2 0 sorting
+```java
+static int intersection(int[] arr1, int[] arr2){
+        int length = Math.max(arr1.length, arr2.length);
+        int i = 0;
+        int j = 0;
+        int count = 0;
+        while (i != length){
+            if (arr1[i] == arr2[j]){
+                count++;
+                j++;
+                i++;
+            }
+            else{
+                i++;
+            }
+            if (j == arr2.length - 1){
+                j = 0;
+            }
+
+
+        }
+        return count;
+    }
+    static void two_one_zero(int[] arr){
+        int start = 0;
+        int i = 0;
+        while (start != arr.length){
+            if (arr[start] == 0){
+                swap(arr, start, i);
+                i++;
+            }
+            start++;
+
+        }
+        start = i + 1;
+        i++;
+        while (start != arr.length){
+            if (arr[start] == 1){
+                swap(arr,start, i);
+                i++;
+            }
+            start++;
+        }
+
+
+    }
+    static void swap(int[] arr, int first, int second){
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+```
