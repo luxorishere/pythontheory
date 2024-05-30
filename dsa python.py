@@ -1,29 +1,27 @@
 import numpy as np
 def leetcode(arr):
-    ilist = []
+
     rstart = 0
     rend = len(arr)
-    temp = 0
-    while temp != rend:
-        ilist = []
-        rend = len(arr)
-        rstart = 0
-        while rstart <= rend - 1:  # Fixed index out of range error
-        
-            if rstart < rend - 1 and arr[rstart][1] >= arr[rstart + 1][0] and arr[rstart]:
-                minimum = min(arr[rstart][0], arr[rstart + 1][0])
-                maximum = max(arr[rstart][1], arr[rstart + 1][1])
-                ilist.append([minimum, maximum])
-                rstart += 1
-            else:
-                ilist.append([arr[rstart][0], arr[rstart][1]])
-            rstart += 1
-        arr = np.copy(ilist)
-        temp += 1
-    
-    # Append the last interval
+    cstart = 0
+    cend = len(arr[0]) - 1
+    rcount = 0
+    while rstart != rend:
+        while cstart <= cend:
+            if arr[rstart][cstart] == 1:
+                rcount += 1
             
-    return ilist
+    print(rcount)
+    return
 
-arr =[[1,4],[0,0]]
-print(leetcode(arr))
+
+# Set the dimensions of the matrix
+rows = 5
+columns = 5
+
+# Generate a random 2D matrix
+random_matrix = np.random.rand(rows, columns)
+
+print("Random 2D Matrix:")
+print(random_matrix)
+leetcode(random_matrix)

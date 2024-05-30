@@ -778,5 +778,108 @@ public class ThreadLifecycleExample {
     }
 }
 ```
+Checking
+```java
+package com.javapackage;
+
+
+import java.util.Arrays;
+
+public class Main{
+    public static void main(String[] args) {
+        int[][] arr = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+        System.out.println(Arrays.toString(leetcode_matrix(arr, 11)));
+    }
+    static int[] leetcode_matrix(int[][] arr, int target){
+        int rstart = 0;
+        int rend = arr.length - 1;
+        int cstart = 0;
+        int cend =  arr[0].length - 1;
+        int[][] m = new int[arr.length][arr[0].length];
+        int temp = 0;
+        m[0][0] = 1;
+
+        while (temp != target){
+            temp = arr[rstart][cstart];
+            if (temp == target){
+                return new int[] {rstart, cstart};
+            }
+            else{
+                if (cstart < cend && arr[rstart][cstart + 1] <= target && m[rstart][cstart + 1] != 1){
+                    m[rstart][cstart + 1] = 1;
+                    temp = arr[rstart][cstart + 1];
+                    cstart++;
+                }
+                else if (rstart < rend && arr[rstart + 1][cstart] <= target && m[rstart + 1][cstart] != 1){
+                    m[rstart + 1][cstart] = 1;
+                    temp = arr[rstart + 1][cstart];
+                    rstart++;
+                }
+                else if (cstart > 0 && arr[rstart][cstart - 1] <= target && m[rstart][cstart - 1] != 1){
+                    m[rstart][cstart - 1] = 1;
+                    temp = arr[rstart][cstart - 1];
+                    cstart--;
+                }
+                else if (rstart > 0 && arr[rstart - 1][cstart] <= target && m[rstart - 1][cstart] != 1){
+                    m[rstart - 1][cstart] = 1;
+                    temp = arr[rstart - 1][cstart];
+                    rstart--;
+
+                }
+                else{
+                    rstart++;
+                    cstart++;
+                }
+            }
+
+        }
+        return new int[] {-1,-1};
+    }
+    static int median(int[] arr, int[] a){
+        int med1 = arr[arr.length / 2];
+        int med2 = a[a.length / 2];
+
+        return (med1 + med2);
+    }
+    static int mean(int[] arr1, int[] arr2){
+        int sum1 = 0;
+        int sum2 = 0;
+        for (int k : arr1) {
+            sum1 += k;
+        }
+        for (int j : arr2) {
+            sum2 += j;
+        }
+        int mean1 = (sum1) / arr1.length;
+        int mean2 = (sum2) / arr2.length;
+
+        return (mean1 + mean2) / (arr1.length + arr2.length);
+    }
+    static void leetcode(int[] arr){
+        int i = 0;
+        int s = 0;
+        while (i != arr.length - 1){
+            if (arr[i] < 0 && arr[s] < 0){
+                i++;
+                s++;
+            }
+            else{
+                if (arr[i] > 0){
+                    i++;
+                }
+                if (arr[i] < 0 && arr[s] >= 0){
+                    swap(arr, i , s);
+                    s++;
+                }
+            }
+        }
+    }
+    static void swap(int[] arr, int first, int second){
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+}
+```
 
 <!-- SET JAVA HOME PATH -->

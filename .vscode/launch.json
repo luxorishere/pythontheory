@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "javatemp",
+            "request": "launch",
+            "mainClass": "javatemp.javatemp",
+            "projectName": "rkgithub_b717fac8"
+        },
+        {
+            "type": "java",
             "name": "javaclass",
             "request": "launch",
             "mainClass": "javap.javaclass",
