@@ -121,4 +121,19 @@ The `String` class in Java offers a rich set of methods for manipulating and wor
 **Additional Notes:**
 
 - Java `String` objects are immutable, meaning that methods that appear to modify the `String` actually create a new `String` object.
-- The official Java API documentation provides comprehensive details on each method, including syntax, parameters,
+- The official Java API documentation provides comprehensive details on each method, including syntax, parameters
+
+
+### Character array to String
+
+```java
+package javatemp;
+class javatemp{
+    public static void main(String[] args) {
+        char[] character = {'P','a','r','t','h'};
+        String str = new String(character);
+        System.out.println(str);
+        
+    }
+}
+```

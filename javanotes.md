@@ -2,8 +2,7 @@
 
 ### Unit 1
 
-Introduction (First Part)
-------------
+#### Introduction (First Part)
 
 - Why Java
 - History of Java
@@ -13,31 +12,29 @@ Introduction (First Part)
 - Java Source File Structure
 - Compilation
 
-Fundamental concepts in Java
---------------------------------
+#### Fundamental Concepts in Java
 
 - Programming Structures in Java
-	+ Defining classes in Java
-	+ Constructors
-	+ Methods
-	+ Access Specifiers
-	+ Static Members
-	+ Final Members
-	+ Comments
-	+ Data types
-	+ Variables
-	+ Operators
-	+ Control Flow
-	+ Arrays & Strings
+  - Defining classes in Java
+  - Constructors
+  - Methods
+  - Access Specifiers
+  - Static Members
+  - Final Members
+  - Comments
+  - Data types
+  - Variables
+  - Operators
+  - Control Flow
+  - Arrays & Strings
 
-Object Oriented Programming
--------------------------------
+#### Object-Oriented Programming
 
 - Class
 - Object
 - Inheritance
-	+ Super class
-	+ Sub class
+  - Superclass
+  - Subclass
 - Overriding
 - Overloading
 - Encapsulation
@@ -46,16 +43,15 @@ Object Oriented Programming
 - Interfaces
 - Abstract Class
 
-Packages
---------
+#### Packages
 
 - Defining Packages
 - CLASSPATH Setting for Packages
 - Making JAR Files for Library Packages
 - Import and Static Import Naming Convention For Packages
 
+## Introduction
 
-## Introduction *First Part*
 ### Java
 Java is a high-level, object-oriented programming language developed by Sun Microsystems (now owned by Oracle) in the mid-1990s. It is known for its platform independence and robustness.
 
@@ -77,8 +73,7 @@ A Java source file typically consists of a single public class and other support
 ### Compilation
 Compilation is the process of converting human-readable Java source code into platform-independent bytecode using a Java compiler (e.g., `javac`). This bytecode can then be executed by the JVM on any platform that supports Java.
 
-## Fundamental concepts in Java *Second Part*
-
+## Fundamental Concepts in Java
 
 ### Defining Classes in Java
 Classes in Java are blueprints for objects. They define attributes (fields) and behaviors (methods) that objects of that class will have.
@@ -97,7 +92,6 @@ public class MyClass {
 ```
 
 ### Constructors
-
 Constructors are special methods used to initialize objects when they are created. They have the same name as the class and do not have a return type.
 
 ```java
@@ -113,7 +107,6 @@ public class MyClass {
 ```
 
 ### Methods
-
 Methods are functions defined inside a class that perform specific tasks or operations.
 
 ```java
@@ -126,7 +119,6 @@ public class MyClass {
 ```
 
 ### Access Specifiers
-
 Access specifiers control the visibility of classes, fields, and methods in Java. There are four access specifiers: `public`, `private`, `protected`, and default (no specifier).
 
 ```java
@@ -153,7 +145,6 @@ public class MyClass {
 ```
 
 ### Final Members
-
 Final members (fields or methods) cannot be changed once initialized (for fields) or defined (for methods).
 
 ```java
@@ -240,12 +231,9 @@ public class MyClass {
 }
 ```
 
-## Object Oriented Programming *Third Part*
+## Object-Oriented Programming
 
 ### Class
-
-What is a class?
-
 A class is a blueprint or template for creating objects. It defines the properties and behaviors that an object of that class will have.
 
 ```java
@@ -254,13 +242,9 @@ public class MyClass {
     // Fields (attributes)
     int myField;
 }
-    
 ```
 
 ### Object
-
-What is an object?
-
 An object is an instance of a class. It contains the state and behavior of the class.
 
 ```java
@@ -282,7 +266,6 @@ public class MyClass {
 ```
 
 ### Inheritance
-
 Inheritance is a mechanism in object-oriented programming that allows one class to inherit the properties and behaviors of another class.
 
 ```java
@@ -304,14 +287,13 @@ class MyChildClass extends MyParentClass {
         System.out.println("This is myChildMethod");
     }
 }
-
 ```
-### Super Class and Sub Class
 
-Super class is the class that is inherited from and sub class is the class that inherits from the super class.
+#### Superclass and Subclass
+Superclass is the class that is inherited from, and subclass is the class that inherits from the superclass.
 
 ```java
-// Example of super class and sub class
+// Example of superclass and subclass
 public class MyParentClass {
     int myField;
     void myMethod() {
@@ -336,7 +318,25 @@ class MyChildClass extends MyParentClass {
 }
 ```
 
-1. **Overriding**: Overriding occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. This allows for runtime polymorphism, where the method that gets executed is determined at runtime based on the object's type.
+#### Overriding
+Overriding occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. This allows for runtime polymorphism, where the method that gets executed is determined at runtime based on the object's type.
+
+**Parent obj = new Child();**
+
+This is also known as Upsitting
+
+
+### Runtime / Dyanmic Polymorphism
+
+*What is dynamic Method overlaoding*
+
+**Dynamic runtime dispatched**
+
+It's a mechanism to a call to a overridden method is resolved at runtime rather than a compile time
+
+That's why the name is Dyanmic Polymorphism
+
+
 
 ```java
 class Animal {
@@ -353,146 +353,175 @@ class Dog extends Animal {
 }
 
 public class Main {
-    public static void main(String[] args) {
-        Animal animal = new Dog();
-        animal.makeSound(); // Output: Bark
+    public static void main(String[] args)
+
+ {
+        Animal myAnimal = new Dog();
+        myAnimal.makeSound(); // Output: Bark
     }
 }
 ```
 
-2. **Overloading**: Overloading refers to defining multiple methods in a class with the same name but different parameters (number, type, or order). The compiler determines which method to call based on the arguments provided.
+#### Overloading
+Overloading occurs when two or more methods in the same class have the same name but different parameters (number, type, or both). Overloaded methods provide different ways to perform similar actions.
 
 ```java
-class Calculator {
+class MathOperations {
     int add(int a, int b) {
         return a + b;
     }
-
+    
     double add(double a, double b) {
         return a + b;
     }
+    
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Calculator calc = new Calculator();
-        System.out.println(calc.add(5, 10)); // Output: 15
-        System.out.println(calc.add(3.5, 2.5)); // Output: 6.0
+        MathOperations math = new MathOperations();
+        System.out.println(math.add(2, 3)); // Output: 5
+        System.out.println(math.add(2.5, 3.5)); // Output: 6.0
+        System.out.println(math.add(1, 2, 3)); // Output: 6
     }
 }
 ```
 
-3. **Encapsulation**: Encapsulation is the practice of bundling the data (attributes) and methods (behavior) that operate on the data into a single unit (class). It helps in hiding the internal state of an object and only exposing the necessary functionalities through methods.
+### Encapsulation
+Encapsulation is the practice of wrapping data (fields) and methods (behaviors) that operate on the data into a single unit or class. It is used to protect the internal state of an object and only allow controlled access through public methods.
 
 ```java
-class Student {
+class Person {
     private String name;
     private int age;
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
+    
+    // Getter method for name
     public String getName() {
         return name;
     }
-
+    
+    // Setter method for name
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    // Getter method for age
     public int getAge() {
         return age;
     }
+    
+    // Setter method for age
+    public void setAge(int age) {
+        if (age > 0) {
+            this.age = age;
+        }
+    }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Student student = new Student();
-        student.setName("Alice");
-        student.setAge(20);
-        System.out.println("Name: " + student.getName());
-        System.out.println("Age: " + student.getAge());
+        Person person = new Person();
+        person.setName("John");
+        person.setAge(25);
+        System.out.println("Name: " + person.getName());
+        System.out.println("Age: " + person.getAge());
     }
 }
 ```
 
-4. **Polymorphism**: Polymorphism allows objects to be treated as instances of their superclass, even if they are instances of a subclass. This can be achieved through method overriding (runtime polymorphism) or method overloading (compile-time polymorphism).
+### Polymorphism
+Polymorphism is the ability of an object to take on many forms. It allows one interface to be used for a general class of actions. The specific action is determined by the exact nature of the situation.
 
 ```java
-class Shape {
-    void draw() {
-        System.out.println("Drawing a shape");
+class Animal {
+    void makeSound() {
+        System.out.println("Animal sound");
     }
 }
 
-class Circle extends Shape {
+class Dog extends Animal {
     @Override
-    void draw() {
-        System.out.println("Drawing a circle");
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Meow");
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Shape shape = new Circle();
-        shape.draw(); // Output: Drawing a circle
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
+        
+        myDog.makeSound(); // Output: Bark
+        myCat.makeSound(); // Output: Meow
     }
 }
 ```
 
-5. **Abstraction**: Abstraction is the process of hiding the implementation details and showing only the essential features of an object. Abstract classes and interfaces are used to achieve abstraction.
-
-```java
-abstract class Shape {
-    abstract void draw();
-}
-
-class Circle extends Shape {
-    @Override
-    void draw() {
-        System.out.println("Drawing a circle");
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Shape shape = new Circle();
-        shape.draw(); // Output: Drawing a circle
-    }
-}
-```
-
-6. **Interfaces**: An interface in Java is a reference type that can contain only constants, method signatures, default methods, static methods, and nested types. It defines a set of methods that a class must implement, providing a contract for behavior.
-
-```java
-interface Printable {
-    void print();
-}
-
-class Document implements Printable {
-    @Override
-    public void print() {
-        System.out.println("Printing document");
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Printable printable = new Document();
-        printable.print(); // Output: Printing document
-    }
-}
-```
-
-7. **Abstract Class**: An abstract class is a class that cannot be instantiated on its own and may contain abstract methods (methods without a body) that must be implemented by its subclasses. It can also contain concrete methods and instance variables.
+### Abstraction
+Abstraction is the concept of hiding the complex implementation details of a system and exposing only the necessary and relevant parts to the user. It can be achieved using abstract classes and interfaces.
 
 ```java
 abstract class Animal {
-    abstract void makeSound();
+    abstract void makeSound(); // Abstract method
+}
 
-    void eat() {
-        System.out.println("Animal eating");
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        myDog.makeSound(); // Output: Bark
+    }
+}
+```
+
+### Interfaces
+Interfaces are used to achieve abstraction in Java. They define a contract that implementing classes must follow. An interface can contain abstract methods and static constants.
+
+```java
+interface Animal {
+    void makeSound(); // Abstract method
+}
+
+class Dog implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        myDog.makeSound(); // Output: Bark
+    }
+}
+```
+
+### Abstract Class
+An abstract class is a class that cannot be instantiated and is meant to be subclassed. It can have abstract methods (without implementation) as well as concrete methods (with implementation).
+
+```java
+abstract class Animal {
+    abstract void makeSound(); // Abstract method
+    
+    void sleep() {
+        System.out.println("Sleeping...");
     }
 }
 
@@ -505,381 +534,49 @@ class Dog extends Animal {
 
 public class Main {
     public static void main(String[] args) {
-        Animal animal = new Dog();
-        animal.makeSound(); // Output: Bark
-        animal.eat(); // Output: Animal eating
+        Animal myDog = new Dog();
+        myDog.makeSound(); // Output: Bark
+        myDog.sleep(); // Output: Sleeping...
     }
 }
 ```
 
 ## Packages
 
-
-1. **Defining Packages**:
-   - A package in Java is a way to organize related classes and interfaces. It helps avoid naming conflicts and provides a namespace for the classes.
-   - Packages are defined at the beginning of your Java source file using the `package` keyword followed by the package name.
-   - For example, let's say we have a package named `com.example.utilities`:
+### Defining Packages
+Packages are used to group related classes and interfaces together. They help to avoid name conflicts and make it easier to manage large codebases.
 
 ```java
-package com.example.utilities;
+// Define a package
+package com.example.myapp;
 
-public class MathUtils {
-    public static int add(int a, int b) {
-        return a + b;
-    }
+public class MyClass {
+    // Class implementation
 }
 ```
 
-2. **CLASSPATH Setting for Packages**:
-   - CLASSPATH is an environment variable that tells the Java compiler and runtime where to look for classes and packages.
-   - When you compile and run Java programs that use packages, you need to set the CLASSPATH to include the directory containing your packages.
-   - You can set the CLASSPATH using command-line options or by setting the environment variable. For example:
+### CLASSPATH Setting for Packages
+The `CLASSPATH` environment variable is used to specify the location of user-defined classes and packages. It tells the Java compiler and JVM where to look for classes.
+
+### Making JAR Files for Library Packages
+JAR (Java ARchive) files are used to package multiple Java classes, metadata, and resources into a single file for distribution.
 
 ```bash
-# Command-line option
-javac -cp path/to/your/packages Main.java
-
-# Environment variable (Linux/macOS)
-export CLASSPATH=/path/to/your/packages
-
-# Environment variable (Windows)
-set CLASSPATH=C:\path\to\your\packages
+# Create a JAR file
+jar cvf mylibrary.jar com/example/myapp/*.class
 ```
 
-3. **Making JAR Files for Library Packages**:
-   - JAR (Java Archive) files are used to package Java classes and resources into a single file. They are commonly used for distributing libraries and applications.
-   - To create a JAR file for your package, you can use the `jar` command provided by Java.
-   - For example, let's create a JAR file for our `com.example.utilities` package:
-
-```bash
-# Create JAR file
-jar cf myutils.jar -C /path/to/your/packages com/example/utilities
-```
-
-4. **Import and Static Import Naming Convention For Packages**:
-   - Import statements are used to make classes and interfaces from other packages accessible in your code.
-   - Regular import: `import package_name.class_name;`
-   - Static import (Java 5 and above): `import static package_name.class_name.*;`
-   - It's recommended to follow naming conventions when importing packages and classes:
-     - Use lowercase for package names (e.g., `com.example.utilities`).
-     - Use camelCase for class names (e.g., `MathUtils`).
-
-Example usage with import statements:
+### Import and Static Import Naming Convention For Packages
+The `import` statement is used to include classes and packages into your code. The `static import` statement allows the static members of a class to be used without specifying the class name.
 
 ```java
-import com.example.utilities.MathUtils;
+// Import a package
+import java.util.*;
 
-public class Main {
-    public static void main(String[] args) {
-        int sum = MathUtils.add(5, 10);
-        System.out.println("Sum: " + sum);
-    }
-}
+// Import a specific class
+import java.util.ArrayList;
+
+// Static import
+import static java.lang.Math.*;
 ```
 
-Example usage with static import:
-
-```java
-import static com.example.utilities.MathUtils.*;
-
-public class Main {
-    public static void main(String[] args) {
-        int sum = add(5, 10);
-        System.out.println("Sum: " + sum);
-    }
-}
-```
-
-### Try Exception Handling
-
-
-Exception Handling:
-
-- Exceptions are used to handle errors or exceptions that occur during the execution of a program.
-- Exceptions are objects that are thrown when an error occurs.
-- Exception handling is the process of writing code that will "handle" these exceptions in a way that is appropriate for the situation.
-- Catch block is used to handle exceptions.
-- Finally block is used to execute certain code whether an exception occurs or not.
-- Java has a number of built-in exceptions, and it is also possible to create custom exceptions.
-
-```java
-
-public class ExceptionHandlingExample {
-    public static void main(String[] args) {
-        try {
-            // Code that may cause an exception
-            int result = 10 / 0; // This will throw an ArithmeticException
-            System.out.println("Result: " + result); // This line won't be executed
-        } catch (ArithmeticException e) {
-            // Catching and handling the exception
-            System.out.println("An arithmetic exception occurred: " + e.getMessage());
-        }
-        // The program continues execution after handling the exception
-        System.out.println("Program execution continues...");
-    }
-}
-```
-
-### Multithreading
-
-Multithreading in Java:
-
-- Multithreading is the ability of a program to perform multiple tasks simultaneously.
-- In Java, multithreading is achieved using threads. A thread is a separate flow of execution that can run concurrently with other threads in a program.
-- Java provides a built-in support for multithreading using the `Thread` class.
-- To create a thread in Java, you need to extend the `Thread` class or implement the `Runnable` interface.
-- When a thread is created, it is in a new state called "New". The thread scheduler starts the thread by changing its state to "Runnable".
-- When a thread is runnable, it is executed by the thread scheduler. The thread scheduler selects a runnable thread and executes it.
-- If the thread scheduler is unable to find any runnable thread, it will put the current thread (the thread that is being executed) in the "Waiting" state.
-- The thread scheduler will wake up a waiting thread when there is a runnable thread available.
-- A thread can be in one of the following states: New, Runnable, Waiting, Timed Waiting, Blocked, Terminated.
-- The `join()` method is used to wait for the completion of a thread.
-- The `synchronized` keyword is used to provide mutual exclusion between threads.
-- The `volatile` keyword is used to ensure that changes to a variable are immediately visible to all threads.
-- The `wait()` and `notify()` methods are used to synchronize threads.
-- The `notifyAll()` method is used to notify all threads that are waiting on an object.
-
-
-```markdown
-### Summarizing multithreading in Java in five lines:
-
-- Multithreading allows a program to perform multiple tasks simultaneously.
-- Java provides built-in support for multithreading using the `Thread` class.
-- Threads execute concurrently with other threads in a program, and the thread scheduler manages the execution of threads.
-- Threads can also be in the "Blocked" state, which means that the thread is waiting for a lock to be released.
-- The thread scheduler will wake up a blocked thread when the lock is released.
-```
-```java
-public class MultithreadingExample {
-    public static void main(String[] args) {
-        // Create and start a new thread using Runnable interface
-        Thread thread1 = new Thread(new MyRunnable());
-        thread1.start();
-
-        // Create and start a new thread by extending Thread class
-        MyThread thread2 = new MyThread();
-        thread2.start();
-
-        // Main thread continues execution
-        System.out.println("Main thread is running...");
-    }
-
-    // Runnable implementation for creating threads
-    static class MyRunnable implements Runnable {
-        @Override
-        public void run() {
-            // Code that runs in the new thread
-            for (int i = 0; i < 5; i++) {
-                System.out.println("Runnable thread: " + i);
-                try {
-                    Thread.sleep(1000); // Sleep for 1 second
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    // Thread class extension for creating threads
-    static class MyThread extends Thread {
-        @Override
-        public void run() {
-            // Code that runs in the new thread
-            for (int i = 0; i < 5; i++) {
-                System.out.println("Thread class thread: " + i);
-                try {
-                    Thread.sleep(1000); // Sleep for 1 second
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-}
-```
-
-### Shorter Code
-
-```java
-public class MultithreadingExample {
-    public static void main(String[] args) {
-        // Creating and starting a thread using lambda expression
-        Thread thread1 = new Thread(() -> {
-            for (int i = 0; i < 5; i++) {
-                System.out.println("Thread 1: " + i);
-                try {
-                    Thread.sleep(1000); // Sleep for 1 second
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-        thread1.start();
-
-        // Creating and starting a thread using anonymous class
-        Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 5; i++) {
-                    System.out.println("Thread 2: " + i);
-                    try {
-                        Thread.sleep(1000); // Sleep for 1 second
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
-        thread2.start();
-
-        // Main thread continues execution
-        System.out.println("Main thread is running...");
-    }
-}
-```
-
-### Thread life cycle
-
-Thread Life Cycle
-
-------------------
-
-1. New: A thread is created using the `Thread` constructor or by implementing the `Runnable` interface.
-2. Runnable: The thread becomes runnable when it is started using the `start()` method.
-3. Running: The thread is executing the code inside the `run()` method.
-4. Blocked: The thread is waiting for a resource to become available, such as a lock or a condition variable.
-5. Waiting: The thread has finished executing the `run()` method and is waiting to be joined by another thread.
-6. Terminated: The thread has completed execution and is no longer running.
-
-Note that a thread can be in multiple states at the same time, for example, a thread can be both runnable and blocked.
-
-```java
-public class ThreadLifecycleExample {
-    public static void main(String[] args) {
-        Thread thread = new Thread(() -> {
-            System.out.println("Thread is in NEW state"); // New state
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println("Thread is in RUNNABLE state"); // Runnable state
-        });
-
-        System.out.println("Thread is created but not yet started"); // New state
-        thread.start(); // Transition to Runnable state
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Thread is in TERMINATED state"); // Terminated state
-    }
-}
-```
-Checking
-```java
-package com.javapackage;
-
-
-import java.util.Arrays;
-
-public class Main{
-    public static void main(String[] args) {
-        int[][] arr = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
-        System.out.println(Arrays.toString(leetcode_matrix(arr, 11)));
-    }
-    static int[] leetcode_matrix(int[][] arr, int target){
-        int rstart = 0;
-        int rend = arr.length - 1;
-        int cstart = 0;
-        int cend =  arr[0].length - 1;
-        int[][] m = new int[arr.length][arr[0].length];
-        int temp = 0;
-        m[0][0] = 1;
-
-        while (temp != target){
-            temp = arr[rstart][cstart];
-            if (temp == target){
-                return new int[] {rstart, cstart};
-            }
-            else{
-                if (cstart < cend && arr[rstart][cstart + 1] <= target && m[rstart][cstart + 1] != 1){
-                    m[rstart][cstart + 1] = 1;
-                    temp = arr[rstart][cstart + 1];
-                    cstart++;
-                }
-                else if (rstart < rend && arr[rstart + 1][cstart] <= target && m[rstart + 1][cstart] != 1){
-                    m[rstart + 1][cstart] = 1;
-                    temp = arr[rstart + 1][cstart];
-                    rstart++;
-                }
-                else if (cstart > 0 && arr[rstart][cstart - 1] <= target && m[rstart][cstart - 1] != 1){
-                    m[rstart][cstart - 1] = 1;
-                    temp = arr[rstart][cstart - 1];
-                    cstart--;
-                }
-                else if (rstart > 0 && arr[rstart - 1][cstart] <= target && m[rstart - 1][cstart] != 1){
-                    m[rstart - 1][cstart] = 1;
-                    temp = arr[rstart - 1][cstart];
-                    rstart--;
-
-                }
-                else{
-                    rstart++;
-                    cstart++;
-                }
-            }
-
-        }
-        return new int[] {-1,-1};
-    }
-    static int median(int[] arr, int[] a){
-        int med1 = arr[arr.length / 2];
-        int med2 = a[a.length / 2];
-
-        return (med1 + med2);
-    }
-    static int mean(int[] arr1, int[] arr2){
-        int sum1 = 0;
-        int sum2 = 0;
-        for (int k : arr1) {
-            sum1 += k;
-        }
-        for (int j : arr2) {
-            sum2 += j;
-        }
-        int mean1 = (sum1) / arr1.length;
-        int mean2 = (sum2) / arr2.length;
-
-        return (mean1 + mean2) / (arr1.length + arr2.length);
-    }
-    static void leetcode(int[] arr){
-        int i = 0;
-        int s = 0;
-        while (i != arr.length - 1){
-            if (arr[i] < 0 && arr[s] < 0){
-                i++;
-                s++;
-            }
-            else{
-                if (arr[i] > 0){
-                    i++;
-                }
-                if (arr[i] < 0 && arr[s] >= 0){
-                    swap(arr, i , s);
-                    s++;
-                }
-            }
-        }
-    }
-    static void swap(int[] arr, int first, int second){
-        int temp = arr[first];
-        arr[first] = arr[second];
-        arr[second] = temp;
-    }
-}
-```
-
-<!-- SET JAVA HOME PATH -->
