@@ -581,11 +581,51 @@ import static java.lang.Math.*;
 ```
 
 ## Unit 3
+### Syllabus in one shot
 
+- Functional Interfaces: Interfaces with a single abstract method, enabling lambda expressions.
+
+- Lambda Expressions: Concise syntax for defining anonymous functions, enhancing code readability, and enabling functional programming paradigms.
+
+- Method References: Simplified syntax for referencing methods without invoking them directly.
+
+- Stream API: Enables functional-style operations on sequences of elements, promoting efficient and concise code.
+
+- Default Methods: Methods within interfaces with default implementations, facilitating interface evolution without breaking existing implementations.
+
+- Static Method: Methods that can be called directly on a class without needing an instance.
+
+- Base64 Encode and Decode: Functions for encoding and decoding data in Base64 format.
+
+- Each Method: Simplified iteration over collections using lambda expressions.
+
+- Try-with-resources: Automatic resource management by ensuring resources are closed after being used.
+
+- Type Annotations: Annotations that can be applied to types to provide additional type information.
+
+- Repeating Annotations: Annotations that can be applied multiple times to a declaration.
+
+- Java Module System: Enables modular programming by encapsulating code into modules with explicit dependencies.
+
+- Diamond Syntax with Anonymous Class: Simplified syntax for creating instances of anonymous classes using the diamond operator.
+
+- Inner Anonymous Class: Anonymous class defined within another class without a name.
+
+- Local Variable Type Inference: Allows the compiler to infer the type of local variables, reducing verbosity in code.
+
+- Switch Expressions: Enhanced switch statement that can return a value, improving code expressiveness.
+
+- Yield Keyword: Used in switch expressions to return a value and terminate the switch block.
+
+- Text Blocks: Multi-line string literals for improved readability of large text blocks.
+
+- Records: Concise data carrier classes with auto-generated methods like constructors, getters, equals, and hashcode.
+
+- Sealed Classes: Classes that restrict which other classes can extend or implement them, enhancing code safety and maintainability.
 # Functional Interfaces (imp)
 
 ## Definition
-Functional Interfaces are interfaces that have only one abstract method. They can contain multiple default or static methods. They are often used in conjunction with lambda expressions and method references.
+Functional Interfaces are interfaces that have only one abstract method. They can contain multiple default or static methods. They are - often used in conjunction with lambda expressions and method references.
 
 ## Code
 ```java
