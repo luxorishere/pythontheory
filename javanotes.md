@@ -580,3 +580,412 @@ import java.util.ArrayList;
 import static java.lang.Math.*;
 ```
 
+## Unit 3
+
+# Functional Interfaces (imp)
+
+## Definition
+Functional Interfaces are interfaces that have only one abstract method. They can contain multiple default or static methods. They are often used in conjunction with lambda expressions and method references.
+
+## Code
+```java
+@FunctionalInterface
+interface MyFunctionalInterface {
+    void myMethod();
+}
+```
+
+# Lambda Expression
+
+## Definition
+Lambda expressions are a way to provide concise implementations of functional interfaces. They are essentially anonymous functions that can be used to replace instances of functional interfaces.
+
+## Code
+```java
+MyFunctionalInterface myFunc = () -> System.out.println("Hello Lambda!");
+myFunc.myMethod();
+```
+
+# Method References
+
+## Definition
+Method references are a shorthand notation of a lambda expression to call a method. They use the `::` operator.
+
+## Code
+```java
+import java.util.Arrays;
+import java.util.List;
+
+class MethodReferenceExample {
+    public static void printMessage(String message) {
+        System.out.println(message);
+    }
+
+    public static void main(String[] args) {
+        List<String> messages = Arrays.asList("Hello", "World");
+        messages.forEach(MethodReferenceExample::printMessage);
+    }
+}
+```
+
+# Stream API
+
+## Definition
+The Stream API is used to process collections of objects in a functional style. It allows operations like filtering, mapping, and reducing.
+
+## Code
+```java
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+class StreamAPIExample {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+        List<String> filteredNames = names.stream()
+                                          .filter(name -> name.startsWith("A"))
+                                          .collect(Collectors.toList());
+        System.out.println(filteredNames);
+    }
+}
+```
+
+# Default Methods
+
+## Definition
+Default methods are methods in an interface that have a default implementation. They allow adding new methods to interfaces without breaking existing implementations.
+
+## Code
+```java
+interface MyInterface {
+    default void defaultMethod() {
+        System.out.println("This is a default method.");
+    }
+}
+
+class MyClass implements MyInterface {
+    // No need to override defaultMethod
+}
+
+public class DefaultMethodExample {
+    public static void main(String[] args) {
+        MyClass myClass = new MyClass();
+        myClass.defaultMethod();
+    }
+}
+```
+
+# Static Method
+
+## Definition
+Static methods in interfaces are methods that belong to the interface rather than any particular instance. They can be called without an object of the class.
+
+## Code
+```java
+interface MyInterface {
+    static void staticMethod() {
+        System.out.println("This is a static method.");
+    }
+}
+
+public class StaticMethodExample {
+    public static void main(String[] args) {
+        MyInterface.staticMethod();
+    }
+}
+```
+
+# Base64 Encode and Decode
+
+## Definition
+Base64 encoding and decoding are mechanisms to encode binary data into a textual format and decode it back.
+
+## Code
+```java
+import java.util.Base64;
+
+public class Base64Example {
+    public static void main(String[] args) {
+        String originalInput = "Hello World!";
+        String encodedString = Base64.getEncoder().encodeToString(originalInput.getBytes());
+        String decodedString = new String(Base64.getDecoder().decode(encodedString));
+
+        System.out.println("Encoded: " + encodedString);
+        System.out.println("Decoded: " + decodedString);
+    }
+}
+```
+
+# ForEach Method
+
+## Definition
+The `forEach` method is used to iterate over elements of a collection and perform an action on each element.
+
+## Code
+```java
+import java.util.Arrays;
+import java.util.List;
+
+public class ForEachExample {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+        names.forEach(name -> System.out.println(name));
+    }
+}
+```
+
+# Try-with-resources
+
+## Definition
+The try-with-resources statement ensures that each resource is closed at the end of the statement. It works with any object that implements `java.lang.AutoCloseable`.
+
+## Code
+```java
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class TryWithResourcesExample {
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new FileReader("test.txt"))) {
+            System.out.println(br.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+# Type Annotations
+
+## Definition
+Type annotations are annotations that can be applied to any use of a type. They are used to provide additional information about the type.
+
+## Code
+```java
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
+@Target(ElementType.TYPE_USE)
+@interface NonNull {}
+
+public class TypeAnnotationsExample {
+    public static void main(String[] args) {
+        @NonNull String str = "Hello";
+        System.out.println(str);
+    }
+}
+```
+
+# Repeating Annotations
+
+## Definition
+Repeating annotations allow the same annotation to be applied multiple times to the same declaration or type use.
+
+## Code
+```java
+import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+@Repeatable(Schedules.class)
+@interface Schedule {
+    String day();
+}
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+@interface Schedules {
+    Schedule[] value();
+}
+
+@Schedule(day = "Monday")
+@Schedule(day = "Wednesday")
+class RepeatingAnnotationsExample {
+    public static void main(String[] args) {
+        Schedule[] schedules = RepeatingAnnotationsExample.class.getAnnotationsByType(Schedule.class);
+        for (Schedule schedule : schedules) {
+            System.out.println("Day: " + schedule.day());
+        }
+    }
+}
+```
+
+# Java Module System
+
+## Definition
+The Java Module System (introduced in Java 9) allows developers to group related packages and resources together, control the accessibility of these packages, and ensure strong encapsulation.
+
+## Code
+```java
+// module-info.java
+module com.example.myapp {
+    exports com.example.myapp;
+}
+```
+
+# Diamond Syntax with Anonymous Class
+
+## Definition
+The diamond syntax (`<>`) can be used with anonymous classes to infer type parameters.
+
+## Code
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class DiamondSyntaxExample {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>() {
+            {
+                add("Hello");
+                add("World");
+            }
+        };
+        list.forEach(System.out::println);
+    }
+}
+```
+
+# Inner Anonymous Class
+
+## Definition
+An inner anonymous class is a class without a name that is defined and instantiated all at once. It is often used to implement interfaces or extend classes in a concise way.
+
+## Code
+```java
+public class InnerAnonymousClassExample {
+    interface Greeting {
+        void sayHello();
+    }
+
+    public static void main(String[] args) {
+        Greeting greeting = new Greeting() {
+            @Override
+            public void sayHello() {
+                System.out.println("Hello, World!");
+            }
+        };
+        greeting.sayHello();
+    }
+}
+```
+
+# Local Variable Type Inference
+
+## Definition
+Local Variable Type Inference allows the `var` keyword to be used to infer the type of local variables based on their initializer.
+
+## Code
+```java
+public class LocalVariableTypeInferenceExample {
+    public static void main(String[] args) {
+        var message = "Hello, World!";
+        System.out.println(message);
+    }
+}
+```
+
+# Switch Expressions
+
+## Definition
+Switch expressions (introduced in Java 12) allow the use of switch as an expression rather than a statement, simplifying many switch-case scenarios.
+
+## Code
+```java
+public class SwitchExpressionExample {
+    public static void main(String[] args) {
+        var day = "TUESDAY";
+        var result = switch (day) {
+            case "MONDAY", "FRIDAY", "SUNDAY" -> "1st, 5th or 7th day";
+            case "TUESDAY" -> "2nd day";
+            case "THURSDAY", "SATURDAY" -> "4th or 6th day";
+            case "WEDNESDAY" -> "3rd day";
+            default -> "Invalid day";
+        };
+        System.out.println(result);
+    }
+}
+```
+
+# Yield Keyword
+
+## Definition
+The `yield` keyword is used in switch expressions to return a value from a case block.
+
+## Code
+```java
+public class YieldKeywordExample {
+    public static void main(String[] args) {
+        var day = "WEDNESDAY";
+        var result = switch (day) {
+            case "MONDAY" -> "Start of the work week";
+            case "WEDNESDAY" -> {
+                yield "Midweek";
+            }
+            case "FRIDAY" -> "End of the work week";
+            default -> "Other day";
+        };
+        System.out.println(result);
+    }
+}
+```
+
+# Text Blocks
+
+## Definition
+Text blocks (introduced in Java 13) are multi-line string literals that help improve the readability and maintainability of strings that span multiple lines.
+
+## Code
+```java
+public class TextBlocksExample {
+    public static void main(String[] args) {
+        var textBlock = """
+                This is a text block.
+                It spans multiple lines.
+                """;
+        System.out.println(textBlock);
+    }
+}
+```
+
+# Records
+
+## Definition
+Records (introduced in Java 14) are a special kind of class in Java that is designed to hold immutable data. They automatically generate boilerplate code like constructors, getters, `equals`, `hashCode`, and `toString`.
+
+## Code
+```java
+public record Person(String
+
+ name, int age) {}
+
+public class RecordsExample {
+    public static void main(String[] args) {
+        var person = new Person("Alice", 30);
+        System.out.println(person.name());
+        System.out.println(person.age());
+    }
+}
+```
+
+# Sealed Classes
+
+## Definition
+Sealed classes (introduced in Java 15) allow a class to control which other classes or interfaces can extend or implement it. They provide a more declarative way of defining class hierarchies.
+
+## Code
+```java
+public sealed class Shape permits Circle, Rectangle {}
+
+final class Circle extends Shape {}
+final class Rectangle extends Shape {}
+
+public class SealedClassesExample {
+    public static void main(String[] args) {
+        Shape shape1 = new Circle();
+        Shape shape2 = new Rectangle();
+        System.out.println("Created shapes: " + shape1 + ", " + shape2);
+    }
+}
+```

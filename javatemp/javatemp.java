@@ -5,7 +5,7 @@ import java.util.Arrays;
 class javatemp{
     public static void main(String[] args) {
         String str = "Hello";
-        System.out.println(swap(str));
+        System.out.println(str);
         
     } 
     static String swap(String str){
