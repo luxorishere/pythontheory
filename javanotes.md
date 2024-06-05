@@ -638,7 +638,7 @@ interface MyFunctionalInterface {
 # Lambda Expression
 
 ## Definition
-e57uh67Lambda expressions are a way to provide concise implementations of functional interfaces. They are essentially anonymous functions that can be used to replace instances of functional interfaces.
+Lambda expressions are a way to provide concise implementations of functional interfaces. They are essentially anonymous functions that can be used to replace instances of functional interfaces.
 
 ## Code
 ```java
