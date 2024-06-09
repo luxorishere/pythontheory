@@ -15,4 +15,10 @@
 11. Melay to Moore not done
 12. Moore to Melay not done
 
+## Unit 2
+
+1. Determine FA by regular expression and mention the accepted language
+2. Find the regular expression of given FA using Arden's theorem / or without it
+3. State recursive definition of regular expression and construct expression corresponding to the state transition
+
 
