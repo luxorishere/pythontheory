@@ -583,37 +583,37 @@ import static java.lang.Math.*;
 ## Unit 3
 ### Syllabus in one shot
 
-- Functional Interfaces: Interfaces with a single abstract method, enabling lambda expressions.
+- *Functional Interfaces*: Interfaces with a single abstract method, enabling lambda expressions.
 
-- Lambda Expressions: Concise syntax for defining anonymous functions, enhancing code readability, and enabling functional programming paradigms.
+- *Lambda Expressions*: Concise syntax for defining anonymous functions, enhancing code readability, and enabling functional programming paradigms.
 
-- Method References: Simplified syntax for referencing methods without invoking them directly.
+- *Method References*: Simplified syntax for referencing methods without invoking them directly.
 
 - Stream API: Enables functional-style operations on sequences of elements, promoting efficient and concise code.
 
 - Default Methods: Methods within interfaces with default implementations, facilitating interface evolution without breaking existing implementations.
 
-- Static Method: Methods that can be called directly on a class without needing an instance.
+- *Static Method*: Methods that can be called directly on a class without needing an instance.
 
-- Base64 Encode and Decode: Functions for encoding and decoding data in Base64 format.
+- *Base64 Encode and Decode*: Functions for encoding and decoding data in Base64 format.
 
 - Each Method: Simplified iteration over collections using lambda expressions.
 
-- Try-with-resources: Automatic resource management by ensuring resources are closed after being used.
+- *Try-with-resources*: Automatic resource management by ensuring resources are closed after being used.
 
-- Type Annotations: Annotations that can be applied to types to provide additional type information.
+- *Type Annotations*: Annotations that can be applied to types to provide additional type information.
 
 - Repeating Annotations: Annotations that can be applied multiple times to a declaration.
 
-- Java Module System: Enables modular programming by encapsulating code into modules with explicit dependencies.
+- *Java Module System*: Enables modular programming by encapsulating code into modules with explicit dependencies.
 
 - Diamond Syntax with Anonymous Class: Simplified syntax for creating instances of anonymous classes using the diamond operator.
 
 - Inner Anonymous Class: Anonymous class defined within another class without a name.
 
-- Local Variable Type Inference: Allows the compiler to infer the type of local variables, reducing verbosity in code.
+- *Local Variable Type Inference*: Allows the compiler to infer the type of local variables, reducing verbosity in code.
 
-- Switch Expressions: Enhanced switch statement that can return a value, improving code expressiveness.
+- *Switch Expressions*: Enhanced switch statement that can return a value, improving code expressiveness.
 
 - Yield Keyword: Used in switch expressions to return a value and terminate the switch block.
 
@@ -1033,28 +1033,28 @@ public class SealedClassesExample {
 # Unit 4: Java Collections Framework
 ## Unit 4: Java Collections Framework - Overview
 
-- **Collection**: A container for a group of objects.
+- ***Collection***: A container for a group of objects.
 - **Collection Framework**: A set of classes and interfaces for reusable collection data structures.
-- **Hierarchy of Collection Framework**: A family tree showing relationships between collection interfaces and classes.
-- **Iterator Interface**: Provides methods to traverse a collection.
-- **Collection Interface**: The root interface of the collection hierarchy.
-- **List Interface**: An ordered collection (like a shopping list).
-- **ArrayList**: A resizable array (dynamic array).
-- **LinkedList**: A list where each element points to the next (a chain).
-- **Vector**: A synchronized, resizable array.
-- **Stack**: A LIFO (Last In, First Out) collection.
-- **Queue Interface**: A FIFO (First In, First Out) collection.
+- ***Hierarchy of Collection Framework***: A family tree showing relationships between collection interfaces and classes.
+- ***Iterator Interface***: Provides methods to traverse a collection.
+- ***Collection Interface***: The root interface of the collection hierarchy.
+- ***List Interface***: An ordered collection (like a shopping list).
+- ***ArrayList***: A resizable array (dynamic array).
+- ***LinkedList***: A list where each element points to the next (a chain).
+- ***Vector***: A synchronized, resizable array.
+- ***Stack***: A LIFO (Last In, First Out) collection.
+- ***Queue Interface***: A FIFO (First In, First Out) collection.
 - **Set Interface**: A collection that cannot contain duplicate elements.
-- **HashSet**: A Set backed by a hash table (unique guest list).
+- ***HashSet***: A Set backed by a hash table (unique guest list).
 - **LinkedHashSet**: A HashSet with insertion order.
 - **SortedSet Interface**: A Set that maintains ascending order.
-- **TreeSet**: A NavigableSet implementation based on a TreeMap (sorted guest list).
-- **Map Interface**: A collection of key-value pairs (dictionary).
-- **HashMap Class**: A Map based on a hash table.
+- ***TreeSet***: A NavigableSet implementation based on a TreeMap (sorted guest list).
+- ***Map Interface***: A collection of key-value pairs (dictionary).
+- ***HashMap Class***: A Map based on a hash table.
 - **LinkedHashMap Class**: A HashMap with insertion order.
 - **TreeMap Class**: A Red-Black tree-based Map (sorted dictionary).
 - **Hashtable Class**: A synchronized Map that doesn't allow null keys/values.
-- **Sorting**: Arranging elements in a particular order.
+- ***Sorting***: Arranging elements in a particular order.
 - **Comparable Interface**: Imposes natural ordering on objects.
 - **Comparator Interface**: Provides alternative comparison criteria.
 - **Properties Class in Java**: Represents a persistent set of properties (configuration settings).
