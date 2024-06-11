@@ -1029,3 +1029,196 @@ public class SealedClassesExample {
     }
 }
 ```
+
+# Unit 4: Java Collections Framework
+
+## Collection in Java
+A **Collection** is like a container that holds a group of objects, often referred to as elements. It's similar to a basket where you can store and organize items.
+
+## Collection Framework in Java
+The **Collection Framework** is a set of classes and interfaces that implement commonly reusable collection data structures. Think of it as a toolbox with different types of storage containers.
+
+## Hierarchy of Collection Framework
+The hierarchy of the Collection Framework can be visualized like a family tree, showing the relationships between interfaces and classes.
+
+## Iterator Interface
+The **Iterator** interface provides methods to traverse a collection. It's like having a remote control to navigate through channels (elements).
+
+```java
+Iterator<String> iterator = collection.iterator();
+while (iterator.hasNext()) {
+    System.out.println(iterator.next());
+}
+```
+
+## Collection Interface
+The **Collection** interface is the root of the collection hierarchy. It's like the base template for all types of collections.
+
+```java
+Collection<String> collection = new ArrayList<>();
+```
+
+## List Interface
+The **List** interface represents an ordered collection, like a shopping list where order matters.
+
+```java
+List<String> list = new ArrayList<>();
+```
+
+## ArrayList
+An **ArrayList** is a resizable array. It's like a dynamic array that can grow as needed.
+
+```java
+ArrayList<String> arrayList = new ArrayList<>();
+arrayList.add("Apple");
+```
+
+## LinkedList
+A **LinkedList** is a list where each element points to the next. It's like a chain where each link knows the next link.
+
+```java
+LinkedList<String> linkedList = new LinkedList<>();
+linkedList.add("Banana");
+```
+
+## Vector
+A **Vector** is similar to an ArrayList but synchronized. It's like an ArrayList with a security guard ensuring thread safety.
+
+```java
+Vector<String> vector = new Vector<>();
+vector.add("Cherry");
+```
+
+## Stack
+A **Stack** follows LIFO (Last In, First Out). It's like a stack of plates where you can only take the top one.
+
+```java
+Stack<String> stack = new Stack<>();
+stack.push("Plate1");
+String top = stack.pop();
+```
+
+## Queue Interface
+A **Queue** follows FIFO (First In, First Out). It's like a line at the ticket counter where the first person in line is served first.
+
+```java
+Queue<String> queue = new LinkedList<>();
+queue.add("Person1");
+String next = queue.poll();
+```
+
+## Set Interface
+A **Set** is a collection that cannot contain duplicate elements. It's like a guest list where each name must be unique.
+
+```java
+Set<String> set = new HashSet<>();
+set.add("John");
+```
+
+## HashSet
+A **HashSet** is a Set backed by a hash table. It's like a guest list where names are stored in a hash table for quick lookup.
+
+```java
+HashSet<String> hashSet = new HashSet<>();
+hashSet.add("Jane");
+```
+
+## LinkedHashSet
+A **LinkedHashSet** maintains insertion order. It's like a guest list that remembers the order in which guests were added.
+
+```java
+LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>();
+linkedHashSet.add("Doe");
+```
+
+## SortedSet Interface
+A **SortedSet** is a Set that maintains its elements in ascending order. It's like a sorted guest list.
+
+```java
+SortedSet<String> sortedSet = new TreeSet<>();
+sortedSet.add("Alice");
+```
+
+## TreeSet
+A **TreeSet** is a NavigableSet implementation based on a TreeMap. It's like a sorted guest list backed by a tree structure.
+
+```java
+TreeSet<String> treeSet = new TreeSet<>();
+treeSet.add("Bob");
+```
+
+## Map Interface
+A **Map** is a collection of key-value pairs. It's like a dictionary where you look up values using keys.
+
+```java
+Map<String, String> map = new HashMap<>();
+map.put("Key1", "Value1");
+```
+
+## HashMap Class
+A **HashMap** is a Map based on a hash table. It's like a dictionary implemented using a hash table for fast access.
+
+```java
+HashMap<String, String> hashMap = new HashMap<>();
+hashMap.put("Apple", "Fruit");
+```
+
+## LinkedHashMap Class
+A **LinkedHashMap** maintains insertion order. It's like a hash map that remembers the order entries were added.
+
+```java
+LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap<>();
+linkedHashMap.put("Banana", "Fruit");
+```
+
+## TreeMap Class
+A **TreeMap** is a Red-Black tree-based implementation of the Map interface. It's like a sorted dictionary.
+
+```java
+TreeMap<String, String> treeMap = new TreeMap<>();
+treeMap.put("Cherry", "Fruit");
+```
+
+## Hashtable Class
+A **Hashtable** is synchronized and does not allow null keys or values. It's like a thread-safe dictionary.
+
+```java
+Hashtable<String, String> hashtable = new Hashtable<>();
+hashtable.put("Date", "Fruit");
+```
+
+## Sorting
+**Sorting** is arranging elements in a particular order. It's like organizing books on a shelf alphabetically.
+
+## Comparable Interface
+The **Comparable** interface imposes a natural ordering on objects. It's like specifying how to compare two books.
+
+```java
+class Book implements Comparable<Book> {
+    String title;
+
+    public int compareTo(Book b) {
+        return this.title.compareTo(b.title);
+    }
+}
+```
+
+## Comparator Interface
+The **Comparator** interface provides an alternative comparison. It's like having different criteria to sort books.
+
+```java
+class BookComparator implements Comparator<Book> {
+    public int compare(Book b1, Book b2) {
+        return b1.title.compareTo(b2.title);
+    }
+}
+```
+
+## Properties Class in Java
+The **Properties** class represents a persistent set of properties. It's like a file where you store configuration settings.
+
+```java
+Properties properties = new Properties();
+properties.setProperty("username", "admin");
+```
+
