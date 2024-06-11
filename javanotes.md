@@ -1031,6 +1031,34 @@ public class SealedClassesExample {
 ```
 
 # Unit 4: Java Collections Framework
+## Unit 4: Java Collections Framework - Overview
+
+- **Collection**: A container for a group of objects.
+- **Collection Framework**: A set of classes and interfaces for reusable collection data structures.
+- **Hierarchy of Collection Framework**: A family tree showing relationships between collection interfaces and classes.
+- **Iterator Interface**: Provides methods to traverse a collection.
+- **Collection Interface**: The root interface of the collection hierarchy.
+- **List Interface**: An ordered collection (like a shopping list).
+- **ArrayList**: A resizable array (dynamic array).
+- **LinkedList**: A list where each element points to the next (a chain).
+- **Vector**: A synchronized, resizable array.
+- **Stack**: A LIFO (Last In, First Out) collection.
+- **Queue Interface**: A FIFO (First In, First Out) collection.
+- **Set Interface**: A collection that cannot contain duplicate elements.
+- **HashSet**: A Set backed by a hash table (unique guest list).
+- **LinkedHashSet**: A HashSet with insertion order.
+- **SortedSet Interface**: A Set that maintains ascending order.
+- **TreeSet**: A NavigableSet implementation based on a TreeMap (sorted guest list).
+- **Map Interface**: A collection of key-value pairs (dictionary).
+- **HashMap Class**: A Map based on a hash table.
+- **LinkedHashMap Class**: A HashMap with insertion order.
+- **TreeMap Class**: A Red-Black tree-based Map (sorted dictionary).
+- **Hashtable Class**: A synchronized Map that doesn't allow null keys/values.
+- **Sorting**: Arranging elements in a particular order.
+- **Comparable Interface**: Imposes natural ordering on objects.
+- **Comparator Interface**: Provides alternative comparison criteria.
+- **Properties Class in Java**: Represents a persistent set of properties (configuration settings).
+
 
 ## Collection in Java
 A **Collection** is like a container that holds a group of objects, often referred to as elements. It's similar to a basket where you can store and organize items.
