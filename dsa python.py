@@ -1,7 +1,19 @@
-a = [] # the empty list
-a = ['dog', 'cat', 'bird'] # simple list
-a = [[1, 2], ['a', 'b']] # nested lists
-a = [1, 2, 3] + [4, 5, 6] # concatenation
-a = [1, 2, 3] * 456 # replication
+# max time number comes
 
-print(a)
+def max_time_number_comes(arr):
+    i = 1
+    count = 1
+    first = arr[i]
+    while (i < len(arr)):
+        if count == 0:
+            first = arr[i]
+            count = 1
+        elif arr[i] == first:
+            count += 1
+        else:
+            count -= 1
+        i += 1
+    return first
+
+arr = [2,2,2,3,2,3,2,3]
+print(max_time_number_comes(arr))

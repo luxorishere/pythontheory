@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>I Love You Chutki</title>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: appear 3s ease-in-out 3s forwards;
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.5) rotate(45deg);
+            }
+        }
+
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            text-align: center;
+            animation: slideIn 1s ease-in-out;
+            color: #fff;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translate(-50%, -100%);
+            }
+            100% {
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #ff0077;">
+    <div class="heart">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+    </div>
+    <div class="message">
+        I Love You Chutki
+    </div>
+    <script>
+        const message = document.querySelector('.message');
+        message.innerHTML = '';
+
+        const letters = 'I Love You Chutki'.split('');
+        letters.forEach((letter, index) => {
+            const span = document.createElement('span');
+            span.innerHTML = letter;
+            span.style.animationDelay = `${index * 0.5}s`;
+            message.appendChild(span);
+        });
+    </script>
+</body>
+</html>
+

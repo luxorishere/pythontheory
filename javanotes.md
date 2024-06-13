@@ -1031,6 +1031,34 @@ public class SealedClassesExample {
 ```
 
 # Unit 4: Java Collections Framework
+## Unit 4: Java Collections Framework - Overview
+
+- **Collection**: A container for a group of objects.
+- **Collection Framework**: A set of classes and interfaces for reusable collection data structures.
+- **Hierarchy of Collection Framework**: A family tree showing relationships between collection interfaces and classes.
+- **Iterator Interface**: Provides methods to traverse a collection.
+- **Collection Interface**: The root interface of the collection hierarchy.
+- **List Interface**: An ordered collection (like a shopping list).
+- **ArrayList**: A resizable array (dynamic array).
+- **LinkedList**: A list where each element points to the next (a chain).
+- **Vector**: A synchronized, resizable array.
+- **Stack**: A LIFO (Last In, First Out) collection.
+- **Queue Interface**: A FIFO (First In, First Out) collection.
+- **Set Interface**: A collection that cannot contain duplicate elements.
+- **HashSet**: A Set backed by a hash table (unique guest list).
+- **LinkedHashSet**: A HashSet with insertion order.
+- **SortedSet Interface**: A Set that maintains ascending order.
+- **TreeSet**: A NavigableSet implementation based on a TreeMap (sorted guest list).
+- **Map Interface**: A collection of key-value pairs (dictionary).
+- **HashMap Class**: A Map based on a hash table.
+- **LinkedHashMap Class**: A HashMap with insertion order.
+- **TreeMap Class**: A Red-Black tree-based Map (sorted dictionary).
+- **Hashtable Class**: A synchronized Map that doesn't allow null keys/values.
+- **Sorting**: Arranging elements in a particular order.
+- **Comparable Interface**: Imposes natural ordering on objects.
+- **Comparator Interface**: Provides alternative comparison criteria.
+- **Properties Class in Java**: Represents a persistent set of properties (configuration settings).
+
 
 ## Collection in Java
 A **Collection** is like a container that holds a group of objects, often referred to as elements. It's similar to a basket where you can store and organize items.
@@ -1221,4 +1249,215 @@ The **Properties** class represents a persistent set of properties. It's like a 
 Properties properties = new Properties();
 properties.setProperty("username", "admin");
 ```
+
+Sure, I'll provide brief explanations for each topic according to the marks allocated, ensuring the language is simple and focused on Java OOP.
+
+### Memory Hierarchy (5 marks)
+Memory hierarchy refers to the different levels of storage used by a computer system to manage data efficiently. These levels include:
+
+1. **Registers**: Small, fast storage locations within the CPU used for temporary data storage during processing.
+2. **Cache**: Faster than main memory (RAM), used to store frequently accessed data to speed up processing.
+3. **Main Memory (RAM)**: Primary storage used to hold data and programs currently in use.
+4. **Secondary Storage**: Includes hard drives and SSDs, used for long-term data storage, slower but larger capacity than RAM.
+5. **Tertiary Storage**: External storage like tapes and optical discs, used for backup and archival purposes, slower but very high capacity.
+
+### Base Encoder (10 marks)
+In Java, a Base Encoder typically refers to encoding data into Base64 format. Base64 is a way to encode binary data into text using 64 different ASCII characters. It is often used to encode data for transmission over text-based protocols like HTTP.
+
+- **Encoding**:
+  ```java
+  import java.util.Base64;
+  
+  public class Base64Encoder {
+      public static void main(String[] args) {
+          String originalInput = "Hello, World!";
+          String encodedString = Base64.getEncoder().encodeToString(originalInput.getBytes());
+          System.out.println(encodedString); // Outputs encoded string
+      }
+  }
+  ```
+
+- **Decoding**:
+  ```java
+  import java.util.Base64;
+  
+  public class Base64Decoder {
+      public static void main(String[] args) {
+          String encodedString = "SGVsbG8sIFdvcmxkIQ==";
+          byte[] decodedBytes = Base64.getDecoder().decode(encodedString);
+          String decodedString = new String(decodedBytes);
+          System.out.println(decodedString); // Outputs: Hello, World!
+      }
+  }
+  ```
+
+### Priority Queue (10 marks)
+A Priority Queue in Java is a data structure that stores elements in a way that allows for efficient retrieval of the highest (or lowest) priority element.
+
+- **Using PriorityQueue**:
+  ```java
+  import java.util.PriorityQueue;
+
+  public class PriorityQueueExample {
+      public static void main(String[] args) {
+          PriorityQueue<Integer> pq = new PriorityQueue<>();
+          pq.add(5);
+          pq.add(1);
+          pq.add(3);
+
+          while (!pq.isEmpty()) {
+              System.out.println(pq.poll()); // Outputs elements in ascending order: 1, 3, 5
+          }
+      }
+  }
+  ```
+
+### Try with Resources (5 marks)
+The try-with-resources statement in Java ensures that resources (like files, database connections) are automatically closed after use.
+
+- **Example**:
+  ```java
+  import java.io.BufferedReader;
+  import java.io.FileReader;
+  import java.io.IOException;
+
+  public class TryWithResourcesExample {
+      public static void main(String[] args) {
+          try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
+              String line;
+              while ((line = br.readLine()) != null) {
+                  System.out.println(line);
+              }
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
+      }
+  }
+  ```
+
+### Functional Interface with Lambda Expressions (5 marks)
+A functional interface in Java is an interface with a single abstract method. Lambda expressions provide a clear and concise way to implement these interfaces.
+
+- **Example**:
+  ```java
+  @FunctionalInterface
+  interface Greeting {
+      void sayHello(String name);
+  }
+
+  public class LambdaExample {
+      public static void main(String[] args) {
+          Greeting greet = (name) -> System.out.println("Hello, " + name);
+          greet.sayHello("World"); // Outputs: Hello, World
+      }
+  }
+  ```
+
+### Annotations (2 marks)
+Annotations in Java provide metadata about the code. They can be used for various purposes like documentation, code analysis, and even at runtime.
+
+- **Example**:
+  ```java
+  @Override
+  public String toString() {
+      return "Example";
+  }
+  ```
+
+### Iterator Interface (2 marks)
+The Iterator interface provides a way to traverse a collection of objects.
+
+- **Example**:
+  ```java
+  import java.util.ArrayList;
+  import java.util.Iterator;
+  import java.util.List;
+
+  public class IteratorExample {
+      public static void main(String[] args) {
+          List<String> list = new ArrayList<>();
+          list.add("A");
+          list.add("B");
+          list.add("C");
+
+          Iterator<String> iterator = list.iterator();
+          while (iterator.hasNext()) {
+              System.out.println(iterator.next()); // Outputs: A, B, C
+          }
+      }
+  }
+  ```
+
+### Switch Statements and Expressions (2 marks)
+Switch statements in Java allow a variable to be tested against multiple values. As of Java 12, switch expressions provide a more concise syntax.
+
+- **Example**:
+  ```java
+  int day = 2;
+  switch (day) {
+      case 1 -> System.out.println("Monday");
+      case 2 -> System.out.println("Tuesday"); // Outputs: Tuesday
+      default -> System.out.println("Other day");
+  }
+  ```
+
+### Yield Keyword (2 marks)
+The `yield` keyword in Java is used in switch expressions to return a value.
+
+- **Example**:
+  ```java
+  int day = 2;
+  String dayName = switch (day) {
+      case 1 -> "Monday";
+      case 2 -> {
+          yield "Tuesday"; // Returns: Tuesday
+      }
+      default -> "Other day";
+  };
+  System.out.println(dayName);
+  ```
+
+### Object-Oriented and Procedural Programming (5 marks)
+- **Object-Oriented Programming (OOP)**:
+  - **Focus**: Objects and classes.
+  - **Key Concepts**: Encapsulation, inheritance, polymorphism, abstraction.
+  - **Example**:
+    ```java
+    class Animal {
+        void sound() {
+            System.out.println("Animal makes a sound");
+        }
+    }
+
+    class Dog extends Animal {
+        void sound() {
+            System.out.println("Dog barks");
+        }
+    }
+
+    public class OOPExample {
+        public static void main(String[] args) {
+            Animal myDog = new Dog();
+            myDog.sound(); // Outputs: Dog barks
+        }
+    }
+    ```
+
+- **Procedural Programming**:
+  - **Focus**: Functions and procedures.
+  - **Key Concepts**: Sequence of steps or instructions.
+  - **Example**:
+    ```java
+    public class ProceduralExample {
+        public static void main(String[] args) {
+            printGreeting("World");
+        }
+
+        static void printGreeting(String name) {
+            System.out.println("Hello, " + name); // Outputs: Hello, World
+        }
+    }
+    ```
+
+Each explanation is concise, focused on the marks allocated, and tailored to fit within the context of Java OOP.
 
