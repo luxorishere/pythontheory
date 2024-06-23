@@ -1431,7 +1431,305 @@ The `yield` keyword in Java is used in switch expressions to return a value.
     }
     ```
 
-Each explanation is concise, focused on the marks allocated, and tailored to fit within the context of Java OOP.
 
 # Unit 5
+
+
+### Spring Framework:
+
+#### Spring Core Basics:
+Spring Core is the heart of the Spring Framework. It provides the foundation for dependency injection and the IoC (Inversion of Control) container. It allows developers to manage the dependencies between objects through configuration files or annotations, promoting loose coupling and easier testability. The core module is essential for building any Spring application. 
+
+**Example:**
+```java
+@Configuration
+public class AppConfig {
+    @Bean
+    public MyService myService() {
+        return new MyServiceImpl();
+    }
+}
+```
+
+#### Spring Dependency Injection concepts:
+Dependency Injection (DI) is a design pattern that allows the Spring container to automatically inject dependencies into an object at runtime. It simplifies object creation and management, leading to more modular and testable code. DI can be achieved through constructor injection, setter injection, or field injection. Spring uses DI to manage components and their lifecycles.
+
+**Example:**
+```java
+@Service
+public class MyService {
+    private final MyRepository myRepository;
+
+    @Autowired
+    public MyService(MyRepository myRepository) {
+        this.myRepository = myRepository;
+    }
+}
+```
+
+#### Spring Inversion of Control (IoC):
+Inversion of Control (IoC) is a principle where the control of object creation and management is transferred from the application code to the Spring container. This allows for better separation of concerns and easier management of dependencies. IoC is implemented through dependency injection, where the container injects the required dependencies into the objects.
+
+**Example:**
+```java
+public class Main {
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        MyService myService = context.getBean(MyService.class);
+        myService.performTask();
+    }
+}
+```
+
+#### AOP (Aspect-Oriented Programming):
+Aspect-Oriented Programming (AOP) is a programming paradigm that aims to increase modularity by allowing the separation of cross-cutting concerns. Spring AOP enables defining aspects, advice, pointcuts, and join points to separate business logic from system services like logging, transaction management, or security. This helps in maintaining cleaner code and improving reusability.
+
+**Example:**
+```java
+@Aspect
+@Component
+public class LoggingAspect {
+    @Before("execution(* com.example.service.*.*(..))")
+    public void logBefore(JoinPoint joinPoint) {
+        System.out.println("Executing: " + joinPoint.getSignature().getName());
+    }
+}
+```
+
+#### Bean Scopes:
+Bean scopes define the lifecycle and visibility of beans within the Spring container. Common scopes include singleton (one instance per container), prototype (new instance every time), request (one instance per HTTP request), session (one instance per HTTP session), and application (one instance per ServletContext). Proper scope management ensures efficient resource utilization and application performance.
+
+**Example:**
+```java
+@Configuration
+public class AppConfig {
+    @Bean
+    @Scope("prototype")
+    public MyPrototypeBean myPrototypeBean() {
+        return new MyPrototypeBean();
+    }
+}
+```
+
+#### Annotations:
+Spring annotations simplify the configuration and wiring of beans. Common annotations include @Component, @Service, @Repository, and @Controller, which are used to mark classes as Spring-managed components. Other annotations like @Autowired, @Qualifier, and @Value help with dependency injection and configuration properties. Annotations reduce the need for XML configuration, making the code more readable and maintainable.
+
+**Example:**
+```java
+@Component
+public class MyComponent {
+    @Autowired
+    private MyService myService;
+}
+```
+
+#### Life Cycle Callbacks:
+Spring beans can have custom initialization and destruction logic using lifecycle callbacks. The @PostConstruct and @PreDestroy annotations allow defining methods that should run after bean creation and before bean destruction. Alternatively, implementing InitializingBean and DisposableBean interfaces or specifying init-method and destroy-method in XML configuration can achieve similar results.
+
+**Example:**
+```java
+@Component
+public class MyBean {
+    @PostConstruct
+    public void init() {
+        System.out.println("Bean is initialized");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("Bean is destroyed");
+    }
+}
+```
+
+### Spring Boot:
+
+#### Spring Boot Build Systems:
+Spring Boot supports various build systems like Maven and Gradle, which manage project dependencies and build processes. Maven uses a `pom.xml` file, while Gradle uses a `build.gradle` file. These build tools simplify dependency management, project configuration, and packaging, making it easier to build and deploy Spring Boot applications.
+
+**Example (Maven):**
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter</artifactId>
+</dependency>
+```
+
+#### Spring Boot Code Structure:
+Spring Boot applications follow a specific structure with packages like `com.example.demo` for main classes and `com.example.demo.controller`, `com.example.demo.service`, and `com.example.demo.repository` for controllers, services, and repositories respectively. This structure promotes organized and maintainable code by separating different layers of the application.
+
+**Example:**
+```
+com.example.demo
+|-- DemoApplication.java
+|-- controller
+|   |-- MyController.java
+|-- service
+|   |-- MyService.java
+|-- repository
+|   |-- MyRepository.java
+```
+
+#### Spring Boot Runners:
+Spring Boot runners, like CommandLineRunner and ApplicationRunner, are interfaces used to execute code after the Spring Boot application has started. Implementing these interfaces allows running custom startup logic, such as initializing data or executing background tasks. They provide a convenient way to execute code at application startup.
+
+**Example:**
+```java
+@Component
+public class MyRunner implements CommandLineRunner {
+    @Override
+    public void run(String... args) throws Exception {
+        System.out.println("Application has started!");
+    }
+}
+```
+
+#### Logger:
+Spring Boot includes logging capabilities using frameworks like Logback, Log4j2, and SLF4J. By default, it uses Logback for logging. Loggers can be configured through `application.properties` or `logback.xml` to control log levels, formats, and appenders. Proper logging helps in monitoring and debugging applications.
+
+**Example:**
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+@Service
+public class MyService {
+    private static final Logger logger = LoggerFactory.getLogger(MyService.class);
+
+    public void performTask() {
+        logger.info("Task performed");
+    }
+}
+```
+
+#### BUILDING RESTFUL WEB SERVICES:
+Spring Boot simplifies building RESTful web services using annotations like @RestController, @RequestMapping, @GetMapping, @PostMapping, @PutMapping, and @DeleteMapping. These annotations map HTTP requests to handler methods in controllers, enabling CRUD operations. Spring Boot's embedded server makes it easy to deploy and run web services.
+
+**Example:**
+```java
+@RestController
+@RequestMapping("/api")
+public class MyController {
+    @GetMapping("/items")
+    public List<Item> getAllItems() {
+        return itemService.getAllItems();
+    }
+}
+```
+
+#### Rest Controller:
+@RestController is a Spring annotation used to create RESTful web services. It combines @Controller and @ResponseBody, meaning the methods in the class return data directly instead of views. It simplifies the creation of RESTful APIs by eliminating the need to annotate each method with @ResponseBody.
+
+**Example:**
+```java
+@RestController
+public class MyRestController {
+    @GetMapping("/greet")
+    public String greet() {
+        return "Hello, World!";
+    }
+}
+```
+
+#### Request Mapping:
+@RequestMapping is used to map HTTP requests to handler methods in controller classes. It can map requests to specific URLs, HTTP methods, and even URL parameters. More specific annotations like @GetMapping, @PostMapping, @PutMapping, and @DeleteMapping are specialized forms of @RequestMapping for common HTTP methods.
+
+**Example:**
+```java
+@RestController
+public class MyController {
+    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
+    public String welcome() {
+        return "Welcome to Spring Boot!";
+    }
+}
+```
+
+#### Request Body:
+@RequestBody is an annotation used in Spring to bind the body of an HTTP request to a Java object. This is typically used in POST and PUT methods to pass data from the client to the server in JSON or XML format. Spring automatically converts the incoming JSON or XML payload into a Java object.
+
+**Example:**
+```java
+@RestController
+public class MyController {
+    @PostMapping("/create")
+    public ResponseEntity<String> createItem(@RequestBody Item item) {
+        itemService.save(item);
+        return ResponseEntity.ok("Item created");
+    }
+}
+```
+
+#### Path Variable:
+@PathVariable is an annotation used to extract values from the URI. It is used in Spring MVC to pass parameters to handler methods directly from the URL. This allows for more readable and RESTful URLs.
+
+**Example:**
+```java
+@RestController
+public class MyController {
+    @GetMapping("/items/{id}")
+    public Item getItemById(@PathVariable Long id) {
+        return itemService.findById(id);
+    }
+}
+```
+
+#### Request Parameter:
+@RequestParam is an annotation used to extract query parameters from the URL in Spring MVC. It binds HTTP request parameters to method parameters in controller methods. This is commonly used to handle query strings in GET requests.
+
+**Example:**
+```java
+@RestController
+public class MyController {
+    @GetMapping("/search")
+    public List<Item> searchItems(@RequestParam String keyword) {
+        return itemService.search(keyword);
+    }
+}
+```
+
+#### GET, POST, PUT, DELETE APIs:
+These HTTP methods are used to perform CRUD operations in RESTful web services. GET retrieves data, POST creates new resources, PUT
+
+ updates existing resources, and DELETE removes resources. Spring Boot simplifies the implementation of these methods through annotations like @GetMapping, @PostMapping, @PutMapping, and @DeleteMapping.
+
+**Example:**
+```java
+@RestController
+@RequestMapping("/items")
+public class ItemController {
+    @GetMapping("/{id}")
+    public Item getItem(@PathVariable Long id) {
+        return itemService.findById(id);
+    }
+
+    @PostMapping
+    public Item createItem(@RequestBody Item item) {
+        return itemService.save(item);
+    }
+
+    @PutMapping("/{id}")
+    public Item updateItem(@PathVariable Long id, @RequestBody Item item) {
+        return itemService.update(id, item);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteItem(@PathVariable Long id) {
+        itemService.delete(id);
+    }
+}
+```
+
+#### Build Web Applications:
+Spring Boot makes it easy to build web applications by providing embedded servers like Tomcat and Jetty, and by integrating seamlessly with front-end technologies. It simplifies configuration and development, allowing developers to focus on building features rather than managing infrastructure. With Spring Boot, creating scalable and robust web applications is streamlined.
+
+**Example:**
+```java
+@SpringBootApplication
+public class MyWebApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(MyWebApplication.class, args);
+    }
+}
+```
 
