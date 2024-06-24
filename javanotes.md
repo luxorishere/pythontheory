@@ -579,8 +579,314 @@ import java.util.ArrayList;
 // Static import
 import static java.lang.Math.*;
 ```
+# Unit 2
+![alt text](image-3.png)
+### Exception Handling
 
-## Unit 3
+#### The Idea behind Exception
+Exceptions are events that disrupt the normal flow of the program's instructions. They occur during runtime and signal errors or other exceptional conditions. Handling exceptions allows a program to continue execution or fail gracefully. Without proper exception handling, a program may crash or produce incorrect results. In Java, exceptions are objects that describe an exceptional condition.
+
+```java
+try {
+    int result = 10 / 0; // This will throw an ArithmeticException
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero.");
+}
+```
+
+#### Exceptions & Errors
+Exceptions are conditions that a program can reasonably handle, such as file not found or invalid input. Errors, on the other hand, are usually not recoverable and indicate serious problems, like OutOfMemoryError. Both are subclasses of Throwable, but errors are generally beyond the program's control. Handling exceptions properly can prevent crashes and unexpected behavior. Errors should be logged and monitored as they typically indicate critical issues.
+
+```java
+try {
+    int[] arr = new int[5];
+    System.out.println(arr[10]); // This will throw an ArrayIndexOutOfBoundsException
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Index out of bounds.");
+}
+```
+
+#### Types of Exception
+Exceptions in Java are broadly categorized into checked and unchecked exceptions. Checked exceptions must be either caught or declared in the method signature using throws. Unchecked exceptions, also known as runtime exceptions, do not need explicit handling. Common checked exceptions include IOException and SQLException. Unchecked exceptions include NullPointerException and ArithmeticException. Properly categorizing exceptions helps in writing robust and error-free code.
+
+```java
+try {
+    FileReader file = new FileReader("nonexistentfile.txt"); // This will throw a FileNotFoundException
+} catch (FileNotFoundException e) {
+    System.out.println("File not found.");
+}
+```
+
+#### Control Flow in Exceptions
+Control flow in exception handling involves using try, catch, finally, throw, and throws. A try block is used to wrap code that might throw an exception. Catch blocks follow to handle specific exceptions. The finally block is optional and executes whether or not an exception is thrown. The throw keyword manually throws an exception, and throws is used in method signatures to declare possible exceptions. This structured approach ensures clean and manageable error handling.
+
+```java
+try {
+    int num = Integer.parseInt("abc"); // This will throw a NumberFormatException
+} catch (NumberFormatException e) {
+    System.out.println("Invalid number format.");
+} finally {
+    System.out.println("This block always executes.");
+}
+```
+
+#### JVM Reaction to Exceptions
+When an exception occurs, the Java Virtual Machine (JVM) creates an exception object. This object contains details about the exception, including its type and state. The JVM then searches for a catch block to handle the exception. If no appropriate handler is found, the JVM terminates the program. Properly handled exceptions allow the JVM to continue execution, maintaining program stability and preventing abrupt terminations.
+
+```java
+public void method() throws IOException {
+    FileReader file = new FileReader("nonexistentfile.txt");
+}
+try {
+    method();
+} catch (IOException e) {
+    System.out.println("Caught IOException.");
+}
+```
+
+#### Use of try, catch, finally, throw, throws in Exception Handling
+The try block contains code that might throw an exception. The catch block handles the specific exception. Multiple catch blocks can handle different exceptions. The finally block executes regardless of whether an exception was thrown. The throw keyword manually throws an exception, while throws declares exceptions in a method signature. Together, these constructs provide a robust framework for handling exceptions.
+
+```java
+try {
+    throw new Exception("This is a thrown exception.");
+} catch (Exception e) {
+    System.out.println(e.getMessage());
+} finally {
+    System.out.println("This block always executes.");
+}
+```
+
+#### In-built and User Defined Exceptions
+Java provides in-built exceptions such as NullPointerException and IOException. These are part of the Java API and cover common error conditions. User-defined exceptions extend the Exception class and provide custom error handling. They are useful for application-specific errors. By creating user-defined exceptions, developers can signal and handle unique error conditions in their applications.
+
+```java
+class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}
+try {
+    throw new CustomException("Custom exception occurred.");
+} catch (CustomException e) {
+    System.out.println(e.getMessage());
+}
+```
+
+#### Checked and Un-Checked Exceptions
+Checked exceptions are checked at compile-time and must be either caught or declared using throws. Examples include IOException and SQLException. Unchecked exceptions, or runtime exceptions, are checked at runtime and include NullPointerException and ArithmeticException. They do not need explicit handling. Handling checked exceptions ensures that the code is prepared for possible error conditions, while unchecked exceptions often indicate programming errors.
+
+```java
+// Checked Exception
+try {
+    FileInputStream file = new FileInputStream("nonexistentfile.txt");
+} catch (FileNotFoundException e) {
+    System.out.println("File not found.");
+}
+
+// Unchecked Exception
+int num = 10 / 0; // This will throw an ArithmeticException
+```
+
+### Input/Output Basics
+
+#### Byte Streams and Character Streams
+Byte streams handle I/O of raw binary data. They use InputStream and OutputStream classes. Character streams handle I/O of character data, and they use Reader and Writer classes. Byte streams are useful for binary files like images, while character streams are suitable for text files. Choosing the correct stream ensures efficient and appropriate data handling.
+
+```java
+// Byte Stream Example
+try (FileInputStream in = new FileInputStream("input.txt");
+     FileOutputStream out = new FileOutputStream("output.txt")) {
+    int byteData;
+    while ((byteData = in.read()) != -1) {
+        out.write(byteData);
+    }
+}
+
+// Character Stream Example
+try (FileReader reader = new FileReader("input.txt");
+     FileWriter writer = new FileWriter("output.txt")) {
+    int charData;
+    while ((charData = reader.read()) != -1) {
+        writer.write(charData);
+    }
+}
+```
+
+#### Reading and Writing File in Java
+Reading and writing files in Java involve using classes like FileReader, FileWriter, FileInputStream, and FileOutputStream. FileReader and FileWriter are used for character data, while FileInputStream and FileOutputStream handle binary data. Properly closing the streams is crucial to avoid resource leaks. Using try-with-resources ensures that streams are closed automatically.
+
+```java
+// Reading from a file
+try (BufferedReader reader = new BufferedReader(new FileReader("input.txt"))) {
+    String line;
+    while ((line = reader.readLine()) != null) {
+        System.out.println(line);
+    }
+}
+
+// Writing to a file
+try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))) {
+    writer.write("Hello, world!");
+}
+```
+
+### Multithreading
+
+#### Thread
+A thread is the smallest unit of a process that can be scheduled for execution. It is a lightweight process with its own call stack but shares resources with other threads in the same process. Multithreading allows concurrent execution of two or more threads. Java provides the Thread class and Runnable interface to create and manage threads. Properly managing threads ensures efficient execution and resource utilization.
+
+```java
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running.");
+    }
+}
+MyThread t1 = new MyThread();
+t1.start();
+```
+
+#### Thread Life Cycle
+A thread in Java has several states: New, Runnable, Blocked, Waiting, Timed Waiting, and Terminated. The life cycle starts when a thread is created (New) and transitions to Runnable when the start() method is called. It can be Blocked or Waiting during execution, depending on synchronization or I/O operations. Finally, it reaches the Terminated state after execution completes.
+
+```java
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is in running state.");
+    }
+}
+MyThread t1 = new MyThread();
+System.out.println("Thread is in new state.");
+t1.start();
+System.out.println("Thread is in runnable state.");
+```
+
+#### Creating Threads
+Threads can be created by extending the Thread class or implementing the Runnable interface. Extending the Thread class provides more control over the thread, while implementing Runnable is more flexible and allows the class to extend other classes. Choosing the right method depends on the application's requirements and design.
+
+```java
+// Extending Thread class
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running.");
+    }
+}
+MyThread t1 = new MyThread();
+t1.start();
+
+// Implementing Runnable interface
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable is running.");
+    }
+}
+Thread t2 = new Thread(new MyRunnable());
+t2.start();
+```
+
+#### Thread Priorities
+Threads in Java have priorities that help determine the order of thread execution. The priority of a thread ranges from MIN_PRIORITY (1) to MAX_PRIORITY (10), with NORM_PRIORITY (5) as the default. Higher priority threads are more likely to be executed sooner than lower priority threads. Properly setting thread priorities can optimize the performance of a multithreaded application.
+
+```java
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running with priority: " + Thread.currentThread().getPriority());
+    }
+}
+MyThread t1 = new MyThread();
+t1.setPriority(Thread.MAX_PRIORITY);
+t1.start();
+```
+
+#### Synchronizing Threads
+Synchronization in Java is essential to avoid thread interference and ensure consistency. The synchronized keyword is used to lock an object, allowing
+
+ only one thread to access a synchronized block or method at a time. This prevents concurrent access issues but can lead to thread contention. Proper synchronization ensures thread-safe operations in multithreaded applications.
+
+```java
+class Counter {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
+}
+
+Counter counter = new Counter();
+
+Thread t1 = new Thread(() -> {
+    for (int i = 0; i < 1000; i++) {
+        counter.increment();
+    }
+});
+
+Thread t2 = new Thread(() -> {
+    for (int i = 0; i < 1000; i++) {
+        counter.increment();
+    }
+});
+
+t1.start();
+t2.start();
+t1.join();
+t2.join();
+
+System.out.println("Count: " + counter.getCount());
+```
+
+#### Inter-thread Communication
+Inter-thread communication in Java is achieved using methods like wait(), notify(), and notifyAll(). These methods allow threads to communicate about the lock status of an object. A thread that calls wait() releases the lock and waits until another thread calls notify() or notifyAll(). This mechanism is essential for coordinating the activities of multiple threads, especially in producer-consumer scenarios.
+
+```java
+class SharedResource {
+    private boolean available = false;
+
+    public synchronized void produce() throws InterruptedException {
+        while (available) {
+            wait();
+        }
+        available = true;
+        System.out.println("Produced resource");
+        notify();
+    }
+
+    public synchronized void consume() throws InterruptedException {
+        while (!available) {
+            wait();
+        }
+        available = false;
+        System.out.println("Consumed resource");
+        notify();
+    }
+}
+
+SharedResource resource = new SharedResource();
+
+Thread producer = new Thread(() -> {
+    try {
+        resource.produce();
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+});
+
+Thread consumer = new Thread(() -> {
+    try {
+        resource.consume();
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+});
+
+producer.start();
+consumer.start();
+```
+
+# Unit 3
 ### Syllabus in one shot
 
 - *Functional Interfaces*: Interfaces with a single abstract method, enabling lambda expressions.
