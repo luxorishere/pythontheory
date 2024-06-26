@@ -42,56 +42,89 @@
 9. **What is Time Sharing?**\
    Time sharing allows multiple users to share system resources simultaneously by rapidly switching the CPU among them. It provides quick response times for interactive tasks, making it appear as though each user has their own dedicated system.
 
-10. **What is a Multiprocessing System?**
+```
+ _______  _______  _______  _______  _______  _______  _______  _______
+|       ||       ||       ||       ||       ||       ||       ||       |
+|  P1   ||  P2   ||  P3   ||  P4   ||  P5   ||  P6   ||  P7   ||  P8   |
+|_______||_______||_______||_______||_______||_______||_______||_______|
+
+ _______  _______  _______  _______  _______  _______  _______  _______
+|       ||       ||       ||       ||       ||       ||       ||       |
+|_______||_______||_______||_______||_______||_______||_______||_______|
+
+ _______  _______  _______  _______  _______  _______  _______  _______
+|       ||       ||       ||       ||       ||       ||       ||       |
+|  CPU  ||  CPU  ||  CPU  ||  CPU  ||  CPU  ||  CPU  ||  CPU  ||  CPU  |
+|_______||_______||_______||_______||_______||_______||_______||_______|
+
+ _______  _______  _______  _______  _______  _______  _______  _______
+|       ||       ||       ||       ||       ||       ||       ||       |
+|_______||_______||_______||_______||_______||_______||_______||_______|
+
+ _______  _______  _______  _______  _______  _______  _______  _______
+|       ||       ||       ||       ||       ||       ||       ||       |
+| Time  || Time  || Time  || Time  || Time  || Time  || Time  || Time  |
+| Slice || Slice || Slice || Slice || Slice || Slice || Slice || Slice |
+|_______||_______||_______||_______||_______||_______||_______||_______|
+```
+
+In this representation:
+
+- Each "P" (P1, P2, P3, etc.) represents a different process.
+- The "CPU" blocks represent the CPU time allocated to each process.
+- The "Time Slice" blocks indicate the division of time allocated to each process in a time-sharing system.
+
+
+10.  **What is a Multiprocessing System?**
     - **Tightly Coupled System:** Multiple processors share a common memory and are connected by a high-speed bus, working closely together.
     - **Symmetric Processing:** All processors are equal and share the same memory and I/O devices, enhancing reliability and performance.
     - **Asymmetric Processing:** One processor controls the system and assigns tasks to other processors, simplifying system design but potentially creating bottlenecks.
 
-11. **What is a Real-Time OS?**
+2.  **What is a Real-Time OS?**
     - **Hard Real-Time OS:** Guarantees strict timing constraints for task completion, essential for critical systems like medical devices or industrial controls.
     - **Soft Real-Time OS:** Less stringent timing constraints where delays are acceptable, used in applications like multimedia systems.
 
-12. **What is a Distributed OS?**\
+3.  **What is a Distributed OS?**\
     A Distributed Operating System manages a group of distinct computers and makes them appear as a single system to users. It enables resource sharing, load balancing, and fault tolerance across multiple machines, enhancing overall system performance and reliability.
 
-13. **What is the Structure of OS?**
+4.  **What is the Structure of OS?**
     The structure of an OS typically includes:
     - **Hardware:** The physical components of the computer.
     - **Kernel:** The core part of the OS, managing hardware resources.
     - **System Calls:** Interfaces for applications to interact with the OS.
     - **Application Programs:** Software that performs specific tasks for users.
 
-14. **Define Micro Kernel?**
+5.  **Define Micro Kernel?**
     A Micro Kernel is a minimalistic kernel design that only includes essential functions like process management, memory management, and IPC (Inter-Process Communication). Other services run in user space, improving system reliability and security by isolating critical components from non-essential services.
 
-15. **User and OS Interface**
+6.  **User and OS Interface**
     - **Command Line Interface (CLI):** A text-based interface where users type commands to interact with the OS. It is powerful for advanced users but has a steep learning curve.
     - **Graphical User Interface (GUI):** A visual interface with windows, icons, and menus, making it more intuitive and user-friendly for general users.
 
-16. **What is a System Call?**\
+7.  **What is a System Call?**\
     A system call is a programmatic way for a process to request a service from the OS. It provides an interface between the user programs and the OS, allowing programs to perform tasks like reading a file, creating a process, or communicating with hardware devices.
 
-17. **What is Device Management?**\
+8.  **What is Device Management?**\
     Device management involves managing the operation and control of peripheral devices such as printers, disk drives, and network cards. The OS uses device drivers to translate OS commands into device-specific operations, ensuring smooth communication between hardware and software.
 
-18. **What is Mode?**
+9.  **What is Mode?**
     - **User Mode:** A restricted mode where applications run, preventing them from directly accessing hardware or critical OS areas.
     - **Kernel Mode:** A privileged mode where the OS operates, allowing unrestricted access to hardware and system resources.
 
-19. **What is a Process?**\
+10. **What is a Process?**\
     A process is an instance of a program in execution. It includes the program code, current activity, and associated resources such as memory and open files. The OS manages processes by allocating resources and scheduling CPU time.
 
-20. **What is a Program?**\
+11. **What is a Program?**\
     A program is a static set of instructions written in a programming language, stored on disk. It becomes a process when executed by the OS, transitioning from passive code to an active entity in the system.
 
-21. **Program vs. Process**\
+12. **Program vs. Process**\
     - **Program:** A set of instructions stored on disk; static and passive.
     - **Process:** An executing instance of a program; dynamic and active, with associated resources.
 
-22. **What is Process Control Block (PCB)?**\
+13. **What is Process Control Block (PCB)?**\
     The PCB is a data structure used by the OS to store information about a process. It includes process state, process ID, CPU registers, memory management information, and I/O status, allowing the OS to manage and control processes effectively.
 
-23. **What is Process State?**
+14. **What is Process State?**
     - **New:** The process is being created.
     - **Ready:** The process is ready to run but waiting for CPU time.
     - **Running:** The process is currently being executed by the CPU.
