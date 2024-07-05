@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Class",
+            "request": "launch",
+            "mainClass": "javap.Class",
+            "projectName": "rkgithub_b717fac8"
+        },
+        {
+            "type": "java",
+            "name": "Javadsa",
+            "request": "launch",
+            "mainClass": "Javadsa",
+            "projectName": "rkgithub_b717fac8"
+        },
+        {
+            "type": "java",
             "name": "javatemp",
             "request": "launch",
             "mainClass": "javatemp.javatemp",

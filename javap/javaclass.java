@@ -1,10 +1,32 @@
 package javap;
-public class javaclass{
+
+public class javaclass {
     public static void main(String[] args) {
-        fun(5);
+        int result = calculate(5, 3, '+');
+        System.out.println(result);
     }
-    static void fun(int n){
-        if (n == 0){
+
+    static int calculate(int num1, int num2, char operator) {
+        switch (operator) {
+            case '+':
+                return num1 + num2;
+            case '-':
+                return num1 - num2;
+            case '*':
+                return num1 * num2;
+            case '/':
+                if (num2 != 0) {
+                    return num1 / num2;
+                } else {
+                    throw new ArithmeticException("Division by zero");
+                }
+            default:
+                throw new IllegalArgumentException("Invalid operator");
+        }
+    }
+
+    static void fun(int n) {
+        if (n == 0) {
             return;
         }
         System.out.println(n);
