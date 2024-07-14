@@ -1335,407 +1335,578 @@ public class SealedClassesExample {
     }
 }
 ```
+# Unit 4
 
-# Unit 4: Java Collections Framework
+1. **Collection in Java**: This is the root interface in the Java Collections Framework. It represents a group of objects, known as elements.
 
-## Collection in Java
-A **Collection** is like a container that holds a group of objects, often referred to as elements. It's similar to a basket where you can store and organize items.
+2. **Collection Framework in Java**: A set of classes and interfaces that help store and manipulate groups of data as a single unit.
 
-## Collection Framework in Java
-The **Collection Framework** is a set of classes and interfaces that implement commonly reusable collection data structures. Think of it as a toolbox with different types of storage containers.
+3. **Hierarchy of Collection Framework**: The structure showing how different collection classes and interfaces are related to each other.
 
-## Hierarchy of Collection Framework
-The hierarchy of the Collection Framework can be visualized like a family tree, showing the relationships between interfaces and classes.
+4. **Iterator Interface**: An interface used to step through the elements of a collection one by one.
 
-## Iterator Interface
-The **Iterator** interface provides methods to traverse a collection. It's like having a remote control to navigate through channels (elements).
+5. **Collection Interface**: The root interface from which all collection interfaces (like List, Set, etc.) inherit.
 
+6. **List Interface**: An ordered collection (also known as a sequence). Allows duplicate elements.
+
+7. **ArrayList**: A resizable array implementation of the List interface.
+
+8. **LinkedList**: A List implementation using a doubly linked list. Good for adding and removing elements.
+
+9. **Vector**: A synchronized version of ArrayList. Rarely used.
+
+10. **Stack**: A subclass of Vector that implements a last-in, first-out (LIFO) stack.
+
+11. **Queue Interface**: Used to hold multiple elements prior to processing. Typically follows FIFO (first-in, first-out).
+
+12. **Set Interface**: A collection that does not allow duplicate elements.
+
+13. **HashSet**: A Set implementation that uses a hash table. Best for fast lookups and inserts.
+
+14. **LinkedHashSet**: A HashSet that maintains a doubly-linked list of its elements to preserve the insertion order.
+
+15. **SortedSet Interface**: A Set that maintains its elements in ascending order.
+
+16. **TreeSet**: A SortedSet implementation that uses a tree for storage. Guarantees that the elements are in sorted order.
+
+17. **Map Interface**: Represents a collection of key-value pairs. Each key maps to exactly one value.
+
+18. **HashMap**: A Map implementation that uses a hash table. Allows null values and null key.
+
+19. **LinkedHashMap**: A HashMap that maintains a doubly-linked list of its entries to preserve the insertion order.
+
+20. **TreeMap**: A Map that uses a tree structure to maintain its entries in ascending key order.
+
+21. **Hashtable**: Similar to HashMap but synchronized and does not allow null keys or values.
+
+22. **Sorting**: The process of arranging elements in a specific order, typically ascending or descending.
+
+23. **Comparable Interface**: Allows objects of a class to be ordered. Classes that implement this interface can be sorted using the Collections.sort() method.
+
+24. **Comparator Interface**: Provides a comparison function, which imposes a total ordering on some collection of objects. Used for custom ordering.
+
+25. **Properties Class in Java**: A subclass of Hashtable. Used to maintain lists of values in which the key is a string and the value is also a string.
+
+### 1. Collection in Java
+**Definition**: The `Collection` interface is the root interface of the Java Collections Framework. It provides common methods for working with collections of objects.
+
+**Example**:
 ```java
-Iterator<String> iterator = collection.iterator();
-while (iterator.hasNext()) {
-    System.out.println(iterator.next());
+import java.util.Collection;
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        Collection<String> collection = new ArrayList<>();
+        collection.add("Element1");
+        collection.add("Element2");
+        
+        for (String element : collection) {
+            System.out.println(element);
+        }
+    }
 }
 ```
+### 2. Collection Framework in Java
+**Definition**: The Java Collection Framework provides a set of classes and interfaces for storing and manipulating groups of data as a single unit, such as lists, sets, and maps.
 
-## Collection Interface
-The **Collection** interface is the root of the collection hierarchy. It's like the base template for all types of collections.
-
+**Example**:
 ```java
-Collection<String> collection = new ArrayList<>();
-```
+import java.util.*;
 
-## List Interface
-The **List** interface represents an ordered collection, like a shopping list where order matters.
-
-```java
-List<String> list = new ArrayList<>();
-```
-
-## ArrayList
-An **ArrayList** is a resizable array. It's like a dynamic array that can grow as needed.
-
-```java
-ArrayList<String> arrayList = new ArrayList<>();
-arrayList.add("Apple");
-```
-
-## LinkedList
-A **LinkedList** is a list where each element points to the next. It's like a chain where each link knows the next link.
-
-```java
-LinkedList<String> linkedList = new LinkedList<>();
-linkedList.add("Banana");
-```
-
-## Vector
-A **Vector** is similar to an ArrayList but synchronized. It's like an ArrayList with a security guard ensuring thread safety.
-
-```java
-Vector<String> vector = new Vector<>();
-vector.add("Cherry");
-```
-
-## Stack
-A **Stack** follows LIFO (Last In, First Out). It's like a stack of plates where you can only take the top one.
-
-```java
-Stack<String> stack = new Stack<>();
-stack.push("Plate1");
-String top = stack.pop();
-```
-
-## Queue Interface
-A **Queue** follows FIFO (First In, First Out). It's like a line at the ticket counter where the first person in line is served first.
-
-```java
-Queue<String> queue = new LinkedList<>();
-queue.add("Person1");
-String next = queue.poll();
-```
-
-## Set Interface
-A **Set** is a collection that cannot contain duplicate elements. It's like a guest list where each name must be unique.
-
-```java
-Set<String> set = new HashSet<>();
-set.add("John");
-```
-
-## HashSet
-A **HashSet** is a Set backed by a hash table. It's like a guest list where names are stored in a hash table for quick lookup.
-
-```java
-HashSet<String> hashSet = new HashSet<>();
-hashSet.add("Jane");
-```
-
-## LinkedHashSet
-A **LinkedHashSet** maintains insertion order. It's like a guest list that remembers the order in which guests were added.
-
-```java
-LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>();
-linkedHashSet.add("Doe");
-```
-
-## SortedSet Interface
-A **SortedSet** is a Set that maintains its elements in ascending order. It's like a sorted guest list.
-
-```java
-SortedSet<String> sortedSet = new TreeSet<>();
-sortedSet.add("Alice");
-```
-
-## TreeSet
-A **TreeSet** is a NavigableSet implementation based on a TreeMap. It's like a sorted guest list backed by a tree structure.
-
-```java
-TreeSet<String> treeSet = new TreeSet<>();
-treeSet.add("Bob");
-```
-
-## Map Interface
-A **Map** is a collection of key-value pairs. It's like a dictionary where you look up values using keys.
-
-```java
-Map<String, String> map = new HashMap<>();
-map.put("Key1", "Value1");
-```
-
-## HashMap Class
-A **HashMap** is a Map based on a hash table. It's like a dictionary implemented using a hash table for fast access.
-
-```java
-HashMap<String, String> hashMap = new HashMap<>();
-hashMap.put("Apple", "Fruit");
-```
-
-## LinkedHashMap Class
-A **LinkedHashMap** maintains insertion order. It's like a hash map that remembers the order entries were added.
-
-```java
-LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap<>();
-linkedHashMap.put("Banana", "Fruit");
-```
-
-## TreeMap Class
-A **TreeMap** is a Red-Black tree-based implementation of the Map interface. It's like a sorted dictionary.
-
-```java
-TreeMap<String, String> treeMap = new TreeMap<>();
-treeMap.put("Cherry", "Fruit");
-```
-
-## Hashtable Class
-A **Hashtable** is synchronized and does not allow null keys or values. It's like a thread-safe dictionary.
-
-```java
-Hashtable<String, String> hashtable = new Hashtable<>();
-hashtable.put("Date", "Fruit");
-```
-
-## Sorting
-**Sorting** is arranging elements in a particular order. It's like organizing books on a shelf alphabetically.
-
-## Comparable Interface
-The **Comparable** interface imposes a natural ordering on objects. It's like specifying how to compare two books.
-
-```java
-class Book implements Comparable<Book> {
-    String title;
-
-    public int compareTo(Book b) {
-        return this.title.compareTo(b.title);
+public class Main {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        Set<String> set = new HashSet<>();
+        Map<Integer, String> map = new HashMap<>();
+        
+        list.add("ListElement");
+        set.add("SetElement");
+        map.put(1, "MapElement");
+        
+        System.out.println(list);
+        System.out.println(set);
+        System.out.println(map);
     }
 }
 ```
 
-## Comparator Interface
-The **Comparator** interface provides an alternative comparison. It's like having different criteria to sort books.
+### 3. Hierarchy of Collection Framework
+**Definition**: The hierarchy shows how collection interfaces and classes are related. The `Collection` interface is extended by `List`, `Set`, and `Queue`. The `Map` interface is separate from `Collection` but still part of the framework.
 
+**Example**: No code example, but a conceptual diagram can be helpful.
+
+### 4. Iterator Interface
+**Definition**: The `Iterator` interface provides methods to iterate over any collection.
+
+**Example**:
 ```java
-class BookComparator implements Comparator<Book> {
-    public int compare(Book b1, Book b2) {
-        return b1.title.compareTo(b2.title);
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("Element1");
+        list.add("Element2");
+        
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 }
 ```
 
-## Properties Class in Java
-The **Properties** class represents a persistent set of properties. It's like a file where you store configuration settings.
+### 5. Collection Interface
+**Definition**: The `Collection` interface is the root interface for the framework and includes methods like `add`, `remove`, `size`, etc.
 
+**Example**:
 ```java
-Properties properties = new Properties();
-properties.setProperty("username", "admin");
+import java.util.Collection;
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        Collection<String> collection = new ArrayList<>();
+        collection.add("Element1");
+        collection.add("Element2");
+        
+        System.out.println("Size: " + collection.size());
+    }
+}
 ```
 
-Sure, I'll provide brief explanations for each topic according to the marks allocated, ensuring the language is simple and focused on Java OOP.
+### 6. List Interface
+**Definition**: The `List` interface extends `Collection` and represents an ordered collection that can contain duplicate elements.
 
-### Memory Hierarchy (5 marks)
-Memory hierarchy refers to the different levels of storage used by a computer system to manage data efficiently. These levels include:
+**Example**:
+```java
+import java.util.List;
+import java.util.ArrayList;
 
-1. **Registers**: Small, fast storage locations within the CPU used for temporary data storage during processing.
-2. **Cache**: Faster than main memory (RAM), used to store frequently accessed data to speed up processing.
-3. **Main Memory (RAM)**: Primary storage used to hold data and programs currently in use.
-4. **Secondary Storage**: Includes hard drives and SSDs, used for long-term data storage, slower but larger capacity than RAM.
-5. **Tertiary Storage**: External storage like tapes and optical discs, used for backup and archival purposes, slower but very high capacity.
+public class Main {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("Element1");
+        list.add("Element2");
+        list.add("Element1"); // Allows duplicates
+        
+        System.out.println(list);
+    }
+}
+```
 
-### Base Encoder (10 marks)
-In Java, a Base Encoder typically refers to encoding data into Base64 format. Base64 is a way to encode binary data into text using 64 different ASCII characters. It is often used to encode data for transmission over text-based protocols like HTTP.
+### 7. ArrayList
+**Definition**: `ArrayList` is a resizable array implementation of the `List` interface. It allows random access to elements.
 
-- **Encoding**:
-  ```java
-  import java.util.Base64;
-  
-  public class Base64Encoder {
-      public static void main(String[] args) {
-          String originalInput = "Hello, World!";
-          String encodedString = Base64.getEncoder().encodeToString(originalInput.getBytes());
-          System.out.println(encodedString); // Outputs encoded string
-      }
-  }
-  ```
+**Example**:
+```java
+import java.util.ArrayList;
 
-- **Decoding**:
-  ```java
-  import java.util.Base64;
-  
-  public class Base64Decoder {
-      public static void main(String[] args) {
-          String encodedString = "SGVsbG8sIFdvcmxkIQ==";
-          byte[] decodedBytes = Base64.getDecoder().decode(encodedString);
-          String decodedString = new String(decodedBytes);
-          System.out.println(decodedString); // Outputs: Hello, World!
-      }
-  }
-  ```
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("Element1");
+        arrayList.add("Element2");
+        
+        System.out.println(arrayList);
+    }
+}
+```
 
-### Priority Queue (10 marks)
-A Priority Queue in Java is a data structure that stores elements in a way that allows for efficient retrieval of the highest (or lowest) priority element.
+### 8. LinkedList
+**Definition**: `LinkedList` is a doubly linked list implementation of the `List` and `Deque` interfaces. It allows for efficient insertion and removal.
 
-- **Using PriorityQueue**:
-  ```java
-  import java.util.PriorityQueue;
+**Example**:
+```java
+import java.util.LinkedList;
 
-  public class PriorityQueueExample {
-      public static void main(String[] args) {
-          PriorityQueue<Integer> pq = new PriorityQueue<>();
-          pq.add(5);
-          pq.add(1);
-          pq.add(3);
+public class Main {
+    public static void main(String[] args) {
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("Element1");
+        linkedList.add("Element2");
+        
+        System.out.println(linkedList);
+    }
+}
+```
 
-          while (!pq.isEmpty()) {
-              System.out.println(pq.poll()); // Outputs elements in ascending order: 1, 3, 5
-          }
-      }
-  }
-  ```
+### 9. Vector
+**Definition**: `Vector` is a synchronized, resizable array implementation of the `List` interface. It's similar to `ArrayList` but thread-safe.
 
-### Try with Resources (5 marks)
-The try-with-resources statement in Java ensures that resources (like files, database connections) are automatically closed after use.
+**Example**:
+```java
+import java.util.Vector;
 
-- **Example**:
-  ```java
-  import java.io.BufferedReader;
-  import java.io.FileReader;
-  import java.io.IOException;
+public class Main {
+    public static void main(String[] args) {
+        Vector<String> vector = new Vector<>();
+        vector.add("Element1");
+        vector.add("Element2");
+        
+        System.out.println(vector);
+    }
+}
+```
 
-  public class TryWithResourcesExample {
-      public static void main(String[] args) {
-          try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
-              String line;
-              while ((line = br.readLine()) != null) {
-                  System.out.println(line);
-              }
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
-      }
-  }
-  ```
+### 10. Stack
+**Definition**: `Stack` is a subclass of `Vector` that implements a last-in, first-out (LIFO) stack.
 
-### Functional Interface with Lambda Expressions (5 marks)
-A functional interface in Java is an interface with a single abstract method. Lambda expressions provide a clear and concise way to implement these interfaces.
+**Example**:
+```java
+import java.util.Stack;
 
-- **Example**:
-  ```java
-  @FunctionalInterface
-  interface Greeting {
-      void sayHello(String name);
-  }
+public class Main {
+    public static void main(String[] args) {
+        Stack<String> stack = new Stack<>();
+        stack.push("Element1");
+        stack.push("Element2");
+        
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+    }
+}
+```
 
-  public class LambdaExample {
-      public static void main(String[] args) {
-          Greeting greet = (name) -> System.out.println("Hello, " + name);
-          greet.sayHello("World"); // Outputs: Hello, World
-      }
-  }
-  ```
+### 11. Queue Interface
+**Definition**: The `Queue` interface represents a collection used to hold multiple elements prior to processing, typically in FIFO order.
 
-### Annotations (2 marks)
-Annotations in Java provide metadata about the code. They can be used for various purposes like documentation, code analysis, and even at runtime.
+**Example**:
+```java
+import java.util.Queue;
+import java.util.LinkedList;
 
-- **Example**:
-  ```java
-  @Override
-  public String toString() {
-      return "Example";
-  }
-  ```
+public class Main {
+    public static void main(String[] args) {
+        Queue<String> queue = new LinkedList<>();
+        queue.add("Element1");
+        queue.add("Element2");
+        
+        System.out.println(queue.poll());
+        System.out.println(queue.poll());
+    }
+}
+```
 
-### Iterator Interface (2 marks)
-The Iterator interface provides a way to traverse a collection of objects.
+### 12. Set Interface
+**Definition**: The `Set` interface represents a collection that does not allow duplicate elements.
 
-- **Example**:
-  ```java
-  import java.util.ArrayList;
-  import java.util.Iterator;
-  import java.util.List;
+**Example**:
+```java
+import java.util.Set;
+import java.util.HashSet;
 
-  public class IteratorExample {
-      public static void main(String[] args) {
-          List<String> list = new ArrayList<>();
-          list.add("A");
-          list.add("B");
-          list.add("C");
+public class Main {
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("Element1");
+        set.add("Element2");
+        set.add("Element1"); // Duplicate, will not be added
+        
+        System.out.println(set);
+    }
+}
+```
 
-          Iterator<String> iterator = list.iterator();
-          while (iterator.hasNext()) {
-              System.out.println(iterator.next()); // Outputs: A, B, C
-          }
-      }
-  }
-  ```
+### 13. HashSet
+**Definition**: `HashSet` is a `Set` implementation backed by a hash table. It does not guarantee any order of elements.
 
-### Switch Statements and Expressions (2 marks)
-Switch statements in Java allow a variable to be tested against multiple values. As of Java 12, switch expressions provide a more concise syntax.
+**Example**:
+```java
+import java.util.HashSet;
 
-- **Example**:
-  ```java
-  int day = 2;
-  switch (day) {
-      case 1 -> System.out.println("Monday");
-      case 2 -> System.out.println("Tuesday"); // Outputs: Tuesday
-      default -> System.out.println("Other day");
-  }
-  ```
+public class Main {
+    public static void main(String[] args) {
+        HashSet<String> hashSet = new HashSet<>();
+        hashSet.add("Element1");
+        hashSet.add("Element2");
+        
+        System.out.println(hashSet);
+    }
+}
+```
 
-### Yield Keyword (2 marks)
-The `yield` keyword in Java is used in switch expressions to return a value.
+### 14. LinkedHashSet
+**Definition**: `LinkedHashSet` is a `HashSet` implementation that maintains a doubly-linked list of its elements, preserving the insertion order.
 
-- **Example**:
-  ```java
-  int day = 2;
-  String dayName = switch (day) {
-      case 1 -> "Monday";
-      case 2 -> {
-          yield "Tuesday"; // Returns: Tuesday
-      }
-      default -> "Other day";
-  };
-  System.out.println(dayName);
-  ```
+**Example**:
+```java
+import java.util.LinkedHashSet;
 
-### Object-Oriented and Procedural Programming (5 marks)
-- **Object-Oriented Programming (OOP)**:
-  - **Focus**: Objects and classes.
-  - **Key Concepts**: Encapsulation, inheritance, polymorphism, abstraction.
-  - **Example**:
-    ```java
-    class Animal {
-        void sound() {
-            System.out.println("Animal makes a sound");
+public class Main {
+    public static void main(String[] args) {
+        LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>();
+        linkedHashSet.add("Element1");
+        linkedHashSet.add("Element2");
+        
+        System.out.println(linkedHashSet);
+    }
+}
+```
+
+### 15. SortedSet Interface
+**Definition**: The `SortedSet` interface is a `Set` that maintains its elements in ascending order.
+
+**Example**:
+```java
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class Main {
+    public static void main(String[] args) {
+        SortedSet<String> sortedSet = new TreeSet<>();
+        sortedSet.add("Element1");
+        sortedSet.add("Element2");
+        
+        System.out.println(sortedSet);
+    }
+}
+```
+
+### 16. TreeSet
+**Definition**: `TreeSet` is a `SortedSet` implementation that uses a tree for storage. It guarantees that the elements are in ascending order.
+
+**Example**:
+```java
+import java.util.TreeSet;
+
+public class Main {
+    public static void main(String[] args) {
+        TreeSet<String> treeSet = new TreeSet<>();
+        treeSet.add("Element2");
+        treeSet.add("Element1");
+        
+        System.out.println(treeSet);
+    }
+}
+```
+
+### 17. Map Interface
+**Definition**: The `Map` interface represents a collection of key-value pairs. Each key maps to exactly one value.
+
+**Example**:
+```java
+import java.util.Map;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Value1");
+        map.put(2, "Value2");
+        
+        System.out.println(map);
+    }
+}
+```
+
+### 18. HashMap
+**Definition**: `HashMap` is a `Map` implementation that uses a hash table. It allows null values and null key.
+
+**Example**:
+```java
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<Integer, String> hashMap = new HashMap<>();
+        hashMap.put(1, "Value1");
+        hashMap.put(2, "Value2");
+        
+        System.out.println(hashMap);
+    }
+}
+```
+
+### 19. LinkedHashMap
+**Definition**: `LinkedHashMap` is a `HashMap` that maintains a doubly-linked list of its entries to preserve the insertion order.
+
+**Example**:
+```java
+import java.util.LinkedHashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedHashMap<Integer, String
+
+> linkedHashMap = new LinkedHashMap<>();
+        linkedHashMap.put(1, "Value1");
+        linkedHashMap.put(2, "Value2");
+        
+        System.out.println(linkedHashMap);
+    }
+}
+```
+
+### 20. TreeMap
+**Definition**: `TreeMap` is a `Map` that uses a tree structure to maintain its entries in ascending key order.
+
+**Example**:
+```java
+import java.util.TreeMap;
+
+public class Main {
+    public static void main(String[] args) {
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(2, "Value2");
+        treeMap.put(1, "Value1");
+        
+        System.out.println(treeMap);
+    }
+}
+```
+
+### 21. Hashtable
+**Definition**: `Hashtable` is similar to `HashMap` but is synchronized. It does not allow null keys or values.
+
+**Example**:
+```java
+import java.util.Hashtable;
+
+public class Main {
+    public static void main(String[] args) {
+        Hashtable<Integer, String> hashtable = new Hashtable<>();
+        hashtable.put(1, "Value1");
+        hashtable.put(2, "Value2");
+        
+        System.out.println(hashtable);
+    }
+}
+```
+
+### 22. Sorting
+**Definition**: The process of arranging elements in a specific order, typically ascending or descending.
+
+**Example**:
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("C");
+        list.add("A");
+        list.add("B");
+        
+        Collections.sort(list);
+        System.out.println(list);
+    }
+}
+```
+
+### 23. Comparable Interface
+**Definition**: The `Comparable` interface allows objects of a class to be ordered. Classes that implement this interface can be sorted using the `Collections.sort()` method.
+
+**Example**:
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Person> list = new ArrayList<>();
+        list.add(new Person("Alice", 30));
+        list.add(new Person("Bob", 25));
+        
+        Collections.sort(list);
+        for (Person p : list) {
+            System.out.println(p);
         }
     }
+}
 
-    class Dog extends Animal {
-        void sound() {
-            System.out.println("Dog barks");
+class Person implements Comparable<Person> {
+    String name;
+    int age;
+    
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    @Override
+    public int compareTo(Person other) {
+        return Integer.compare(this.age, other.age);
+    }
+    
+    @Override
+    public String toString() {
+        return name + ": " + age;
+    }
+}
+```
+
+### 24. Comparator Interface
+**Definition**: The `Comparator` interface provides a comparison function, which imposes a total ordering on some collection of objects. Used for custom ordering.
+
+**Example**:
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Person> list = new ArrayList<>();
+        list.add(new Person("Alice", 30));
+        list.add(new Person("Bob", 25));
+        
+        Collections.sort(list, new NameComparator());
+        for (Person p : list) {
+            System.out.println(p);
         }
     }
+}
 
-    public class OOPExample {
-        public static void main(String[] args) {
-            Animal myDog = new Dog();
-            myDog.sound(); // Outputs: Dog barks
+class Person {
+    String name;
+    int age;
+    
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    @Override
+    public String toString() {
+        return name + ": " + age;
+    }
+}
+
+class NameComparator implements Comparator<Person> {
+    @Override
+    public int compare(Person p1, Person p2) {
+        return p1.name.compareTo(p2.name);
+    }
+}
+```
+
+### 25. Properties Class in Java
+**Definition**: `Properties` is a subclass of `Hashtable`. It is used to maintain lists of values in which the key is a string and the value is also a string.
+
+**Example**:
+```java
+import java.util.Properties;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        Properties properties = new Properties();
+        properties.setProperty("username", "admin");
+        properties.setProperty("password", "12345");
+        
+        try {
+            properties.store(new FileOutputStream("config.properties"), null);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
-    ```
+}
+```
 
-- **Procedural Programming**:
-  - **Focus**: Functions and procedures.
-  - **Key Concepts**: Sequence of steps or instructions.
-  - **Example**:
-    ```java
-    public class ProceduralExample {
-        public static void main(String[] args) {
-            printGreeting("World");
-        }
-
-        static void printGreeting(String name) {
-            System.out.println("Hello, " + name); // Outputs: Hello, World
-        }
-    }
-    ```
 
 
 # Unit 5
