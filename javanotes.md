@@ -1336,6 +1336,7 @@ public class SealedClassesExample {
 }
 ```
 # Unit 4
+![image](https://github.com/user-attachments/assets/c48db996-2521-42b9-8417-803c2478568c)
 
 1. **Collection in Java**: This is the root interface in the Java Collections Framework. It represents a group of objects, known as elements.
 
