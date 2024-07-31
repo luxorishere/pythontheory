@@ -172,3 +172,259 @@ main()
 ```
 
 **Question:** Create a function to check if a number is prime, and use it in a main function to print all prime numbers up to a given limit.
+
+
+## Python Complex Data Types Summary
+
+| Data Type | Description | Key Operations |
+|---|---|---|
+| **String** | Sequence of characters | Concatenation, repetition, indexing, slicing, methods (upper, lower, strip, split, join) |
+| **List** | Ordered, mutable collection | Indexing, slicing, modifying elements, methods (append, insert, remove, pop, sort) |
+| **Tuple** | Ordered, immutable collection | Indexing, unpacking |
+| **Dictionary** | Unordered key-value pairs | Accessing values, adding/removing key-value pairs, methods (keys, values, items, get, update) |
+
+### In-built Functions
+| Function | Description |
+|---|---|
+| `len()` | Returns length |
+| `max()` | Returns maximum value |
+| `min()` | Returns minimum value |
+| `sorted()` | Returns sorted list |
+| `sum()` | Calculates sum |
+
+### Functions
+* Reusable blocks of code defined using `def` keyword.
+* Improve code organization and reusability.
+
+**Example:**
+```python
+def greet(name):
+  print("Hello,", name)
+```
+## Unit 4 Python File Operations
+```
+- Python File Operations: Reading files, Writing files in python, Understanding read
+functions, read(), readline(), readlines(). 
+- Understanding write functions, write() and
+writelines() Manipulating file pointer using seek Programming, using file operations. 
+```
+### Opening Files
+The first step to working with a file is to open it. Python provides the `open()` function for this purpose.
+
+```python
+file_object = open("filename.txt", "mode")
+```
+* **filename.txt:** The name of the file you want to open.
+* **mode:** Specifies how you want to open the file. Common modes include:
+  * `'r'`: Read mode (default)
+  * `'w'`: Write mode (creates a new file or overwrites an existing one)
+  * `'a'`: Append mode (creates a new file if it doesn't exist, otherwise appends to the end)
+  * `'r+'`: Read and write mode
+  * `'w+'`: Write and read mode (overwrites existing file)
+  * `'a+'`: Append and read mode
+
+### Reading Files
+Once a file is opened in read mode, you can read its contents using different methods:
+
+#### `read()`
+Reads the entire contents of the file as a string.
+
+```python
+file_object = open("data.txt", "r")
+content = file_object.read()
+print(content)
+file_object.close()
+```
+
+#### `readline()`
+Reads a single line from the file.
+
+```python
+file_object = open("data.txt", "r")
+line = file_object.readline()
+print(line)
+file_object.close()
+```
+
+#### `readlines()`
+Reads all lines of the file and returns them as a list of strings.
+
+```python
+file_object = open("data.txt", "r")
+lines = file_object.readlines()
+for line in lines:
+  print(line, end="")
+file_object.close()
+```
+
+### Writing to Files
+To write data to a file, open it in write or append mode.
+
+#### `write()`
+Writes a string to the file.
+
+```python
+file_object = open("output.txt", "w")
+file_object.write("This is some text.")
+file_object.close()
+```
+
+#### `writelines()`
+Writes a list of strings to the file.
+
+```python
+file_object = open("output.txt", "a")
+lines = ["Line 1\n", "Line 2\n"]
+file_object.writelines(lines)
+file_object.close()
+```
+
+### Manipulating File Pointer
+The file pointer indicates the current position within the file. You can use the `seek()` method to move the pointer.
+
+```python
+file_object = open("data.txt", "r+")
+file_object.seek(10)  # Move pointer to position 10
+data = file_object.read(5)  # Read 5 characters from position 10
+print(data)
+file_object.close()
+```
+
+### Closing Files
+It's essential to close the file after you're done using it to release system resources.
+
+```python
+file_object.close()
+```
+
+**Question:**
+* How would you read every other line from a text file?
+
+**Compound Question:**
+* Write a Python program to copy the contents of one text file to another, converting all text to uppercase in the process.
+
+## Python File Operations Summary
+
+### Opening Files
+| Function | Description |
+|---|---|
+| `open(filename, mode)` | Opens a file with specified mode |
+| Modes | `'r'` (read), `'w'` (write), `'a'` (append), `'r+'` (read and write), `'w+'` (write and read), `'a+'` (append and read) |
+
+### Reading Files
+| Function | Description |
+|---|---|
+| `read()` | Reads entire file as a string |
+| `readline()` | Reads a single line |
+| `readlines()` | Reads all lines into a list |
+
+### Writing to Files
+| Function | Description |
+|---|---|
+| `write(string)` | Writes a string to the file |
+| `writelines(list)` | Writes a list of strings to the file |
+
+### File Pointer Manipulation
+| Function | Description |
+|---|---|
+| `seek(offset, whence)` | Moves the file pointer |
+| `whence` | 0: start of file, 1: current position, 2: end of file |
+
+### Closing Files
+| Function | Description |
+|---|---|
+| `close()` | Closes the file |
+
+**Remember:**
+* Always close files after use to release system resources.
+* Use `with` statement for automatic closing (recommended):
+  ```python
+  with open('file.txt', 'r') as file:
+      # Do something with the file
+  ```
+### File Handling Questions
+
+1. **Change all the vowels in the file to uppercase. Construct a program for the same.**
+   - Example:
+     - Given a file with the content: `hello world`
+     - The result should be: `hEllO wOrld`
+
+2. **Count the number of lines in the file that contain the word 'Python'. Construct a program for the same.**
+   - Example:
+     - Given a file with the content:
+       ```
+       I love Python.
+       Python is great.
+       I enjoy coding.
+       ```
+     - The result should be: `2`
+
+3. **Reverse the content of each line in the file and save it to a new file. Construct a program for the same.**
+   - Example:
+     - Given a file with the content:
+       ```
+       hello
+       world
+       ```
+     - The result should be:
+       ```
+       olleh
+       dlrow
+       ```
+
+4. **Remove all the blank lines from the file. Construct a program for the same.**
+   - Example:
+     - Given a file with the content:
+       ```
+       hello
+
+       world
+       ```
+     - The result should be:
+       ```
+       hello
+       world
+       ```
+
+5. **Count the frequency of each word in the file. Construct a program for the same.**
+   - Example:
+     - Given a file with the content: `hello world hello`
+     - The result should be: `{'hello': 2, 'world': 1}`
+
+6. **Append the string "End of File" to the end of the file. Construct a program for the same.**
+   - Example:
+     - Given a file with the content:
+       ```
+       This is a test file.
+       ```
+     - The result should be:
+       ```
+       This is a test file.
+       End of File
+       ```
+
+7. **Replace all occurrences of a specified word with another word in the file. Construct a program for the same.**
+   - Example:
+     - Given a file with the content: `I love Python. Python is great.`
+     - Replace "Python" with "programming"
+     - The result should be: `I love programming. programming is great.`
+
+8. **Copy the contents of one file to another file. Construct a program for the same.**
+   - Example:
+     - Given a source file with the content: `This is the source file.`
+     - The target file should have the content: `This is the source file.`
+
+9. **Count the number of words in the file. Construct a program for the same.**
+   - Example:
+     - Given a file with the content: `This is a test file.`
+     - The result should be: `5`
+
+10. **Extract all the email addresses from the file. Construct a program for the same.**
+    - Example:
+      - Given a file with the content:
+        ```
+        Contact us at support@example.com.
+        Send your queries to info@example.org.
+        ```
+      - The result should be: `['support@example.com', 'info@example.org']`
+
