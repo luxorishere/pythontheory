@@ -1,200 +1,174 @@
-## Unit 3
-
+## Python Complex Data Types
 ### Python Complex Data Types
-
-1. **Using string data type and string operations**
-2. **Defining list and list slicing**
-3. **Use of Tuple data type**
-4. **String, List, and Dictionary Manipulations**
-    - Building blocks of Python programs
-    - String manipulation methods
-    - List manipulation
-    - Dictionary manipulation
-5. **Programming using string, list, and dictionary in-built functions**
-6. **Python Functions**
-7. **Organizing Python codes using functions**
-
----
-
+```
+   - Using string data type and string operations
+   - Defining list and list slicing
+   - Use of Tuple data type
+   - String, List, and Dictionary Manipulations
+   -     Building blocks of Python programs
+   -     String manipulation methods
+   -     List manipulation
+   -     Dictionary manipulation
+   - Programming using string, list, and dictionary in-built functions
+   - Python Functions
+   - Organizing Python codes using functions
+   ```
 ### 1. Using String Data Type and String Operations
-**Definition:** Strings in Python are sequences of characters. They support various operations like concatenation, repetition, and slicing.
 
-**Code Example:**
-```python
-s = "Hello"
-print(s + " World")  # Concatenation
-print(s * 3)         # Repetition
-print(s[1:4])        # Slicing
-```
+**Strings** are sequences of characters enclosed in single quotes ('), double quotes ("), or triple quotes (''' or """).
 
-**Question:** What will be the output of the above code?
+**Basic Operations:**
 
----
+* **Concatenation:** Combining strings using the `+` operator.
+  ```python
+  str1 = "Hello"
+  str2 = "World"
+  result = str1 + " " + str2
+  print(result)  # Output: Hello World
+  ```
+* **Repetition:** Multiplying a string by an integer repeats it.
+  ```python
+  str = "Python"
+  result = str * 3
+  print(result)  # Output: PythonPythonPython
+  ```
+* **Indexing:** Accessing individual characters using their position (starts from 0).
+  ```python
+  str = "Python"
+  first_char = str[0]
+  print(first_char)  # Output: P
+  ```
+* **Slicing:** Extracting a substring using `[start:end]`.
+  ```python
+  str = "Python"
+  sub_str = str[2:5]
+  print(sub_str)  # Output: tho
+  ```
 
-### 2. Defining List and List Slicing
-**Definition:** Lists are mutable sequences in Python. List slicing allows you to access a subset of list elements.
+**Question:** Given the string "Python Programming", extract the substring "Program".
 
-**Code Example:**
-```python
-lst = [1, 2, 3, 4, 5]
-print(lst[1:3])  # Slicing from index 1 to 2
-print(lst[:2])   # Slicing from start to index 1
-print(lst[3:])   # Slicing from index 3 to end
-```
+### 2. Defining Lists and List Slicing
 
-**Question:** What do the sliced lists contain?
+**Lists** are ordered collections of items, enclosed in square brackets `[]`. They can contain elements of different data types.
 
----
+**Basic Operations:**
+
+* **Accessing elements:** Use indexing to access individual elements.
+  ```python
+  my_list = [1, 2, "hello", True]
+  first_element = my_list[0]
+  print(first_element)  # Output: 1
+  ```
+* **Slicing:** Extract a sublist using `[start:end]`.
+  ```python
+  my_list = [10, 20, 30, 40, 50]
+  sub_list = my_list[1:4]
+  print(sub_list)  # Output: [20, 30, 40]
+  ```
+* **Modifying elements:** Change elements directly using their index.
+  ```python
+  my_list = [1, 2, 3]
+  my_list[0] = 10
+  print(my_list)  # Output: [10, 2, 3]
+  ```
+
+**Question:** Create a list of fruits, append "orange" to it, and then reverse the list.
 
 ### 3. Use of Tuple Data Type
-**Definition:** Tuples are immutable sequences in Python, used to store collections of items.
 
-**Code Example:**
-```python
-t = (1, 2, 3)
-print(t[0])  # Accessing elements
-```
+**Tuples** are ordered, immutable collections of items, enclosed in parentheses `()`.
 
-**Question:** What is the value of `t[0]`?
+**Basic Operations:**
 
----
+* **Accessing elements:** Similar to lists, use indexing.
+  ```python
+  my_tuple = (10, 20, "hello")
+  first_element = my_tuple[0]
+  print(first_element)  # Output: 10
+  ```
+* **Unpacking:** Assign elements to multiple variables.
+  ```python
+  my_tuple = (1, 2, 3)
+  a, b, c = my_tuple
+  print(a, b, c)  # Output: 1 2 3
+  ```
+
+**Question:** Create a tuple of your favorite colors and access the second color.
 
 ### 4. String, List, and Dictionary Manipulations
-#### Building Blocks of Python Programs
-**Definition:** Strings, lists, and dictionaries are fundamental data types used in Python programs.
 
-**Code Example:**
-```python
-# String manipulation
-s = "Python"
-print(s.upper())
+**Building Blocks of Python Programs:**
 
-# List manipulation
-lst = [1, 2, 3]
-lst.append(4)
-print(lst)
+* **Strings:** Used for text data.
+* **Lists:** Used for ordered collections of items.
+* **Dictionaries:** Used for unordered key-value pairs.
 
-# Dictionary manipulation
-d = {"a": 1, "b": 2}
-d["c"] = 3
-print(d)
-```
+**String Manipulation Methods:**
 
-**Question:** What are the outputs of the string, list, and dictionary manipulations?
+* `upper()`: Converts to uppercase.
+* `lower()`: Converts to lowercase.
+* `strip()`: Removes whitespace from both ends.
+* `split()`: Splits a string into a list of substrings.
+* `join()`: Joins elements of a list into a string.
 
-#### String Manipulation Methods
-**Definition:** Methods like `upper()`, `lower()`, `replace()`, and `split()` are used to manipulate strings.
+**List Manipulation Methods:**
 
-**Code Example:**
-```python
-s = "hello world"
-print(s.upper())        # Convert to uppercase
-print(s.replace("world", "Python"))  # Replace substring
-```
+* `append()`: Adds an element to the end.
+* `insert()`: Inserts an element at a specific index.
+* `remove()`: Removes the first occurrence of an element.
+* `pop()`: Removes and returns the last element.
+* `sort()`: Sorts the list in ascending order.
 
-**Question:** What are the outputs of the string manipulation methods?
+**Dictionary Manipulation Methods:**
 
-#### List Manipulation
-**Definition:** Lists can be modified using methods like `append()`, `extend()`, `remove()`, and `pop()`.
+* `keys()`: Returns a view of the dictionary's keys.
+* `values()`: Returns a view of the dictionary's values.
+* `items()`: Returns a view of the dictionary's key-value pairs.
+* `get()`: Retrieves a value for a given key, with an optional default.
+* `update()`: Updates or adds key-value pairs from another dictionary.
 
-**Code Example:**
-```python
-lst = [1, 2, 3]
-lst.append(4)    # Add element
-lst.remove(2)    # Remove element
-print(lst)
-```
+**Question:** Create a dictionary of student names and their ages. Add a new student, then retrieve the age of an existing student.
 
-**Question:** What will `lst` contain after the above manipulations?
+### 5. Programming Using String, List, and Dictionary In-built Functions
 
-#### Dictionary Manipulation
-**Definition:** Dictionaries can be modified using methods like `update()`, `pop()`, and `clear()`.
+**In-built Functions:**
 
-**Code Example:**
-```python
-d = {"a": 1, "b": 2}
-d.update({"c": 3})  # Add new key-value pair
-d.pop("a")          # Remove key-value pair
-print(d)
-```
+* `len()`: Returns the length of a string, list, or tuple.
+* `max()`: Returns the largest item in a list or tuple.
+* `min()`: Returns the smallest item in a list or tuple.
+* `sorted()`: Returns a sorted list.
+* `sum()`: Calculates the sum of numbers in a list.
 
-**Question:** What will `d` contain after the above manipulations?
-
----
-
-### 5. Programming Using String, List, and Dictionary In-Built Functions
-**Definition:** Python provides various in-built functions like `len()`, `sorted()`, `sum()` for strings, lists, and dictionaries.
-
-**Code Example:**
-```python
-# String length
-s = "hello"
-print(len(s))
-
-# List sum
-lst = [1, 2, 3]
-print(sum(lst))
-
-# Dictionary keys
-d = {"a": 1, "b": 2}
-print(list(d.keys()))
-```
-
-**Question:** What are the outputs of the in-built functions for string, list, and dictionary?
-
----
+**Question:** Find the length of a given string, find the maximum number in a list, and calculate the sum of values in a dictionary.
 
 ### 6. Python Functions
-**Definition:** Functions are reusable blocks of code that perform a specific task.
+**Functions** are reusable blocks of code defined using the `def` keyword.
 
-**Code Example:**
-```python
-def add(a, b):
-    return a + b
-
-result = add(2, 3)
-print(result)
-```
-
-**Question:** What is the output of the `add` function when called with arguments `2` and `3`?
-
----
-
-### 7. Organizing Python Codes Using Functions
-**Definition:** Functions help in organizing code into reusable blocks, making the code more modular and manageable.
-
-**Code Example:**
 ```python
 def greet(name):
-    return f"Hello, {name}!"
+  print("Hello,", name)
 
-def main():
-    print(greet("Alice"))
-    print(greet("Bob"))
-
-main()
+greet("Alice")  # Output: Hello, Alice
 ```
 
-**Question:** How does the `main` function help in organizing the code?
+**Question:** Define a function to calculate the factorial of a number.
 
----
+### 7. Organizing Python Codes Using Functions
 
-### Metaphor: Functions as Building Blocks
-**Metaphor Explanation:** Think of functions as building blocks in construction. Each function is like a block that serves a specific purpose. By assembling these blocks in different ways, you can build complex structures (programs) efficiently.
+Functions help in code modularity and reusability.
 
-**Code Example:**
 ```python
-def add(x, y):
-    return x + y
-
-def multiply(x, y):
-    return x * y
+def calculate_area(length, width):
+  area = length * width
+  return area
 
 def main():
-    print(add(2, 3))
-    print(multiply(2, 3))
+  l = 5
+  w = 3
+  result = calculate_area(l, w)
+  print("Area:", result)
 
 main()
 ```
 
-**Question:** How does the metaphor of building blocks help you understand the role of functions in Python programs?
+**Question:** Create a function to check if a number is prime, and use it in a main function to print all prime numbers up to a given limit.
