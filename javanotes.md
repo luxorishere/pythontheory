@@ -760,7 +760,7 @@ System.out.println("Thread is in new state.");
 t1.start();
 System.out.println("Thread is in runnable state.");
 ```
-
+<!--  -->
 #### Creating Threads
 Threads can be created by extending the Thread class or implementing the Runnable interface. Extending the Thread class provides more control over the thread, while implementing Runnable is more flexible and allows the class to extend other classes. Choosing the right method depends on the application's requirements and design.
 
